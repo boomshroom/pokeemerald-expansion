@@ -1048,9 +1048,11 @@ static enum Species DetermineEggSpeciesAndParentSlots(struct DayCare *daycare, u
         eggSpecies = SPECIES_PHIONE;
     else if (GET_BASE_SPECIES_ID(eggSpecies) == SPECIES_ROTOM)
         eggSpecies = SPECIES_ROTOM;
-    else if (GET_BASE_SPECIES_ID(eggSpecies) == SPECIES_SCATTERBUG)
-        eggSpecies = P_SCATTERBUG_LINE_FORM_BREED;
-    else if (GET_BASE_SPECIES_ID(eggSpecies) == SPECIES_FURFROU)
+    else if (GET_BASE_SPECIES_ID(eggSpecies) == SPECIES_SCATTERBUG) {
+        // eggSpecies = P_SCATTERBUG_LINE_FORM_BREED;
+        int variant = Random() % (SPECIES_SPEWPA_POLAR - SPECIES_SCATTERBUG_POLAR);
+        eggSpecies = SPECIES_SCATTERBUG_POLAR + variant;
+    } else if (GET_BASE_SPECIES_ID(eggSpecies) == SPECIES_FURFROU)
         eggSpecies = SPECIES_FURFROU;
     else if (eggSpecies == SPECIES_SINISTEA_ANTIQUE)
         eggSpecies = SPECIES_SINISTEA_PHONY;

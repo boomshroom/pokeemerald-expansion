@@ -266,7 +266,7 @@ struct SaveBlock3
     u8 itemFlags[ITEM_FLAGS_COUNT];
 #endif
 #if USE_DEXNAV_SEARCH_LEVELS == TRUE
-    u8 dexNavSearchLevels[NUM_SPECIES];
+    u8 dexNavSearchLevels[NUM_SPECIES_ENCOUNTERABLE];
 #endif
     u8 dexNavChain;
 #if APRICORN_TREE_COUNT > 0
