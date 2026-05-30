@@ -206,6 +206,7 @@ const struct ItemInfo gItemsInfo[] =
         .secondaryId = BALL_POKE,
         .iconPic = gItemIcon_PokeBall,
         .iconPalette = gItemIconPalette_PokeBall,
+        .shopCriteriaFunc = ShopCriteriaStarted,
     },
 
     [ITEM_GREAT_BALL] =
@@ -222,6 +223,7 @@ const struct ItemInfo gItemsInfo[] =
         .secondaryId = BALL_GREAT,
         .iconPic = gItemIcon_GreatBall,
         .iconPalette = gItemIconPalette_GreatBall,
+        .shopCriteriaFunc = ShopCriteriaBadges3,
     },
 
     [ITEM_ULTRA_BALL] =
@@ -238,6 +240,7 @@ const struct ItemInfo gItemsInfo[] =
         .secondaryId = BALL_ULTRA,
         .iconPic = gItemIcon_UltraBall,
         .iconPalette = gItemIconPalette_UltraBall,
+        .shopCriteriaFunc = ShopCriteriaBadges5,
     },
 
     [ITEM_MASTER_BALL] =
@@ -671,6 +674,7 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_Potion,
         .iconPalette = gItemIconPalette_SuperPotion,
+        .shopCriteriaFunc = ShopCriteriaBadges1,
     },
 
     [ITEM_HYPER_POTION] =
@@ -695,6 +699,7 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_Potion,
         .iconPalette = gItemIconPalette_HyperPotion,
+        .shopCriteriaFunc = ShopCriteriaBadges3,
     },
 
     [ITEM_MAX_POTION] =
@@ -714,6 +719,7 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_LargePotion,
         .iconPalette = gItemIconPalette_MaxPotion,
+        .shopCriteriaFunc = ShopCriteriaBadges7,
     },
 
     [ITEM_FULL_RESTORE] =
@@ -734,6 +740,7 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_LargePotion,
         .iconPalette = gItemIconPalette_FullRestore,
+        .shopCriteriaFunc = ShopCriteriaBadges8,
     },
 
     [ITEM_REVIVE] =
@@ -753,6 +760,7 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_Revive,
         .iconPalette = gItemIconPalette_Revive,
+        .shopCriteriaFunc = ShopCriteriaBadges3,
     },
 
     [ITEM_MAX_REVIVE] =
@@ -1005,6 +1013,7 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_StatusHeal,
         .iconPalette = gItemIconPalette_BurnHeal,
+        .shopCriteriaFunc = ShopCriteriaBadges1,
     },
 
     [ITEM_ICE_HEAL] =
@@ -1029,6 +1038,7 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_StatusHeal,
         .iconPalette = gItemIconPalette_IceHeal,
+        .shopCriteriaFunc = ShopCriteriaBadges1,
     },
 
     [ITEM_AWAKENING] =
@@ -1053,6 +1063,7 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_StatusHeal,
         .iconPalette = gItemIconPalette_Awakening,
+        .shopCriteriaFunc = ShopCriteriaBadges1,
     },
 
     [ITEM_FULL_HEAL] =
@@ -1069,6 +1080,7 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_FullHeal,
         .iconPalette = gItemIconPalette_FullHeal,
+        .shopCriteriaFunc = ShopCriteriaBadges5,
     },
 
     [ITEM_ETHER] =
@@ -2287,6 +2299,7 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_Repel,
         .iconPalette = gItemIconPalette_Repel,
+        .shopCriteriaFunc = ShopCriteriaBadges1,
     },
 
     [ITEM_SUPER_REPEL] =
@@ -2305,6 +2318,7 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_Repel,
         .iconPalette = gItemIconPalette_SuperRepel,
+        .shopCriteriaFunc = ShopCriteriaBadges3,
     },
 
     [ITEM_MAX_REPEL] =
@@ -2323,6 +2337,7 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_Repel,
         .iconPalette = gItemIconPalette_MaxRepel,
+        .shopCriteriaFunc = ShopCriteriaBadges6,
     },
 
     [ITEM_LURE] =
@@ -2342,6 +2357,7 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_Lure,
         .iconPalette = gItemIconPalette_Lure,
+        .shopCriteriaFunc = ShopCriteriaBadges2,
     },
 
     [ITEM_SUPER_LURE] =
@@ -2361,6 +2377,7 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_Lure,
         .iconPalette = gItemIconPalette_SuperLure,
+        .shopCriteriaFunc = ShopCriteriaBadges4,
     },
 
     [ITEM_MAX_LURE] =
@@ -2380,6 +2397,7 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_Lure,
         .iconPalette = gItemIconPalette_MaxLure,
+        .shopCriteriaFunc = ShopCriteriaBadges7,
     },
 
     [ITEM_ESCAPE_ROPE] =
@@ -2403,6 +2421,7 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_EscapeRope,
         .iconPalette = gItemIconPalette_EscapeRope,
+        .shopCriteriaFunc = ShopCriteriaBadges1,
     },
 
 // X Items
@@ -2431,6 +2450,7 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_BattleStatItem,
         .iconPalette = gItemIconPalette_XAttack,
+        .shopCriteriaFunc = ShopCriteriaBadges2,
     },
 
     [ITEM_X_DEFENSE] =
@@ -2457,6 +2477,7 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_BattleStatItem,
         .iconPalette = gItemIconPalette_XDefend,
+        .shopCriteriaFunc = ShopCriteriaBadges2,
     },
 
     [ITEM_X_SP_ATK] =
@@ -2483,6 +2504,7 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_BattleStatItem,
         .iconPalette = gItemIconPalette_XSpecial,
+        .shopCriteriaFunc = ShopCriteriaBadges6,
     },
 
     [ITEM_X_SP_DEF] =
@@ -2509,6 +2531,7 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_BattleStatItem,
         .iconPalette = gItemIconPalette_XSpecialDefense,
+        .shopCriteriaFunc = ShopCriteriaBadges6,
     },
 
     [ITEM_X_SPEED] =
@@ -2535,6 +2558,7 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_BattleStatItem,
         .iconPalette = gItemIconPalette_XSpeed,
+        .shopCriteriaFunc = ShopCriteriaBadges2,
     },
 
     [ITEM_X_ACCURACY] =
@@ -2562,6 +2586,7 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_BattleStatItem,
         .iconPalette = gItemIconPalette_XAccuracy,
+        .shopCriteriaFunc = ShopCriteriaBadges3,
     },
 
     [ITEM_DIRE_HIT] =
@@ -2581,6 +2606,7 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_BattleStatItem,
         .iconPalette = gItemIconPalette_DireHit,
+        .shopCriteriaFunc = ShopCriteriaBadges3,
     },
 
     [ITEM_GUARD_SPEC] =
@@ -2601,6 +2627,7 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_BattleStatItem,
         .iconPalette = gItemIconPalette_GuardSpec,
+        .shopCriteriaFunc = ShopCriteriaBadges3,
     },
 
     [ITEM_POKE_DOLL] =
