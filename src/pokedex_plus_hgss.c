@@ -2497,7 +2497,7 @@ static void CreatePokedexList(u8 dexMode, u8 order)
             else
             {
                 temp_dexNum = i + 1;
-                if (GetSetPokedexFlag(temp_dexNum, FLAG_GET_SEEN) || (GetSetPokedexFlag(temp_dexNum, FLAG_GET_SILHOUETTE) && HGSS_OVERWORLD_NOTICED_AS_SILHOUETTES))
+                if (GetSetPokedexFlag(temp_dexNum, FLAG_GET_ANY))
                     r10 = 1;
             }
 
@@ -2724,7 +2724,7 @@ static void CreateMonDexNum(u16 entryNum, u8 left, u8 top, u16 unused)
     text[offset++] = CHAR_0 + ((dexNum % 1000) % 100) % 10;
     text[offset++] = EOS;
 
-    if (!sPokedexView->pokedexList[entryNum].seen && P_SKIP_POKEDEX_GAPS == SKIP_GAPS_EXCEPT_ONE)
+    if (!(sPokedexView->pokedexList[entryNum].seen || (sPokedexView->pokedexList[entryNum].silhouette && HGSS_OVERWORLD_NOTICED_AS_SILHOUETTES)) && P_SKIP_POKEDEX_GAPS == SKIP_GAPS_EXCEPT_ONE)
         StringCopy(text, COMPOUND_STRING("----"));
 
     PrintMonDexNumAndName(0, FONT_NARROW, text, left, top);

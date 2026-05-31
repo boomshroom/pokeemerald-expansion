@@ -2183,17 +2183,17 @@ bool32 ShouldSkipPokedexListEntry(enum NationalDexOrder dexNum)
     if (P_SKIP_POKEDEX_GAPS == DONT_SKIP_GAPS)
         return FALSE;
 
-    if (GetSetPokedexFlag(dexNum, FLAG_GET_SEEN))
+    if (GetSetPokedexFlag(dexNum, FLAG_GET_ANY))
         return FALSE;
 
     enum NationalDexOrder dexNumBefore = max(dexNum - 1, NATIONAL_DEX_NONE + 1);
     enum NationalDexOrder dexNumAfter = min(dexNum + 1, NATIONAL_DEX_COUNT);
     if (P_SKIP_POKEDEX_GAPS == SKIP_GAPS_EXCEPT_ONE)
-        return !GetSetPokedexFlag(dexNumBefore, FLAG_GET_SEEN);
+        return !GetSetPokedexFlag(dexNumBefore, FLAG_GET_ANY);
 
     if (P_SKIP_POKEDEX_GAPS == SKIP_GAPS_EXCEPT_BEFORE_AFTER)
-        return !GetSetPokedexFlag(dexNumBefore, FLAG_GET_SEEN)
-         && !GetSetPokedexFlag(dexNumAfter, FLAG_GET_SEEN);
+        return !GetSetPokedexFlag(dexNumBefore, FLAG_GET_ANY)
+         && !GetSetPokedexFlag(dexNumAfter, FLAG_GET_ANY);
 
     return TRUE; 
 }
@@ -4540,6 +4540,10 @@ s8 GetSetPokedexFlag(enum NationalDexOrder nationalDexNo, u8 caseID)
     bit = nationalDexNo % 8;
     mask = 1 << bit; // The mask is a bit, nudged over a number of places equal to the nat dex number remainder 8. 
 
+    if (caseID == FLAG_GET_ANY && !HGSS_OVERWORLD_NOTICED_AS_SILHOUETTES) {
+        caseID = FLAG_GET_SEEN;
+    }
+
     switch (caseID)
     {
     case FLAG_GET_SEEN:
@@ -4564,6 +4568,9 @@ s8 GetSetPokedexFlag(enum NationalDexOrder nationalDexNo, u8 caseID)
         break;
     case FLAG_SET_SILHOUETTE:
         gSaveBlock1Ptr->dexCaught[index] |= mask; // Only sets caught. No need to clear seen.
+        break;
+    case FLAG_GET_ANY:
+        retVal = (((gSaveBlock1Ptr->dexSeen[index] | gSaveBlock1Ptr->dexCaught[index]) & mask) != 0);
         break;
     case FLAG_GET_NONE:
         retVal = (((gSaveBlock1Ptr->dexSeen[index] | gSaveBlock1Ptr->dexCaught[index]) & mask) == 0);
