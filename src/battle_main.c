@@ -1895,7 +1895,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             struct OriginalTrainerId otId = OTID_STRUCT_RANDOM_NO_SHINY;
             u32 abilityNum = 0;
 
-            if (trainer->battleType != TRAINER_BATTLE_TYPE_SINGLES)
+            if (trainer->gender == TRAINER_GENDER_OTHER)
                 personalityValue = 0x80;
             else if (trainer->gender == TRAINER_GENDER_FEMALE)
                 personalityValue = 0x78; // Use personality more likely to result in a female Pokémon

@@ -558,6 +558,7 @@ enum TrainerClassID
 
 #define TRAINER_GENDER_MALE   0
 #define TRAINER_GENDER_FEMALE 1
+#define TRAINER_GENDER_OTHER  2
 
 // Trainer party defines
 #define TRAINER_MON_MALE          1

@@ -936,7 +936,7 @@ IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 Name: Gabby & Ty
 Class: Interviewer
 Pic: Interviewer
-Gender: Male
+Gender: Other
 Music: Interviewer
 Double Battle: Yes
 AI: Check Bad Move
@@ -953,7 +953,7 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: Gabby & Ty
 Class: Interviewer
 Pic: Interviewer
-Gender: Male
+Gender: Other
 Music: Interviewer
 Double Battle: Yes
 AI: Check Bad Move
@@ -970,7 +970,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: Gabby & Ty
 Class: Interviewer
 Pic: Interviewer
-Gender: Male
+Gender: Other
 Music: Interviewer
 Double Battle: Yes
 AI: Check Bad Move
@@ -987,7 +987,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Name: Gabby & Ty
 Class: Interviewer
 Pic: Interviewer
-Gender: Male
+Gender: Other
 Music: Interviewer
 Double Battle: Yes
 AI: Check Bad Move
@@ -1004,7 +1004,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Name: Gabby & Ty
 Class: Interviewer
 Pic: Interviewer
-Gender: Male
+Gender: Other
 Music: Interviewer
 Double Battle: Yes
 AI: Check Bad Move
@@ -1021,7 +1021,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 Name: Gabby & Ty
 Class: Interviewer
 Pic: Interviewer
-Gender: Male
+Gender: Other
 Music: Interviewer
 Double Battle: Yes
 AI: Check Bad Move
@@ -5046,7 +5046,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: Tate&Liza
 Class: Leader
 Pic: Leader Tate And Liza
-Gender: Male
+Gender: Other
 Music: Female
 Items: Hyper Potion / Hyper Potion / Hyper Potion / Hyper Potion
 Double Battle: Yes
@@ -5355,7 +5355,7 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: Kate & Joy
 Class: Sr And Jr
 Pic: Sr And Jr
-Gender: Male
+Gender: Female
 Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
@@ -5380,7 +5380,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Name: Anna & Meg
 Class: Sr And Jr
 Pic: Sr And Jr
-Gender: Male
+Gender: Female
 Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
@@ -5404,7 +5404,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Name: Anna & Meg
 Class: Sr And Jr
 Pic: Sr And Jr
-Gender: Male
+Gender: Female
 Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
@@ -5428,7 +5428,7 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: Anna & Meg
 Class: Sr And Jr
 Pic: Sr And Jr
-Gender: Male
+Gender: Female
 Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
@@ -5452,7 +5452,7 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: Anna & Meg
 Class: Sr And Jr
 Pic: Sr And Jr
-Gender: Male
+Gender: Female
 Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
@@ -5476,7 +5476,7 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: Anna & Meg
 Class: Sr And Jr
 Pic: Sr And Jr
-Gender: Male
+Gender: Female
 Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
@@ -8777,7 +8777,7 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: Amy & Liv
 Class: Twins
 Pic: Twins
-Gender: Male
+Gender: Female
 Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
@@ -8794,7 +8794,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Name: Amy & Liv
 Class: Twins
 Pic: Twins
-Gender: Male
+Gender: Female
 Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
@@ -8811,7 +8811,7 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: Gina & Mia
 Class: Twins
 Pic: Twins
-Gender: Male
+Gender: Female
 Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
@@ -8828,7 +8828,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Name: Miu & Yuki
 Class: Twins
 Pic: Twins
-Gender: Male
+Gender: Female
 Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
@@ -8845,7 +8845,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Name: Amy & Liv
 Class: Twins
 Pic: Twins
-Gender: Male
+Gender: Female
 Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
@@ -8862,7 +8862,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Name: Gina & Mia
 Class: Twins
 Pic: Twins
-Gender: Male
+Gender: Female
 Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
@@ -8883,7 +8883,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Name: Amy & Liv
 Class: Twins
 Pic: Twins
-Gender: Male
+Gender: Female
 Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
@@ -8900,7 +8900,7 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: Amy & Liv
 Class: Twins
 Pic: Twins
-Gender: Male
+Gender: Female
 Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
@@ -8925,7 +8925,7 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: Amy & Liv
 Class: Twins
 Pic: Twins
-Gender: Male
+Gender: Female
 Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
@@ -11742,7 +11742,7 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: Dez & Luke
 Class: Young Couple
 Pic: Young Couple
-Gender: Male
+Gender: Other
 Music: Girl
 Double Battle: Yes
 AI: Check Bad Move
@@ -11759,7 +11759,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Name: Lea & Jed
 Class: Young Couple
 Pic: Young Couple
-Gender: Male
+Gender: Other
 Music: Girl
 Double Battle: Yes
 AI: Check Bad Move
@@ -11776,7 +11776,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Name: Kira & Dan
 Class: Young Couple
 Pic: Young Couple
-Gender: Male
+Gender: Other
 Music: Girl
 Double Battle: Yes
 AI: Check Bad Move
@@ -11793,7 +11793,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Name: Kira & Dan
 Class: Young Couple
 Pic: Young Couple
-Gender: Male
+Gender: Other
 Music: Girl
 Double Battle: Yes
 AI: Check Bad Move
@@ -11810,7 +11810,7 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: Kira & Dan
 Class: Young Couple
 Pic: Young Couple
-Gender: Male
+Gender: Other
 Music: Girl
 Double Battle: Yes
 AI: Check Bad Move
@@ -11827,7 +11827,7 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: Kira & Dan
 Class: Young Couple
 Pic: Young Couple
-Gender: Male
+Gender: Other
 Music: Girl
 Double Battle: Yes
 AI: Check Bad Move
@@ -11844,7 +11844,7 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: Kira & Dan
 Class: Young Couple
 Pic: Young Couple
-Gender: Male
+Gender: Other
 Music: Girl
 Double Battle: Yes
 AI: Check Bad Move
@@ -12586,7 +12586,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Name: Tori & Tia
 Class: Twins
 Pic: Twins
-Gender: Male
+Gender: Female
 Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
@@ -12603,7 +12603,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Name: Kim & Iris
 Class: Sr And Jr
 Pic: Sr And Jr
-Gender: Male
+Gender: Female
 Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
@@ -12628,7 +12628,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Name: Tyra & Ivy
 Class: Sr And Jr
 Pic: Sr And Jr
-Gender: Male
+Gender: Female
 Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
@@ -12653,7 +12653,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Name: Mel & Paul
 Class: Young Couple
 Pic: Young Couple
-Gender: Male
+Gender: Other
 Music: Girl
 Double Battle: Yes
 AI: Check Bad Move
@@ -12678,7 +12678,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Name: John & Jay
 Class: Old Couple
 Pic: Old Couple
-Gender: Male
+Gender: Other
 Music: Intense
 Double Battle: Yes
 AI: Basic Trainer
@@ -12703,7 +12703,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Name: John & Jay
 Class: Old Couple
 Pic: Old Couple
-Gender: Male
+Gender: Other
 Music: Intense
 Double Battle: Yes
 AI: Basic Trainer
@@ -12728,7 +12728,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 Name: John & Jay
 Class: Old Couple
 Pic: Old Couple
-Gender: Male
+Gender: Other
 Music: Intense
 Double Battle: Yes
 AI: Basic Trainer
@@ -12753,7 +12753,7 @@ IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 Name: John & Jay
 Class: Old Couple
 Pic: Old Couple
-Gender: Male
+Gender: Other
 Music: Intense
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Force Setup First Turn
@@ -12778,7 +12778,7 @@ IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
 Name: John & Jay
 Class: Old Couple
 Pic: Old Couple
-Gender: Male
+Gender: Other
 Music: Intense
 Double Battle: Yes
 AI: Basic Trainer
@@ -12803,7 +12803,7 @@ IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 Name: Reli & Ian
 Class: Sis And Bro
 Pic: Sis And Bro
-Gender: Male
+Gender: Other
 Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
@@ -12820,7 +12820,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Name: Lila & Roy
 Class: Sis And Bro
 Pic: Sis And Bro
-Gender: Male
+Gender: Other
 Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
@@ -12837,7 +12837,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Name: Lila & Roy
 Class: Sis And Bro
 Pic: Sis And Bro
-Gender: Male
+Gender: Other
 Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
@@ -12854,7 +12854,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Name: Lila & Roy
 Class: Sis And Bro
 Pic: Sis And Bro
-Gender: Male
+Gender: Other
 Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
@@ -12871,7 +12871,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Name: Lila & Roy
 Class: Sis And Bro
 Pic: Sis And Bro
-Gender: Male
+Gender: Other
 Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
@@ -12888,7 +12888,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Name: Lila & Roy
 Class: Sis And Bro
 Pic: Sis And Bro
-Gender: Male
+Gender: Other
 Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
@@ -12905,7 +12905,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Name: Lisa & Ray
 Class: Sis And Bro
 Pic: Sis And Bro
-Gender: Male
+Gender: Other
 Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
@@ -15393,7 +15393,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: Tate&Liza
 Class: Leader
 Pic: Leader Tate And Liza
-Gender: Male
+Gender: Other
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -15443,7 +15443,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: Tate&Liza
 Class: Leader
 Pic: Leader Tate And Liza
-Gender: Male
+Gender: Other
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -15501,7 +15501,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: Tate&Liza
 Class: Leader
 Pic: Leader Tate And Liza
-Gender: Male
+Gender: Other
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -15559,7 +15559,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: Tate&Liza
 Class: Leader
 Pic: Leader Tate And Liza
-Gender: Male
+Gender: Other
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
