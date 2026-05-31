@@ -1515,7 +1515,8 @@ static u16 LoadSpriteSheetWithOffset(const struct SpriteSheet *sheet, u32 offset
 #if T_SHOULD_RUN_MOVE_ANIM
         gLoadFail = TRUE;
 #endif // T_SHOULD_RUN_MOVE_ANIM
-        return 0;
+        // return 0;
+        return 0xFFFF;
     }
     else
     {
