@@ -521,8 +521,8 @@ static void PrintInstructionsOnWindow(struct PokemonSpriteVisualizer *data)
     u8 x = 2;
     enum Species species = IsSpeciesEnabled(data->modifyArrows.currValue) ? SanitizeSpeciesId(data->modifyArrows.currValue) : SPECIES_NONE;
 
-    u8 textBottom[] = _("BACK:\nFRONT:\nBG:$");
-    u8 textBottomForms[] = _("BACK:\nFRONT:\nBG:\nFORMS:$");
+    u8 textBottom[] = _("Back:\nFront:\nBG:$");
+    u8 textBottomForms[] = _("Back:\nFront:\nBG:\nForms:$");
 
     u8 textL[] = _("{L_BUTTON}");
     u8 textR[] = _("{R_BUTTON}");

@@ -20,17 +20,17 @@ Optional (but still recommended) fields for trainers:
     - Music
     - Items (Some Item / Another Item / Third Item)
             (Can also be specified with ITEM_SOME_ITEM)
-    - Battle Type (Singles / Doubles, defaults to Singles)
-    - AI (Ai Flag / Another Flag / Third Flag / ...
-          see "constants/battle_ai.h" for all flags)
+    - Double Battle: Yes (No for Single Battle)
+    - AI (AI Flag / Another Flag / Third Flag / ...
+          see "include/constants/battle_ai.h" for all flags)
     - Mugshot (enable Mugshots during battle transition
                set to one of Purple, Green, Pink, Blue or Yellow)
-    - Starting Status (see include/constants/battle.h for values)
+    - Starting Status (see "include/constants/battle.h" for values)
     - Multi Party   (Half reduces two-trainer battle sides to 3 Pokemon each)
                     (defaults to Full but requires B_MULTI_HALF_TEAMS to be FALSE)
 
 Pokemon are then specified using the Showdown Export format.
-If a field is not specified, it will use it's default value.
+If a field is not specified, it will use its default value.
 
 Required fields for Pokemon:
     - Species (Either as SPECIES_ABRA or Abra)

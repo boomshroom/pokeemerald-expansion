@@ -47,8 +47,7 @@ SINGLE_BATTLE_TEST("Electromorphosis sets up Charge when hit by any move")
         else {
             MESSAGE("Being hit by Gust charged Bellibolt with power!");
         }
-    }
-    THEN {
+    } THEN {
         EXPECT_MUL_EQ(dmgBefore, Q_4_12(2.0), dmgAfter);
     }
 }
