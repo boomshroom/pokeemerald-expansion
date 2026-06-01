@@ -158,4 +158,9 @@
 // Configuration
 #define OW_AMBIENT_CRIES                OW_AMBIENT_CRIES_OWE_PRIORITY // Selects how ambient cries are played, if at all. As in vanilla, no matter what is chosen, cries will not play if the player is not on a map with Land or Water encounter tables.
 
+// Variable Rod
+#define OW_VAR_VARIABLE_ROD_USE_TECHNIQUE       0     // If this var has a value, the game will use it to remember the used fishing technique.
+#define OW_FLAG_VARIABLE_ROD_GOOD_TECHNIQUE     0     // If this flag is set, the game will unlock the 'good fishing technique'.
+#define OW_FLAG_VARIABLE_ROD_SUPER_TECHNIQUE    0     // If this flag is set, the game will unlock the 'super fishing technique'.
+
 #endif // GUARD_CONFIG_OVERWORLD_H
