@@ -1057,6 +1057,8 @@ enum __attribute__((packed)) Item
 
     ITEMS_COUNT,
     ITEM_FIELD_ARROW = ITEMS_COUNT,
+
+    ITEM_VARIABLE_ROD = ITEM_OLD_ROD,
 };
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations
