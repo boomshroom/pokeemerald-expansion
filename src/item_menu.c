@@ -293,7 +293,7 @@ static const struct ListMenuTemplate sItemListMenu =
     .cursorShadowPal = 3,
     .lettersSpacing = 0,
     .itemVerticalPadding = 0,
-    .scrollMultiple = LIST_NO_MULTIPLE_SCROLL,
+    .scrollMultiple = LIST_MULTIPLE_SCROLL_DPAD,
     .fontId = FONT_NARROW,
     .cursorKind = CURSOR_BLACK_ARROW
 };
@@ -1401,13 +1401,14 @@ static u8 GetSwitchBagPocketDirection(void)
     u8 LRKeys;
     if (gBagMenu->pocketSwitchDisabled)
         return SWITCH_POCKET_NONE;
+    bool32 lr_enabled = gSaveBlock2Ptr->optionsButtonMode == OPTIONS_BUTTON_MODE_LR;
     LRKeys = GetLRKeysPressed();
-    if (JOY_NEW(DPAD_LEFT) || LRKeys == MENU_L_PRESSED)
+    if ((JOY_NEW(DPAD_LEFT) && !lr_enabled) || LRKeys == MENU_L_PRESSED)
     {
         PlaySE(SE_SELECT);
         return SWITCH_POCKET_LEFT;
     }
-    if (JOY_NEW(DPAD_RIGHT) || LRKeys == MENU_R_PRESSED)
+    if ((JOY_NEW(DPAD_RIGHT) && !lr_enabled) || LRKeys == MENU_R_PRESSED)
     {
         PlaySE(SE_SELECT);
         return SWITCH_POCKET_RIGHT;
