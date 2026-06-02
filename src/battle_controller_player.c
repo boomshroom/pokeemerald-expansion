@@ -1620,6 +1620,10 @@ static void OpenBagAndChooseItem(enum BattlerId battler)
         ReshowBattleScreenDummy();
         CloseMainBattleScreen();
         CB2_BagMenuFromBattle();
+        if (gBattleStruct->victoryCatchState == VICTORY_CATCH_OPEN_BAG)
+            CB2_ChooseBall();
+        else
+            CB2_BagMenuFromBattle();
     }
 }
 
