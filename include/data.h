@@ -149,7 +149,7 @@ struct Trainer
 
 struct TrainerClass
 {
-    u8 name[13];
+    const u8 *name;
     u8 money;
     u16 ball;
 };

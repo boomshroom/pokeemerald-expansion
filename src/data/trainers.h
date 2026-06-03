@@ -13590,7 +13590,7 @@
     [DIFFICULTY_NORMAL][TRAINER_TATE_AND_LIZA_1] =
     {
 #line 5046
-        .trainerName = COMPOUND_STRING("Tate&Liza"),
+        .trainerName = COMPOUND_STRING("Tate & Liza"),
 #line 5047
         .trainerClass = TRAINER_CLASS_LEADER,
 #line 5048
@@ -41905,7 +41905,7 @@
     [DIFFICULTY_NORMAL][TRAINER_TATE_AND_LIZA_2] =
     {
 #line 15393
-        .trainerName = COMPOUND_STRING("Tate&Liza"),
+        .trainerName = COMPOUND_STRING("Tate & Liza"),
 #line 15394
         .trainerClass = TRAINER_CLASS_LEADER,
 #line 15395
@@ -42032,7 +42032,7 @@
     [DIFFICULTY_NORMAL][TRAINER_TATE_AND_LIZA_3] =
     {
 #line 15443
-        .trainerName = COMPOUND_STRING("Tate&Liza"),
+        .trainerName = COMPOUND_STRING("Tate & Liza"),
 #line 15444
         .trainerClass = TRAINER_CLASS_LEADER,
 #line 15445
@@ -42178,7 +42178,7 @@
     [DIFFICULTY_NORMAL][TRAINER_TATE_AND_LIZA_4] =
     {
 #line 15501
-        .trainerName = COMPOUND_STRING("Tate&Liza"),
+        .trainerName = COMPOUND_STRING("Tate & Liza"),
 #line 15502
         .trainerClass = TRAINER_CLASS_LEADER,
 #line 15503
@@ -42324,7 +42324,7 @@
     [DIFFICULTY_NORMAL][TRAINER_TATE_AND_LIZA_5] =
     {
 #line 15559
-        .trainerName = COMPOUND_STRING("Tate&Liza"),
+        .trainerName = COMPOUND_STRING("Tate & Liza"),
 #line 15560
         .trainerClass = TRAINER_CLASS_LEADER,
 #line 15561
