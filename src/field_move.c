@@ -116,6 +116,8 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .isUnlockedFunc = IsFieldMoveUnlocked_Cut,
         .moveID = MOVE_CUT,
         .partyMsgID = PARTY_MSG_NOTHING_TO_CUT,
+        .hm = ITEM_HM_CUT,
+        .tool = ITEM_CUT_TOOL,
     },
 
     [FIELD_MOVE_FLASH] =
@@ -124,6 +126,8 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .isUnlockedFunc = IsFieldMoveUnlocked_Flash,
         .moveID = MOVE_FLASH,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
+        .hm = ITEM_HM_FLASH,
+        .tool = ITEM_FLASH_TOOL,
     },
 
     [FIELD_MOVE_ROCK_SMASH] =
@@ -132,6 +136,8 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .isUnlockedFunc = IsFieldMoveUnlocked_RockSmash,
         .moveID = MOVE_ROCK_SMASH,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
+        .hm = ITEM_HM_ROCK_SMASH,
+        .tool = ITEM_ROCK_SMASH_TOOL,
     },
 
     [FIELD_MOVE_STRENGTH] =
@@ -140,6 +146,8 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .isUnlockedFunc = IsFieldMoveUnlocked_Strength,
         .moveID = MOVE_STRENGTH,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
+        .hm = ITEM_HM_STRENGTH,
+        .tool = ITEM_STRENGTH_TOOL,
     },
 
     [FIELD_MOVE_SURF] =
@@ -148,6 +156,8 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .isUnlockedFunc = IsFieldMoveUnlocked_Surf,
         .moveID = MOVE_SURF,
         .partyMsgID = PARTY_MSG_CANT_SURF_HERE,
+        .hm = ITEM_HM_SURF,
+        .tool = ITEM_SURF_TOOL,
     },
 
     [FIELD_MOVE_FLY] =
@@ -156,6 +166,8 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .isUnlockedFunc = IsFieldMoveUnlocked_Fly,
         .moveID = MOVE_FLY,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
+        .hm = ITEM_HM_FLY,
+        .tool = ITEM_FLY_TOOL,
     },
 
     [FIELD_MOVE_DIVE] =
@@ -164,6 +176,8 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .isUnlockedFunc = IsFieldMoveUnlocked_Dive,
         .moveID = MOVE_DIVE,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
+        .hm = ITEM_HM_DIVE,
+        .tool = ITEM_DIVE_TOOL,
     },
 
     [FIELD_MOVE_WATERFALL] =
@@ -172,6 +186,8 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .isUnlockedFunc = IsFieldMoveUnlocked_Waterfall,
         .moveID = MOVE_WATERFALL,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
+        .hm = ITEM_HM_WATERFALL,
+        .tool = ITEM_WATERFALL_TOOL,
     },
 
     [FIELD_MOVE_TELEPORT] =
@@ -188,6 +204,10 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .isUnlockedFunc = IsFieldMoveUnlocked_Dig,
         .moveID = MOVE_DIG,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
+        .hm = ITEM_TM_DIG,
+    #if I_KEY_ESCAPE_ROPE >= GEN_8
+        .tool = ITEM_ESCAPE_ROPE,
+    #endif
     },
 
     [FIELD_MOVE_SECRET_POWER] =
@@ -196,6 +216,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .isUnlockedFunc = IsFieldMoveUnlocked_SecretPower,
         .moveID = MOVE_SECRET_POWER,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
+        .hm = ITEM_TM_SECRET_POWER,
     },
 
     [FIELD_MOVE_MILK_DRINK] =
@@ -247,72 +268,67 @@ void SetFieldMoveSource(u8 source)
     sFieldMoveSource = source;
 }
 
-bool8 CanUseFly(void)
-{
+bool32 CanUseFieldMove(enum FieldMove fieldMove, bool32 doUnlockedCheck, u16 *idxPtr, u16 *speciesPtr) {
     u32 i;
+    enum Species party[PARTY_SIZE];
+    enum Move move = FieldMove_GetMoveId(fieldMove);
 
     // Check if the player has the required badge.
-    if (!IsFieldMoveUnlocked(FIELD_MOVE_FLY))
+    if (doUnlockedCheck && !IsFieldMoveUnlocked(fieldMove))
         return FALSE;
 
-    // If they have the badge, check for a Pokémon that can learn Fly.
-    for (i = 0; i < gPartiesCount[B_TRAINER_PLAYER]; i++)
+    // Filter for eligible mon
+    for (u32 i = 0; i < PARTY_SIZE; i++)
     {
-        if (!GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_IS_EGG))
-        {
-            u16 species = GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES);
-            if (CanLearnTeachableMove(species, MOVE_FLY))
-            {
-                sFieldMoveSource = FIELD_MOVE_SOURCE_POKEMON;
-                return TRUE; // Found a valid Pokémon
-            }
+        enum Species species = GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES);
+        if (species && !GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_IS_EGG)) {
+            party[i] = species;
+        } else {
+            party[i] = SPECIES_NONE;
         }
     }
 
-    // If no Pokémon is found, check for the Fly Tool item.
-    if (CheckBagHasItem(ITEM_FLY_TOOL, 1))
+    // 1. Check for Pokémon that already knows the move
+    for (u32 i = 0; i < gPartiesCount[B_TRAINER_PLAYER]; i++)
     {
-        sFieldMoveSource = FIELD_MOVE_SOURCE_ITEM;
-        return TRUE; // Found the item
+        if (party[i] != SPECIES_NONE && MonKnowsMove(&gParties[B_TRAINER_PLAYER][i], move)) {
+            if (idxPtr) *idxPtr = i;
+            if (speciesPtr) *speciesPtr = party[i];
+            sFieldMoveSource = FIELD_MOVE_SOURCE_POKEMON;
+            return TRUE;
+        }
     }
 
-    // If all checks fail, return FALSE.
-    return FALSE;
-}
-
-void FieldCallback_Surf(void)
-{
-    ScriptContext_SetupScript(EventScript_UseSurf);
-}
-
-bool8 CanUseFlash(void)
-{
-    u32 i;
-
-    // 1. Check for the badge
-    if (!IsFieldMoveUnlocked(FIELD_MOVE_FLASH))
-        return FALSE;
-
-    // 2. Check for a Pokémon that can learn Flash
-    for (i = 0; i < gPartiesCount[B_TRAINER_PLAYER]; i++)
-    {
-        if (!GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_IS_EGG))
+    // 2. Check for Pokémon that can learn and HM is obtained
+    if (FieldMove_HaveHM(fieldMove)) {
+        for (i = 0; i < gPartiesCount[B_TRAINER_PLAYER]; i++)
         {
-            u16 species = GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES);
-            if (CanLearnTeachableMove(species, MOVE_FLASH))
+            if (party[i] != SPECIES_NONE && CanLearnTeachableMove(party[i], move))
             {
+                if (idxPtr) *idxPtr = i;
+                if (speciesPtr) *speciesPtr = party[i];
                 sFieldMoveSource = FIELD_MOVE_SOURCE_POKEMON;
                 return TRUE;
             }
         }
     }
 
-    // 3. Check for the item
-    if (CheckBagHasItem(ITEM_FLASH_TOOL, 1))
+    // 3. Check for tool
+    if (FieldMove_HaveTool(fieldMove))
     {
+        if (idxPtr) *idxPtr = PARTY_SIZE + 1;
+        if (speciesPtr) *speciesPtr = SPECIES_NONE;
         sFieldMoveSource = FIELD_MOVE_SOURCE_ITEM;
-        return TRUE;
+        return TRUE; // Found the item
     }
 
+    // If all checks fail, return FALSE.
+    if (idxPtr) *idxPtr = PARTY_SIZE;
+    if (speciesPtr) *speciesPtr = SPECIES_NONE;
     return FALSE;
+}
+
+void FieldCallback_Surf(void)
+{
+    ScriptContext_SetupScript(EventScript_UseSurf);
 }

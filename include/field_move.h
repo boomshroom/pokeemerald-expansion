@@ -2,6 +2,7 @@
 #define GUARD_FIELD_MOVE_H
 
 #include "global.h"
+#include "item.h"
 #include "constants/field_move.h"
 
 // Tracks whether a field move is being used via a Pokémon or an item
@@ -16,11 +17,17 @@ void SetFieldMoveSource(u8 source);
 // Get the source of the current field move operation
 u8 GetFieldMoveSource(void);
 
+bool32 CanUseFieldMove(enum FieldMove fieldMove, bool32 doUnlockedCheck, u16 *idxPtr, u16 *speciesPtr);
+
 // Check if Fly can be used (either via Pokémon or FLY_TOOL item)
-bool8 CanUseFly(void);
+static inline bool32 CanUseFly() {
+    return CanUseFieldMove(FIELD_MOVE_FLY, TRUE, NULL, NULL);
+}
 
 // Check if Flash can be used (either via Pokémon or FLASH_TOOL item)
-bool8 CanUseFlash(void);
+static inline bool32 CanUseFlash() {
+    return CanUseFieldMove(FIELD_MOVE_FLASH, TRUE, NULL, NULL);
+}
 
 struct FieldMoveInfo
 {
@@ -28,6 +35,8 @@ struct FieldMoveInfo
     bool32 (*isUnlockedFunc)(void);
     u16 moveID;
     u8 partyMsgID;
+    enum Item hm;
+    enum Item tool;
 };
 
 extern const struct FieldMoveInfo gFieldMoveInfo[];
@@ -50,6 +59,18 @@ static inline u32 FieldMove_GetMoveId(enum FieldMove fieldMove)
 static inline u32 FieldMove_GetPartyMsgID(enum FieldMove fieldMove)
 {
     return gFieldMoveInfo[fieldMove].partyMsgID;
+}
+
+static inline bool32 FieldMove_HaveHM(enum FieldMove fieldMove)
+{
+    if (gFieldMoveInfo[fieldMove].hm == ITEM_NONE) return FALSE;
+    return CheckBagHasItem(gFieldMoveInfo[fieldMove].hm, 1);
+}
+
+static inline bool32 FieldMove_HaveTool(enum FieldMove fieldMove)
+{
+    if (gFieldMoveInfo[fieldMove].tool == ITEM_NONE) return FALSE;
+    return CheckBagHasItem(gFieldMoveInfo[fieldMove].tool, 1);
 }
 
 #endif //GUARD_FIELD_MOVE_H

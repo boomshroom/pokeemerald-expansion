@@ -2307,32 +2307,6 @@ bool8 ScrCmd_setmonmove(struct ScriptContext *ctx)
     return FALSE;
 }
 
-static u16 GetKeyItemForFieldMove(u16 move)
-{
-    switch (move)
-    {
-        case MOVE_CUT:
-            return ITEM_CUT_TOOL;
-        case MOVE_FLY:
-            return ITEM_FLY_TOOL;
-        case MOVE_SURF:
-            return ITEM_SURF_TOOL;
-        case MOVE_STRENGTH:
-            return ITEM_STRENGTH_TOOL;
-        case MOVE_FLASH:
-            return ITEM_FLASH_TOOL;
-        case MOVE_ROCK_SMASH:
-            return ITEM_ROCK_SMASH_TOOL;
-        case MOVE_WATERFALL:
-            return ITEM_WATERFALL_TOOL;
-        case MOVE_DIVE:
-            return ITEM_DIVE_TOOL;
-        // Add more cases here for future tools
-        default:
-            return ITEM_NONE;
-    }
-}
-
 // Checks if a field move can be used via either a Pokémon or a key item
 // Return values in gSpecialVar_Result:
 //   0-5: Party slot index of a Pokémon that can learn the move
@@ -2342,50 +2316,9 @@ static u16 GetKeyItemForFieldMove(u16 move)
 bool8 ScrCmd_checkfieldmove(struct ScriptContext *ctx)
 {
     enum FieldMove fieldMove = ScriptReadByte(ctx);
-    bool32 doUnlockedCheck UNUSED = ScriptReadByte(ctx);
-    u16 move = FieldMove_GetMoveId(fieldMove);
-    u16 keyItem = GetKeyItemForFieldMove(move);
-    u32 i;
+    bool32 doUnlockedCheck = ScriptReadByte(ctx);
 
-    // 1. Check for a party Pokémon that can learn the move.
-    for (i = 0; i < gPartiesCount[B_TRAINER_PARTNER]; i++)
-    {
-        enum Species species = GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES);
-        if (!species)
-            break;
-        if (!GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_IS_EGG))
-        {
-            if (CanLearnTeachableMove(species, move))
-            {
-                // Pokémon found. Check for the badge flag.
-                if (IsFieldMoveUnlocked(fieldMove))
-                {
-                    gSpecialVar_Result = i; // Return party slot
-                    SetFieldMoveSource(FIELD_MOVE_SOURCE_POKEMON);
-                    return FALSE; // Continue script execution
-                }
-                // Found a Pokémon but don't have the badge, so fail completely.
-                gSpecialVar_Result = PARTY_SIZE;
-                return FALSE;
-            }
-        }
-    }
-
-    // 2. If no Pokémon is found, check for the key item.
-    if (keyItem != ITEM_NONE && CheckBagHasItem(keyItem, 1))
-    {
-        // Key item found. Check for the badge flag.
-        if (IsFieldMoveUnlocked(fieldMove))
-        {
-            gSpecialVar_Result = PARTY_SIZE + 1; // Special value indicating item use
-            SetFieldMoveSource(FIELD_MOVE_SOURCE_ITEM);
-            return FALSE;
-        }
-    }
-
-    // 3. If neither is found, or badge check fails, fail.
-    gSpecialVar_Result = PARTY_SIZE;
-
+    CanUseFieldMove(fieldMove, doUnlockedCheck, &gSpecialVar_Result, &gSpecialVar_0x8004);
     return FALSE;
 }
 
