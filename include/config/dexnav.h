@@ -5,9 +5,9 @@
 #define USE_DEXNAV_SEARCH_LEVELS      TRUE   /* WARNING: POSSIBLY EXCEEDS SAVEBLOCK SPACE! REQUIRES 1 BYTE PER SPECIES */
 
 // Flag/var defines
-#define DN_FLAG_SEARCHING             FLAG_UNUSED_0x266 // Searching for mon
-#define DN_FLAG_DEXNAV_GET            FLAG_UNUSED_0x267 // DexNav shows in start menu
-#define DN_FLAG_DETECTOR_MODE         FLAG_UNUSED_0x268 // Allow player to find hidden mons
+#define DN_FLAG_SEARCHING             FLAG_CUSTOM_DN_SEARCHING // Searching for mon
+#define DN_FLAG_DEXNAV_GET            FLAG_CUSTOM_DN_ENABLED   // DexNav shows in start menu
+#define DN_FLAG_DETECTOR_MODE         FLAG_CUSTOM_DN_HIDDEN    // Allow player to find hidden mons
 #define DN_VAR_SPECIES                VAR_UNUSED_0x40F8 // Registered DexNav species
 #define DN_VAR_STEP_COUNTER           VAR_UNUSED_0x40F9 // Steps for finding hidden pokemon
 

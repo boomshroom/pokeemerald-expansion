@@ -664,12 +664,12 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 
-#define FLAG_UNUSED_0x264  0x264 // Unused Flag
-#define FLAG_UNUSED_0x265  0x265 // Unused Flag
+#define FLAG_CUSTOM_EXP_SHARE        0x264 // Unused Flag
+#define FLAG_CUSTOM_DOWSING_MACHINE  0x265 // Unused Flag
 // DexNav
-#define FLAG_UNUSED_0x266  0x266 // Unused Flag
-#define FLAG_UNUSED_0x267  0x267 // Unused Flag
-#define FLAG_UNUSED_0x268  0x268 // Unused Flag
+#define FLAG_CUSTOM_DN_SEARCHING     0x266 // Unused Flag
+#define FLAG_CUSTOM_DN_ENABLED       0x267 // Unused Flag
+#define FLAG_CUSTOM_DN_HIDDEN        0x268 // Unused Flag
 
 #define FLAG_UNUSED_0x269  0x269 // Unused Flag
 #define FLAG_UNUSED_0x26A  0x26A // Unused Flag
