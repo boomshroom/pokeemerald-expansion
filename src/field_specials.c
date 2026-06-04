@@ -3,6 +3,7 @@
 #include "malloc.h"
 #include "battle.h"
 #include "battle_special.h"
+#include "berry_crush.h"
 #include "cable_club.h"
 #include "data.h"
 #include "daycare.h"
@@ -5778,4 +5779,9 @@ bool8 CheckAddCoins(void)
         return FALSE;
     else
         return TRUE;
+}
+
+void StartBerryCrushSolo(void)
+{
+    StartBerryCrush(CB2_LoadMap, TRUE);
 }

@@ -12,6 +12,7 @@ enum {
     ITEMMENULOCATION_SHOP,
     ITEMMENULOCATION_BERRY_TREE,
     ITEMMENULOCATION_BERRY_BLENDER_CRUSH,
+    ITEMMENULOCATION_BERRY_CRUSH_SOLO,
     ITEMMENULOCATION_ITEMPC,
     ITEMMENULOCATION_FAVOR_LADY,
     ITEMMENULOCATION_QUIZ_LADY,
@@ -112,7 +113,7 @@ void GoToBagMenu(u8 location, u8 pocket, MainCallback exitCallback);
 void DoWallyTutorialBagMenu(void);
 void InitOldManBag(void);
 void ResetBagScrollPositions(void);
-void ChooseBerryForMachine(MainCallback exitCallback);
+void ChooseBerryForMachine(MainCallback exitCallback, bool32 isSolo);
 void CB2_ChooseBerry(void);
 void CB2_ChooseMulch(void);
 void Task_FadeAndCloseBagMenu(u8 taskId);

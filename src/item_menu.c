@@ -405,6 +405,7 @@ static const TaskFunc sContextMenuFuncs[] =
     [ITEMMENULOCATION_SHOP]                     = Task_ItemContext_Sell,
     [ITEMMENULOCATION_BERRY_TREE]               = Task_FadeAndCloseBagMenu,
     [ITEMMENULOCATION_BERRY_BLENDER_CRUSH]      = Task_ItemContext_Normal,
+    [ITEMMENULOCATION_BERRY_CRUSH_SOLO] =       Task_ItemContext_Normal,
     [ITEMMENULOCATION_ITEMPC]                   = Task_ItemContext_Deposit,
     [ITEMMENULOCATION_FAVOR_LADY]               = Task_ItemContext_Normal,
     [ITEMMENULOCATION_QUIZ_LADY]                = Task_ItemContext_Normal,
@@ -645,9 +646,12 @@ void CB2_ChooseMulch(void)
 }
 
 // Choosing berry for Berry Blender or Berry Crush
-void ChooseBerryForMachine(MainCallback exitCallback)
+void ChooseBerryForMachine(MainCallback exitCallback, bool32 isSolo)
 {
-    GoToBagMenu(ITEMMENULOCATION_BERRY_BLENDER_CRUSH, POCKET_BERRIES, exitCallback);
+    if (isSolo)
+        GoToBagMenu(ITEMMENULOCATION_BERRY_CRUSH_SOLO, POCKET_BERRIES, exitCallback);
+    else
+        GoToBagMenu(ITEMMENULOCATION_BERRY_BLENDER_CRUSH, POCKET_BERRIES, exitCallback);
 }
 
 void CB2_ChooseBall(void)
@@ -703,6 +707,7 @@ void GoToBagMenu(u8 location, u8 pocket, MainCallback exitCallback)
         if (gBagPosition.location == ITEMMENULOCATION_BERRY_TREE
          || gBagPosition.location == ITEMMENULOCATION_BERRY_BLENDER_CRUSH
          || gBagPosition.location == ITEMMENULOCATION_BERRY_TREE_MULCH
+         || gBagPosition.location == ITEMMENULOCATION_BERRY_CRUSH_SOLO
          || gBagPosition.location == ITEMMENULOCATION_RAIDEND)
             gBagMenu->pocketSwitchDisabled = TRUE;
         gBagMenu->newScreenCallback = NULL;
@@ -1665,6 +1670,7 @@ static void OpenContextMenu(u8 taskId)
         }
         break;
     case ITEMMENULOCATION_BERRY_BLENDER_CRUSH:
+    case ITEMMENULOCATION_BERRY_CRUSH_SOLO:
         gBagMenu->contextMenuItemsPtr = sContextMenuItems_BerryBlenderCrush;
         gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_BerryBlenderCrush);
         break;
