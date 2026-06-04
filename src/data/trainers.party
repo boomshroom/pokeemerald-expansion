@@ -612,11 +612,15 @@ Mightyena
 Level: 41
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
+Muk
+Level: 41
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
 Crobat
 Level: 41
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-Sharpedo
+Sharpedo @ Sharpedonite
 Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -9380,7 +9384,6 @@ Gender: Male
 Music: Magma
 Double Battle: Yes
 AI: Smart Trainer
-Multi Party: Half
 
 Camerupt
 Level: 36
@@ -13545,7 +13548,6 @@ Gender: Male
 Music: Magma
 Double Battle: Yes
 AI: Smart Trainer
-Multi Party: Half
 
 Mightyena
 Level: 42
@@ -13555,7 +13557,11 @@ Crobat
 Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-Camerupt
+Weezing
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+Camerupt @ Cameruptite
 Level: 44
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 

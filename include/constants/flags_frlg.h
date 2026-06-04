@@ -1432,7 +1432,7 @@
 #define FLAG_CUSTOM_DN_SEARCHING                                    (SYS_FLAGS + 0xC5)
 #define FLAG_CUSTOM_DN_ENABLED                                      (SYS_FLAGS + 0xC6)
 #define FLAG_CUSTOM_DN_HIDDEN                                       (SYS_FLAGS + 0xC7)
-#define FLAG_0x8C8                                                  (SYS_FLAGS + 0xC8)
+#define FLAG_CUSTOM_VICTORY_CATCH                                   (SYS_FLAGS + 0xC8)
 #define FLAG_0x8C9                                                  (SYS_FLAGS + 0xC9)
 #define FLAG_0x8CA                                                  (SYS_FLAGS + 0xCA)
 #define FLAG_0x8CB                                                  (SYS_FLAGS + 0xCB)
