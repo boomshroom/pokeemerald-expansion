@@ -271,21 +271,21 @@ SlateportCity_OceanicMuseum_2F_EventScript_MuseumPatron3::
 SlateportCity_OceanicMuseum_2F_Text_ThankYouForTheParts:
 	.string "Yes? If you're looking for Stern,\n"
 	.string "that would be me.\p"
-	.string "Ah! Those must be the parts I ordered\n"
+	.string "{SPEAKER NAME_STERN}Ah! Those must be the parts I ordered\n"
 	.string "from Mr. Stone of Devon.\p"
 	.string "Thank you! That's great!\n"
 	.string "We can prepare for our expedition now.$"
 
 SlateportCity_OceanicMuseum_2F_Text_WellTakeThoseParts:
-	.string "Hehehe, hold it!\n"
+	.string "{SPEAKER NAME_NONE}Hehehe, hold it!\n"
 	.string "We'll take those parts!$"
 
 SlateportCity_OceanicMuseum_2F_Text_SternWhoAreYou:
-	.string "Capt. Stern: Wh-what?\n"
+	.string "{SPEAKER NAME_STERN}Wh-what?\n"
 	.string "Who are you people?$"
 
 SlateportCity_OceanicMuseum_2F_Text_WereTeamAqua:
-	.string "We're Team Aqua!\p"
+	.string "{SPEAKER NAME_NONE}We're Team Aqua!\p"
 	.string "Our boss wants those parts!\n"
 	.string "Shut your yap and fork them over!$"
 
@@ -321,7 +321,7 @@ SlateportCity_OceanicMuseum_2F_Text_ArchieWarning:
 	.string "and we love the sea!\p"
 	.string "And I am Team Aqua's leader,\n"
 	.string "Archie!\p"
-	.string "What makes you interfere with us?\p"
+	.string "{SPEAKER NAME_ARCHIE}What makes you interfere with us?\p"
 	.string "…No! You can't be!\n"
 	.string "You're not one of Team Magma?\p"
 	.string "Wait, that can't be right.\n"
@@ -344,7 +344,7 @@ SlateportCity_OceanicMuseum_2F_Text_ArchieWarning:
 	.string "And don't you forget it!$"
 
 SlateportCity_OceanicMuseum_2F_Text_SternThankYouForSavingUs:
-	.string "Capt. Stern: You're…\n"
+	.string "{SPEAKER NAME_STERN}You're…\n"
 	.string "Ah, okay, you're {PLAYER}{KUN}…\p"
 	.string "Anyway, that was a tense situation!\n"
 	.string "Thank you for saving us!\p"
@@ -352,7 +352,7 @@ SlateportCity_OceanicMuseum_2F_Text_SternThankYouForSavingUs:
 	.string "even brought the parts from Devon!$"
 
 SlateportCity_OceanicMuseum_2F_Text_SternIveGotToGo:
-	.string "Capt. Stern: Whoops!\n"
+	.string "{SPEAKER NAME_STERN}Whoops!\n"
 	.string "There's no time to lose!\p"
 	.string "We have to set out on our ocean-floor\n"
 	.string "expedition really soon.\p"
