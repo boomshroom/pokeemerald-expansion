@@ -245,7 +245,7 @@ Route119_WeatherInstitute_2F_Text_Grunt5PostBattle:
 	.string "Ihihihihi…$"
 
 Route119_WeatherInstitute_2F_Text_ShellyIntro:
-	.string "Ahahahaha!\p"
+	.string "{SPEAKER NAME_SHELLY}Ahahahaha!\p"
 	.string "You're going to meddle in Team Aqua's\n"
 	.string "affairs?\p"
 	.string "You're either absolutely fearless,\n"
@@ -258,27 +258,27 @@ Route119_WeatherInstitute_2F_Text_ShellyDefeat:
 	.string "You're disgustingly strong!$"
 
 Route119_WeatherInstitute_2F_Text_ShellyPostBattle:
-	.string "It's bad enough to have Team Magma\n"
+	.string "{SPEAKER NAME_SHELLY}It's bad enough to have Team Magma\n"
 	.string "blunder about, but now there's you!\p"
 	.string "What makes you want to sniff around\n"
 	.string "in our business, anyway?$"
 
 Route119_WeatherInstitute_2F_Text_TeamMagmaJustPassedBy:
-	.string "We have a situation here!\p"
+	.string "{SPEAKER NAME_NONE}We have a situation here!\p"
 	.string "A Team Magma mob just passed\n"
 	.string "the Weather Institute.\p"
 	.string "They appear to be headed for\n"
 	.string "Mt. Pyre!$"
 
 Route119_WeatherInstitute_2F_Text_WeHaveToHurryToMtPyre:
-	.string "What?!\p"
+	.string "{SPEAKER NAME_SHELLY}What?!\p"
 	.string "We can't waste any more time here!\n"
 	.string "We have to hurry to Mt. Pyre, too!\p"
 	.string "Ahahahaha!\n"
 	.string "Team Magma, just you wait!$"
 
 Route119_WeatherInstitute_2F_Text_ThanksPleaseTakePokemon:
-	.string "Thanks!\n"
+	.string "{SPEAKER NAME_NONE}Thanks!\n"
 	.string "Thanks to you, we're safe!\p"
 	.string "It might be an odd way of thanking you,\n"
 	.string "but take this Pokémon.$"

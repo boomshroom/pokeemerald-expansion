@@ -87,7 +87,7 @@ AquaHideout_B2F_EventScript_Grunt8::
 	end
 
 AquaHideout_B2F_Text_MattIntro:
-	.string "Hehehe…\p"
+	.string "{SPEAKER NAME_MATT}Hehehe…\p"
 	.string "Got here already, did you?\n"
 	.string "We underestimated you!\p"
 	.string "But this is it!\p"
@@ -101,12 +101,12 @@ AquaHideout_B2F_Text_MattDefeat:
 	.string "So, I lost, too…$"
 
 AquaHideout_B2F_Text_OurBossGotThroughHisPreparations:
-	.string "Hehehe!\p"
+	.string "{SPEAKER NAME_MATT}Hehehe!\p"
 	.string "While I was toying with you, our boss\n"
 	.string "got through his preparations!$"
 
 AquaHideout_B2F_Text_MattPostBattle:
-	.string "Hehehe!\p"
+	.string "{SPEAKER NAME_MATT}Hehehe!\p"
 	.string "Our boss has already gone on his way to\n"
 	.string "some cave under the sea!\p"
 	.string "If you're going to give chase, you'd\n"

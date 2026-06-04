@@ -12,8 +12,14 @@ enum SpeakerNames {
     SP_NAME_DOCK,
     SP_NAME_STERN,
     SP_NAME_ARCHIE,
+    SP_NAME_SHELLY,
+    SP_NAME_MATT,
     SP_NAME_MAXIE,
+    SP_NAME_TABITHA,
+    SP_NAME_COURTNEY, // Unused in Emerald
     SP_NAME_SCOTT,
+    SP_NAME_WALLACE,
+    SP_NAME_COZMO,
     SP_NAME_COUNT
 };
 

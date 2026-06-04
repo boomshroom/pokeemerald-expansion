@@ -12,7 +12,7 @@ SeafloorCavern_Room3_EventScript_Grunt5::
 	end
 
 SeafloorCavern_Room3_Text_ShellyIntro:
-	.string "Ahahahaha!\p"
+	.string "{SPEAKER NAME_SHELLY}Ahahahaha!\p"
 	.string "How did you manage to get here without\n"
 	.string "a submarine?\l"
 	.string "What an impressive child!\p"
@@ -28,7 +28,7 @@ SeafloorCavern_Room3_Text_ShellyDefeat:
 	.string "Ouch!$"
 
 SeafloorCavern_Room3_Text_ShellyPostBattle:
-	.string "Ahahahaha!\n"
+	.string "{SPEAKER NAME_SHELLY}Ahahahaha!\n"
 	.string "You're so darn strong.\p"
 	.string "It's terribly disappointing that you're\n"
 	.string "not a Team Aqua member.\p"
