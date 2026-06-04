@@ -153,7 +153,7 @@ WILD_BATTLE_TEST("Capture: when CRITICAL_CAPTURE_IF_OWNED is enabled, capture of
 
     GIVEN {
         ASSUME(gSpeciesInfo[SPECIES_CATERPIE].catchRate > 155);
-        GetSetPokedexFlag(SPECIES_CATERPIE, FLAG_SET_SEEN);
+        GetSetPokedexFlag(NATIONAL_DEX_CATERPIE, FLAG_SET_SEEN);
         if (alreadyOwned)
             GetSetPokedexFlag(NATIONAL_DEX_CATERPIE, FLAG_SET_CAUGHT);
         WITH_CONFIG(B_MISSING_BADGE_CATCH_MALUS, GEN_7);
