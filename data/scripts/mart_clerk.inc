@@ -37,7 +37,6 @@ Pokemart_DefaultItemList::
 	.2byte ITEM_X_SPEED
 	.2byte ITEM_X_SP_ATK
 	.2byte ITEM_X_SP_DEF
-	.2byte ITEM_X_SPEED
 	.2byte ITEM_X_ACCURACY
 	.2byte ITEM_DIRE_HIT
 	.2byte ITEM_GUARD_SPEC
