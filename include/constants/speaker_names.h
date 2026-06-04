@@ -8,6 +8,7 @@ enum SpeakerNames {
     SP_NAME_DAD,
     SP_NAME_BRINEY,
     SP_NAME_NURSE,
+    SP_NAME_STEVEN,
     SP_NAME_COUNT
 };
 
