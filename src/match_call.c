@@ -1323,8 +1323,10 @@ static bool32 MatchCall_PrintIntro(u8 taskId)
         FillWindowPixelBuffer(tWindowId, PIXEL_FILL(8));
 
         // Ready the message (and the speaker's name if possible)
-        if (!sMatchCallState.triggeredFromScript)
+        if (!sMatchCallState.triggeredFromScript) {
             SelectMatchCallMessage(sMatchCallState.trainerId, gStringVar4);
+            gSpeakerName = GetTrainerNameFromId(sMatchCallState.trainerId);
+        }
 
         if (IsSpeakerBuffered(gStringVar4))
             TrySpawnAndShowNamebox(gSpeakerName, NAME_BOX_BASE_TILE_NUM);
