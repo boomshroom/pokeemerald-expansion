@@ -274,7 +274,7 @@ PlayersHouse_2F_Text_ClockIsStopped:
 	.string "Better set it and start it!$"
 
 PlayersHouse_2F_Text_HowDoYouLikeYourRoom:
-	.string "Mom: {PLAYER}, how do you like your\n"
+	.string "{SPEAKER NAME_MOM}{PLAYER}, how do you like your\n"
 	.string "new room?\p"
 	.string "Good! Everything's put away neatly!\p"
 	.string "They finished moving everything in\n"

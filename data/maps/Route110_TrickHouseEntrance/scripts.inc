@@ -703,42 +703,42 @@ Route110_TrickHouseEntrance_Text_ConcealedBeneathDesk:
 	.string "beneath this desk? You're sharp!$"
 
 Route110_TrickHouseEntrance_Text_ConcealedBehindTree:
-	.string "Hah? Grrr…\p"
+	.string "{SPEAKER NAME_TRICK}Hah? Grrr…\p"
 	.string "How did you know I concealed myself\n"
 	.string "behind this tree? You're sharp!$"
 
 Route110_TrickHouseEntrance_Text_ConcealedInDresser:
-	.string "Hah? Grrr…\p"
+	.string "{SPEAKER NAME_TRICK}Hah? Grrr…\p"
 	.string "How did you know I concealed myself\n"
 	.string "in this dresser? You're sharp!$"
 
 Route110_TrickHouseEntrance_Text_ConealedBeyondWindow:
-	.string "Hah? Grrr…\p"
+	.string "{SPEAKER NAME_TRICK}Hah? Grrr…\p"
 	.string "How did you know I concealed myself\n"
 	.string "beyond this window? You're sharp!$"
 
 Route110_TrickHouseEntrance_Text_ConcealedInPlanter:
-	.string "Hah? Grrr…\p"
+	.string "{SPEAKER NAME_TRICK}Hah? Grrr…\p"
 	.string "How did you know I concealed myself\n"
 	.string "in this planter? You're sharp!$"
 
 Route110_TrickHouseEntrance_Text_ConcealedInCupboard:
-	.string "Hah? Grrr…\p"
+	.string "{SPEAKER NAME_TRICK}Hah? Grrr…\p"
 	.string "How did you know I concealed myself\n"
 	.string "in this cupboard? You're sharp!$"
 
 Route110_TrickHouseEntrance_Text_ConcealedBehindWindow:
-	.string "Hah? Grrr…\p"
+	.string "{SPEAKER NAME_TRICK}Hah? Grrr…\p"
 	.string "How did you know I concealed myself\n"
 	.string "behind this window? You're sharp!$"
 
 Route110_TrickHouseEntrance_Text_ConcealedBeneathCushion:
-	.string "Hah? Grrr…\p"
+	.string "{SPEAKER NAME_TRICK}Hah? Grrr…\p"
 	.string "How did you know I concealed myself\n"
 	.string "beneath this cushion? You're sharp!$"
 
 Route110_TrickHouseEntrance_Text_TheyCallMeTrickMaster:
-	.string "Behold!\p"
+	.string "{SPEAKER NAME_NONE}Behold!\p"
 	.string "For I am the greatest living mystery\n"
 	.string "of a man in all of Hoenn!\l"
 	.string "They call me…\p"
@@ -746,7 +746,7 @@ Route110_TrickHouseEntrance_Text_TheyCallMeTrickMaster:
 	.string "Wahahaha! Glad to meet you!$"
 
 Route110_TrickHouseEntrance_Text_ComeToChallengeTrickHouse:
-	.string "You, you've come to challenge\n"
+	.string "{SPEAKER NAME_TRICK}You, you've come to challenge\n"
 	.string "my Trick House, haven't you?\p"
 	.string "That's why you're here, isn't it?\n"
 	.string "Yes, it is!\p"
@@ -768,13 +768,13 @@ Route110_TrickHouseEntrance_Text_LeavingOnJourneyNote:
 	.string "Don't look for me. Trick Master”$"
 
 Route110_TrickHouseEntrance_Text_NextTimeUseThisTrick:
-	.string "For the next time, I'll use this trick,\n"
+	.string "{SPEAKER NAME_TRICK}For the next time, I'll use this trick,\n"
 	.string "and that scheme, and those ruses…\p"
 	.string "Mufufufu… If I may say so, it's\n"
 	.string "brilliantly difficult, even for me!$"
 
 Route110_TrickHouseEntrance_Text_InMidstOfDevisingNewChallenges:
-	.string "Hah? What?!\n"
+	.string "{SPEAKER NAME_TRICK}Hah? What?!\n"
 	.string "Oh, it's you!\p"
 	.string "I'm in the midst of devising new tricky\n"
 	.string "challenges!\p"
@@ -784,7 +784,7 @@ Route110_TrickHouseEntrance_Text_InMidstOfDevisingNewChallenges:
 	.string "Come back in a little while!$"
 
 Route110_TrickHouseEntrance_Text_YoureHereToAcceptReward:
-	.string "Ah, it's you! You're here to accept the\n"
+	.string "{SPEAKER NAME_TRICK}Ah, it's you! You're here to accept the\n"
 	.string "reward from before, isn't that right?\l"
 	.string "Yes, right I am!\p"
 	.string "Here!\n"

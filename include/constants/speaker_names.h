@@ -21,6 +21,10 @@ enum SpeakerNames {
     SP_NAME_WALLACE,
     SP_NAME_COZMO,
     SP_NAME_BIRCH,
+    SP_NAME_TRICK,
+    SP_NAME_RIVAL,
+    SP_NAME_WALLY,
+    SP_NAME_RYDEL,
     SP_NAME_COUNT
 };
 

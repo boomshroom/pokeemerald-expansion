@@ -67,6 +67,7 @@ MauvilleCity_EventScript_TVExplained::
 MauvilleCity_EventScript_WallysUncle::
 	lock
 	faceplayer
+	setspeaker MauvilleCity_Name_Uncle
 	goto_if_set FLAG_DECLINED_WALLY_BATTLE_MAUVILLE, MauvilleCity_EventScript_UncleAskPlayerToBattleWally
 	msgbox MauvilleCity_Text_UncleHesTooPeppy, MSGBOX_DEFAULT
 	closemessage
@@ -89,6 +90,7 @@ MauvilleCity_EventScript_Wally::
 	applymovement LOCALID_MAUVILLE_WALLY, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	msgbox MauvilleCity_Text_WallyWantToChallengeGym, MSGBOX_DEFAULT
+	setspeaker MauvilleCity_Name_Uncle
 	msgbox MauvilleCity_Text_UncleYourePushingIt, MSGBOX_DEFAULT
 	msgbox MauvilleCity_Text_WallyWeCanBeatAnyone, MSGBOX_DEFAULT
 	applymovement LOCALID_MAUVILLE_WALLY, Common_Movement_FacePlayer
@@ -122,6 +124,7 @@ MauvilleCity_EventScript_WallyAndUncleExitNorth::
 	applymovement LOCALID_PLAYER, MauvilleCity_Movement_PlayerFaceUncleNorth
 	applymovement LOCALID_MAUVILLE_WALLYS_UNCLE, MauvilleCity_Movement_WallysUncleApproachPlayerNorth
 	waitmovement 0
+	setspeaker MauvilleCity_Name_Uncle
 	msgbox MauvilleCity_Text_UncleVisitUsSometime, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_PLAYER, MauvilleCity_Movement_PlayerWatchWallyExitNorth2
@@ -207,6 +210,7 @@ MauvilleCity_EventScript_BattleWally::
 	msgbox MauvilleCity_Text_ThankYouNotEnoughToBattle, MSGBOX_DEFAULT
 	applymovement LOCALID_MAUVILLE_WALLY, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
+	setspeaker MauvilleCity_Name_Uncle
 	msgbox MauvilleCity_Text_UncleNoNeedToBeDown, MSGBOX_DEFAULT
 	return
 
@@ -459,31 +463,34 @@ MauvilleCity_EventScript_RegisterWallyCall::
 	releaseall
 	end
 
+MauvilleCity_Name_Uncle:
+	.string "Uncle$"
+
 MauvilleCity_Text_UncleHesTooPeppy:
-	.string "Uncle: It's because of Pokémon that\n"
+	.string "It's because of Pokémon that\n"
 	.string "this boy's got more pep, I suppose…\l"
 	.string "But he's become a bit too peppy…$"
 
 MauvilleCity_Text_WallyWantToChallengeGym:
-	.string "Wally: Aww, Uncle, please?\p"
+	.string "{SPEAKER NAME_WALLY}Aww, Uncle, please?\p"
 	.string "I want to challenge this Gym and see\n"
 	.string "how much better I've become.\p"
 	.string "Please? May I, please?$"
 
 MauvilleCity_Text_UncleYourePushingIt:
-	.string "Uncle: Now hold on, Wally.\p"
+	.string "Now hold on, Wally.\p"
 	.string "Since you started living with Pokémon,\n"
 	.string "you have grown quite a lot stronger.\p"
 	.string "But don't you think you're pushing it\n"
 	.string "to suddenly challenge a Gym?$"
 
 MauvilleCity_Text_WallyWeCanBeatAnyone:
-	.string "Wally: I'm not pushing it.\p"
+	.string "{SPEAKER NAME_WALLY}I'm not pushing it.\p"
 	.string "If I combine forces with Ralts,\n"
 	.string "we can beat anyone!$"
 
 MauvilleCity_Text_WallyWillYouBattleMe:
-	.string "Wally: Oh! Hi, {PLAYER}!\p"
+	.string "{SPEAKER NAME_WALLY}Oh! Hi, {PLAYER}!\p"
 	.string "I've gotten a lot stronger since\n"
 	.string "we met.\p"
 	.string "{PLAYER}, I want you and my Uncle to\n"
@@ -492,32 +499,32 @@ MauvilleCity_Text_WallyWillYouBattleMe:
 	.string "a battle with me?$"
 
 MauvilleCity_Text_WallyMyUncleWontKnowImStrong:
-	.string "Wally: Oh… If you won't battle me,\n"
+	.string "{SPEAKER NAME_WALLY}Oh… If you won't battle me,\n"
 	.string "{PLAYER}, my Uncle won't know that I've\l"
 	.string "become really strong.$"
 
 MauvilleCity_Text_UncleCanYouBattleWally:
-	.string "Uncle: {PLAYER}{KUN}, was it?\n"
+	.string "{PLAYER}{KUN}, was it?\n"
 	.string "On Wally's behalf, can I ask you to\l"
 	.string "battle with him just this once?\p"
 	.string "I don't think he's going to listen to\n"
 	.string "any reason the way he is now.$"
 
 MauvilleCity_Text_WallyPleaseBattleMe:
-	.string "Wally: {PLAYER}, please!\n"
+	.string "{SPEAKER NAME_WALLY}{PLAYER}, please!\n"
 	.string "Battle with me, please.$"
 
 MauvilleCity_Text_WallyHereICome:
-	.string "Wally: {PLAYER}, thank you.\p"
+	.string "{SPEAKER NAME_WALLY}{PLAYER}, thank you.\p"
 	.string "Okay… Here I come!$"
 
 MauvilleCity_Text_WallyDefeat:
-	.string "Wally: … … … … … … …\p"
+	.string "… … … … … … …\p"
 	.string "… … … … … … … …\p"
 	.string "I lost…$"
 
 MauvilleCity_Text_WallyIllGoBackToVerdanturf:
-	.string "Wally: Uncle…\n"
+	.string "{SPEAKER NAME_WALLY}Uncle…\n"
 	.string "I'll go back to Verdanturf…$"
 
 MauvilleCity_Text_ThankYouNotEnoughToBattle:
@@ -528,7 +535,7 @@ MauvilleCity_Text_ThankYouNotEnoughToBattle:
 	.string "being a real Trainer is about.$"
 
 MauvilleCity_Text_UncleNoNeedToBeDown:
-	.string "Uncle: Wally, there's no need to be so\n"
+	.string "Wally, there's no need to be so\n"
 	.string "down on yourself.\p"
 	.string "Why, what's keeping you from becoming\n"
 	.string "stronger and stronger?\p"
@@ -536,7 +543,7 @@ MauvilleCity_Text_UncleNoNeedToBeDown:
 	.string "Everyone's waiting for you.$"
 
 MauvilleCity_Text_UncleVisitUsSometime:
-	.string "Uncle: {PLAYER}{KUN}, it just dawned on me\n"
+	.string "{PLAYER}{KUN}, it just dawned on me\n"
 	.string "that you must be the Trainer who kept\l"
 	.string "an eye out for Wally when he caught\l"
 	.string "his Pokémon.\p"
@@ -546,9 +553,9 @@ MauvilleCity_Text_UncleVisitUsSometime:
 
 
 MauvilleCity_Text_WallyPokenavCall:
-	.string "… … … … … …\n"
+	.string "{SPEAKER NAME_NONE}… … … … … …\n"
 	.string "… … … … … Beep!\p"
-	.string "Wally: Oh, hello, {PLAYER}!\p"
+	.string "{SPEAKER NAME_WALLY}Oh, hello, {PLAYER}!\p"
 	.string "I just wanted to tell you that\n"
 	.string "my uncle bought me a PokéNav!\p"
 	.string "Now I can get in touch with you\n"
@@ -557,11 +564,11 @@ MauvilleCity_Text_WallyPokenavCall:
 	.string "… … … … … Click!$"
 
 MauvilleCity_Text_RegisteredWally:
-	.string "Registered Wally\n"
+	.string "{SPEAKER NAME_NONE}Registered Wally\n"
 	.string "in the PokéNav.$"
 
 MauvilleCity_Text_ScottYouDidntHoldBack:
-	.string "Scott: Hehe…\n"
+	.string "{SPEAKER NAME_SCOTT}Hehe…\n"
 	.string "I was watching that match!\p"
 	.string "You're friends with that boy Wally,\n"
 	.string "aren't you?\p"

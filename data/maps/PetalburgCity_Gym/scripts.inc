@@ -1159,7 +1159,7 @@ PetalburgCity_Gym_Text_DadOhYoureWallyRight:
 	.string "You're Wally, right?$"
 
 PetalburgCity_Gym_Text_WallyIveNeverCaughtAPokemon:
-	.string "Wally: I'm going to go stay with my\n"
+	.string "{SPEAKER NAME_WALLY}I'm going to go stay with my\n"
 	.string "relatives in Verdanturf Town.\p"
 	.string "I thought I would be lonely by myself,\n"
 	.string "so I wanted to take a Pokémon along.\p"
@@ -1180,14 +1180,14 @@ PetalburgCity_Gym_Text_IllLoanYouMyZigzagoon:
 	.string "Wally received a Zigzagoon!$"
 
 PetalburgCity_Gym_Text_WallyThankYouAndDadGivesPokeBall:
-	.string "Wally: Oh, wow!\n"
+	.string "{SPEAKER NAME_WALLY}Oh, wow!\n"
 	.string "A Pokémon!\p"
 	.string "Dad: Hm. I'll give you a Poké Ball, too.\n"
 	.string "Go for it!\p"
 	.string "Wally received a Poké Ball!$"
 
 PetalburgCity_Gym_Text_WallyOhWowThankYou:
-	.string "Wally: Oh, wow!\n"
+	.string "{SPEAKER NAME_WALLY}Oh, wow!\n"
 	.string "Thank you!$"
 
 PetalburgCity_Gym_Text_WouldYouReallyComeWithMe:
@@ -1198,7 +1198,7 @@ PetalburgCity_Gym_Text_DadSoDidItWorkOut:
 	.string "Dad: So, did it work out?$"
 
 PetalburgCity_Gym_Text_WallyThankYouBye:
-	.string "Wally: Thank you, yes, it did.\n"
+	.string "{SPEAKER NAME_WALLY}Thank you, yes, it did.\n"
 	.string "Here's your Pokémon back.\p"
 	.string "{PLAYER}, thank you for coming along\n"
 	.string "with me.\p"
