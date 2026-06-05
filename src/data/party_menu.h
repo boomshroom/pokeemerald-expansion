@@ -950,6 +950,35 @@ static const struct SpriteTemplate sSpriteTemplate_HeldItem =
     .anims = sSpriteAnimTable_HeldItem,
 };
 
+static const u32 gPartyMenuStrangeball_Gfx[] = INCGFX_U32("graphics/party_menu/strangeball.png", ".4bpp.smol");
+static const u32 gPartyMenuGreatball_Gfx[] = INCGFX_U32("graphics/party_menu/greatball.png", ".4bpp.smol");
+static const u32 gPartyMenuUltraball_Gfx[] = INCGFX_U32("graphics/party_menu/ultraball.png", ".4bpp.smol");
+static const u32 gPartyMenuMasterball_Gfx[] = INCGFX_U32("graphics/party_menu/masterball.png", ".4bpp.smol");
+static const u32 gPartyMenuPremierball_Gfx[] = INCGFX_U32("graphics/party_menu/premierball.png", ".4bpp.smol");
+static const u32 gPartyMenuHealball_Gfx[] = INCGFX_U32("graphics/party_menu/healball.png", ".4bpp.smol");
+static const u32 gPartyMenuNetball_Gfx[] = INCGFX_U32("graphics/party_menu/netball.png", ".4bpp.smol");
+static const u32 gPartyMenuNestball_Gfx[] = INCGFX_U32("graphics/party_menu/nestball.png", ".4bpp.smol");
+static const u32 gPartyMenuDiveball_Gfx[] = INCGFX_U32("graphics/party_menu/diveball.png", ".4bpp.smol");
+static const u32 gPartyMenuDuskball_Gfx[] = INCGFX_U32("graphics/party_menu/duskball.png", ".4bpp.smol");
+static const u32 gPartyMenuTimerball_Gfx[] = INCGFX_U32("graphics/party_menu/timerball.png", ".4bpp.smol");
+static const u32 gPartyMenuQuickball_Gfx[] = INCGFX_U32("graphics/party_menu/quickball.png", ".4bpp.smol");
+static const u32 gPartyMenuRepeatball_Gfx[] = INCGFX_U32("graphics/party_menu/repeatball.png", ".4bpp.smol");
+static const u32 gPartyMenuLuxuryball_Gfx[] = INCGFX_U32("graphics/party_menu/luxuryball.png", ".4bpp.smol");
+static const u32 gPartyMenuLevelball_Gfx[] = INCGFX_U32("graphics/party_menu/levelball.png", ".4bpp.smol");
+static const u32 gPartyMenuLureball_Gfx[] = INCGFX_U32("graphics/party_menu/lureball.png", ".4bpp.smol");
+static const u32 gPartyMenuMoonball_Gfx[] = INCGFX_U32("graphics/party_menu/moonball.png", ".4bpp.smol");
+static const u32 gPartyMenuFriendball_Gfx[] = INCGFX_U32("graphics/party_menu/friendball.png", ".4bpp.smol");
+static const u32 gPartyMenuLoveball_Gfx[] = INCGFX_U32("graphics/party_menu/loveball.png", ".4bpp.smol");
+static const u32 gPartyMenuFastball_Gfx[] = INCGFX_U32("graphics/party_menu/fastball.png", ".4bpp.smol");
+static const u32 gPartyMenuHeavyball_Gfx[] = INCGFX_U32("graphics/party_menu/heavyball.png", ".4bpp.smol");
+static const u32 gPartyMenuDreamball_Gfx[] = INCGFX_U32("graphics/party_menu/dreamball.png", ".4bpp.smol");
+static const u32 gPartyMenuSafariball_Gfx[] = INCGFX_U32("graphics/party_menu/safariball.png", ".4bpp.smol");
+static const u32 gPartyMenuSportball_Gfx[] = INCGFX_U32("graphics/party_menu/sportball.png", ".4bpp.smol");
+static const u32 gPartyMenuParkball_Gfx[] = INCGFX_U32("graphics/party_menu/parkball.png", ".4bpp.smol");
+static const u32 gPartyMenuBeastball_Gfx[] = INCGFX_U32("graphics/party_menu/beastball.png", ".4bpp.smol");
+static const u32 gPartyMenuCherishball_Gfx[] = INCGFX_U32("graphics/party_menu/cherishball.png", ".4bpp.smol");
+static const u16 gPartyMenuPokeballs_Pal[] = INCGFX_U16("graphics/party_menu/strangeball.png", ".gbapal");
+
 static const struct OamData sOamData_MenuPokeball =
 {
     .y = 0,
@@ -1002,6 +1031,295 @@ static const struct SpriteTemplate sSpriteTemplate_MenuPokeball =
     .paletteTag = TAG_POKEBALL,
     .oam = &sOamData_MenuPokeball,
     .anims = sSpriteAnimTable_MenuPokeball,
+};
+
+struct PokeballSprite {
+    struct CompressedSpriteSheet sheet;
+    struct SpritePalette palette;
+    struct SpriteTemplate template;
+};
+
+static const struct PokeballSprite sSpriteTable_Pokeballs[] = {
+    [BALL_STRANGE] = {
+        .sheet = { gPartyMenuStrangeball_Gfx, 0x400, TAG_STRANGEBALL },
+        .palette = { gPartyMenuPokeballs_Pal, TAG_POKE_BALLS },
+        .template = {
+            .tileTag = TAG_STRANGEBALL,
+            .paletteTag = TAG_POKE_BALLS,
+            .oam = &sOamData_MenuPokeball,
+            .anims = sSpriteAnimTable_MenuPokeball,
+        },
+    },
+    [BALL_POKE] = {
+        .sheet = { gPartyMenuPokeball_Gfx, 0x400, TAG_POKEBALL },
+        .palette = { gPartyMenuPokeball_Pal, TAG_POKEBALL },
+        .template = {
+            .tileTag = TAG_POKEBALL,
+            .paletteTag = TAG_POKEBALL,
+            .oam = &sOamData_MenuPokeball,
+            .anims = sSpriteAnimTable_MenuPokeball,
+        },
+    },
+    [BALL_GREAT] = {
+        .sheet = { gPartyMenuGreatball_Gfx, 0x400, TAG_GREATBALL },
+        .palette = { gPartyMenuPokeballs_Pal, TAG_POKE_BALLS },
+        .template = {
+            .tileTag = TAG_GREATBALL,
+            .paletteTag = TAG_POKE_BALLS,
+            .oam = &sOamData_MenuPokeball,
+            .anims = sSpriteAnimTable_MenuPokeball,
+        },
+    },
+    [BALL_ULTRA] = {
+        .sheet = { gPartyMenuUltraball_Gfx, 0x400, TAG_ULTRABALL },
+        .palette = { gPartyMenuPokeballs_Pal, TAG_POKE_BALLS },
+        .template = {
+            .tileTag = TAG_ULTRABALL,
+            .paletteTag = TAG_POKE_BALLS,
+            .oam = &sOamData_MenuPokeball,
+            .anims = sSpriteAnimTable_MenuPokeball,
+        },
+    },
+    [BALL_MASTER] = {
+        .sheet = { gPartyMenuMasterball_Gfx, 0x400, TAG_MASTERBALL },
+        .palette = { gPartyMenuPokeballs_Pal, TAG_POKE_BALLS },
+        .template = {
+            .tileTag = TAG_MASTERBALL,
+            .paletteTag = TAG_POKE_BALLS,
+            .oam = &sOamData_MenuPokeball,
+            .anims = sSpriteAnimTable_MenuPokeball,
+        },
+    },
+    [BALL_PREMIER] = {
+        .sheet = { gPartyMenuPremierball_Gfx, 0x400, TAG_PREMIERBALL },
+        .palette = { gPartyMenuPokeballs_Pal, TAG_POKE_BALLS },
+        .template = {
+            .tileTag = TAG_PREMIERBALL,
+            .paletteTag = TAG_POKE_BALLS,
+            .oam = &sOamData_MenuPokeball,
+            .anims = sSpriteAnimTable_MenuPokeball,
+        },
+    },
+    [BALL_HEAL] = {
+        .sheet = { gPartyMenuHealball_Gfx, 0x400, TAG_HEALBALL },
+        .palette = { gPartyMenuPokeballs_Pal, TAG_POKE_BALLS },
+        .template = {
+            .tileTag = TAG_HEALBALL,
+            .paletteTag = TAG_POKE_BALLS,
+            .oam = &sOamData_MenuPokeball,
+            .anims = sSpriteAnimTable_MenuPokeball,
+        },
+    },
+    [BALL_NET] = {
+        .sheet = { gPartyMenuNetball_Gfx, 0x400, TAG_NETBALL },
+        .palette = { gPartyMenuPokeballs_Pal, TAG_POKE_BALLS },
+        .template = {
+            .tileTag = TAG_NETBALL,
+            .paletteTag = TAG_POKE_BALLS,
+            .oam = &sOamData_MenuPokeball,
+            .anims = sSpriteAnimTable_MenuPokeball,
+        },
+    },
+    [BALL_NEST] = {
+        .sheet = { gPartyMenuNestball_Gfx, 0x400, TAG_NESTBALL },
+        .palette = { gPartyMenuPokeballs_Pal, TAG_POKE_BALLS },
+        .template = {
+            .tileTag = TAG_NESTBALL,
+            .paletteTag = TAG_POKE_BALLS,
+            .oam = &sOamData_MenuPokeball,
+            .anims = sSpriteAnimTable_MenuPokeball,
+        },
+    },
+    [BALL_DIVE] = {
+        .sheet = { gPartyMenuDiveball_Gfx, 0x400, TAG_DIVEBALL },
+        .palette = { gPartyMenuPokeballs_Pal, TAG_POKE_BALLS },
+        .template = {
+            .tileTag = TAG_DIVEBALL,
+            .paletteTag = TAG_POKE_BALLS,
+            .oam = &sOamData_MenuPokeball,
+            .anims = sSpriteAnimTable_MenuPokeball,
+        },
+    },
+    [BALL_DUSK] = {
+        .sheet = { gPartyMenuDuskball_Gfx, 0x400, TAG_DUSKBALL },
+        .palette = { gPartyMenuPokeballs_Pal, TAG_POKE_BALLS },
+        .template = {
+            .tileTag = TAG_DUSKBALL,
+            .paletteTag = TAG_POKE_BALLS,
+            .oam = &sOamData_MenuPokeball,
+            .anims = sSpriteAnimTable_MenuPokeball,
+        },
+    },
+    [BALL_TIMER] = {
+        .sheet = { gPartyMenuTimerball_Gfx, 0x400, TAG_TIMERBALL },
+        .palette = { gPartyMenuPokeballs_Pal, TAG_POKE_BALLS },
+        .template = {
+            .tileTag = TAG_TIMERBALL,
+            .paletteTag = TAG_POKE_BALLS,
+            .oam = &sOamData_MenuPokeball,
+            .anims = sSpriteAnimTable_MenuPokeball,
+        },
+    },
+    [BALL_QUICK] = {
+        .sheet = { gPartyMenuQuickball_Gfx, 0x400, TAG_QUICKBALL },
+        .palette = { gPartyMenuPokeballs_Pal, TAG_POKE_BALLS },
+        .template = {
+            .tileTag = TAG_QUICKBALL,
+            .paletteTag = TAG_POKE_BALLS,
+            .oam = &sOamData_MenuPokeball,
+            .anims = sSpriteAnimTable_MenuPokeball,
+        },
+    },
+    [BALL_REPEAT] = {
+        .sheet = { gPartyMenuRepeatball_Gfx, 0x400, TAG_REPEATBALL },
+        .palette = { gPartyMenuPokeballs_Pal, TAG_POKE_BALLS },
+        .template = {
+            .tileTag = TAG_REPEATBALL,
+            .paletteTag = TAG_POKE_BALLS,
+            .oam = &sOamData_MenuPokeball,
+            .anims = sSpriteAnimTable_MenuPokeball,
+        },
+    },
+    [BALL_LUXURY] = {
+        .sheet = { gPartyMenuLuxuryball_Gfx, 0x400, TAG_LUXURYBALL },
+        .palette = { gPartyMenuPokeballs_Pal, TAG_POKE_BALLS },
+        .template = {
+            .tileTag = TAG_LUXURYBALL,
+            .paletteTag = TAG_POKE_BALLS,
+            .oam = &sOamData_MenuPokeball,
+            .anims = sSpriteAnimTable_MenuPokeball,
+        },
+    },
+    [BALL_LEVEL] = {
+        .sheet = { gPartyMenuLevelball_Gfx, 0x400, TAG_LEVELBALL },
+        .palette = { gPartyMenuPokeballs_Pal, TAG_POKE_BALLS },
+        .template = {
+            .tileTag = TAG_LEVELBALL,
+            .paletteTag = TAG_POKE_BALLS,
+            .oam = &sOamData_MenuPokeball,
+            .anims = sSpriteAnimTable_MenuPokeball,
+        },
+    },
+    [BALL_LURE] = {
+        .sheet = { gPartyMenuLureball_Gfx, 0x400, TAG_LUREBALL },
+        .palette = { gPartyMenuPokeballs_Pal, TAG_POKE_BALLS },
+        .template = {
+            .tileTag = TAG_LUREBALL,
+            .paletteTag = TAG_POKE_BALLS,
+            .oam = &sOamData_MenuPokeball,
+            .anims = sSpriteAnimTable_MenuPokeball,
+        },
+    },
+    [BALL_MOON] = {
+        .sheet = { gPartyMenuMoonball_Gfx, 0x400, TAG_MOONBALL },
+        .palette = { gPartyMenuPokeballs_Pal, TAG_POKE_BALLS },
+        .template = {
+            .tileTag = TAG_MOONBALL,
+            .paletteTag = TAG_POKE_BALLS,
+            .oam = &sOamData_MenuPokeball,
+            .anims = sSpriteAnimTable_MenuPokeball,
+        },
+    },
+    [BALL_FRIEND] = {
+        .sheet = { gPartyMenuFriendball_Gfx, 0x400, TAG_FRIENDBALL },
+        .palette = { gPartyMenuPokeballs_Pal, TAG_POKE_BALLS },
+        .template = {
+            .tileTag = TAG_FRIENDBALL,
+            .paletteTag = TAG_POKE_BALLS,
+            .oam = &sOamData_MenuPokeball,
+            .anims = sSpriteAnimTable_MenuPokeball,
+        },
+    },
+    [BALL_LOVE] = {
+        .sheet = { gPartyMenuLoveball_Gfx, 0x400, TAG_LOVEBALL },
+        .palette = { gPartyMenuPokeballs_Pal, TAG_POKE_BALLS },
+        .template = {
+            .tileTag = TAG_LOVEBALL,
+            .paletteTag = TAG_POKE_BALLS,
+            .oam = &sOamData_MenuPokeball,
+            .anims = sSpriteAnimTable_MenuPokeball,
+        },
+    },
+    [BALL_FAST] = {
+        .sheet = { gPartyMenuFastball_Gfx, 0x400, TAG_FASTBALL },
+        .palette = { gPartyMenuPokeballs_Pal, TAG_POKE_BALLS },
+        .template = {
+            .tileTag = TAG_FASTBALL,
+            .paletteTag = TAG_POKE_BALLS,
+            .oam = &sOamData_MenuPokeball,
+            .anims = sSpriteAnimTable_MenuPokeball,
+        },
+    },
+    [BALL_HEAVY] = {
+        .sheet = { gPartyMenuHeavyball_Gfx, 0x400, TAG_HEAVYBALL },
+        .palette = { gPartyMenuPokeballs_Pal, TAG_POKE_BALLS },
+        .template = {
+            .tileTag = TAG_HEAVYBALL,
+            .paletteTag = TAG_POKE_BALLS,
+            .oam = &sOamData_MenuPokeball,
+            .anims = sSpriteAnimTable_MenuPokeball,
+        },
+    },
+    [BALL_DREAM] = {
+        .sheet = { gPartyMenuDreamball_Gfx, 0x400, TAG_DREAMBALL },
+        .palette = { gPartyMenuPokeballs_Pal, TAG_POKE_BALLS },
+        .template = {
+            .tileTag = TAG_DREAMBALL,
+            .paletteTag = TAG_POKE_BALLS,
+            .oam = &sOamData_MenuPokeball,
+            .anims = sSpriteAnimTable_MenuPokeball,
+        },
+    },
+    [BALL_SAFARI] = {
+        .sheet = { gPartyMenuSafariball_Gfx, 0x400, TAG_SAFARIBALL },
+        .palette = { gPartyMenuPokeballs_Pal, TAG_POKE_BALLS },
+        .template = {
+            .tileTag = TAG_SAFARIBALL,
+            .paletteTag = TAG_POKE_BALLS,
+            .oam = &sOamData_MenuPokeball,
+            .anims = sSpriteAnimTable_MenuPokeball,
+        },
+    },
+    [BALL_SPORT] = {
+        .sheet = { gPartyMenuSportball_Gfx, 0x400, TAG_SPORTBALL },
+        .palette = { gPartyMenuPokeballs_Pal, TAG_POKE_BALLS },
+        .template = {
+            .tileTag = TAG_SPORTBALL,
+            .paletteTag = TAG_POKE_BALLS,
+            .oam = &sOamData_MenuPokeball,
+            .anims = sSpriteAnimTable_MenuPokeball,
+        },
+    },
+    [BALL_PARK] = {
+        .sheet = { gPartyMenuParkball_Gfx, 0x400, TAG_PARKBALL },
+        .palette = { gPartyMenuPokeballs_Pal, TAG_POKE_BALLS },
+        .template = {
+            .tileTag = TAG_PARKBALL,
+            .paletteTag = TAG_POKE_BALLS,
+            .oam = &sOamData_MenuPokeball,
+            .anims = sSpriteAnimTable_MenuPokeball,
+        },
+    },
+    [BALL_BEAST] = {
+        .sheet = { gPartyMenuBeastball_Gfx, 0x400, TAG_BEASTBALL },
+        .palette = { gPartyMenuPokeballs_Pal, TAG_POKE_BALLS },
+        .template = {
+            .tileTag = TAG_BEASTBALL,
+            .paletteTag = TAG_POKE_BALLS,
+            .oam = &sOamData_MenuPokeball,
+            .anims = sSpriteAnimTable_MenuPokeball,
+        },
+    },
+    [BALL_CHERISH] = {
+        .sheet = { gPartyMenuPokeball_Gfx, 0x400, TAG_CHERISHBALL },
+        .palette = { gPartyMenuPokeballs_Pal, TAG_POKE_BALLS },
+        .template = {
+            .tileTag = TAG_CHERISHBALL,
+            .paletteTag = TAG_POKE_BALLS,
+            .oam = &sOamData_MenuPokeball,
+            .anims = sSpriteAnimTable_MenuPokeball,
+        },
+    },
 };
 
 static const struct OamData sOamData_MenuPokeballSmall =

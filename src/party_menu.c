@@ -80,6 +80,7 @@
 #include "constants/party_menu.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
+#include "constants/pokeball.h"
 
 enum {
     MENU_SUMMARY,
@@ -142,6 +143,34 @@ enum {
     TAG_POKEBALL = 1200,
     TAG_POKEBALL_SMALL,
     TAG_STATUS_ICONS,
+    TAG_POKE_BALLS,
+    TAG_STRANGEBALL,
+    TAG_GREATBALL,
+    TAG_ULTRABALL,
+    TAG_MASTERBALL,
+    TAG_PREMIERBALL,
+    TAG_HEALBALL,
+    TAG_NETBALL,
+    TAG_NESTBALL,
+    TAG_DIVEBALL,
+    TAG_DUSKBALL,
+    TAG_TIMERBALL,
+    TAG_QUICKBALL,
+    TAG_REPEATBALL,
+    TAG_LUXURYBALL,
+    TAG_LEVELBALL,
+    TAG_LUREBALL,
+    TAG_MOONBALL,
+    TAG_FRIENDBALL,
+    TAG_LOVEBALL,
+    TAG_FASTBALL,
+    TAG_HEAVYBALL,
+    TAG_DREAMBALL,
+    TAG_SAFARIBALL,
+    TAG_SPORTBALL,
+    TAG_PARKBALL,
+    TAG_BEASTBALL,
+    TAG_CHERISHBALL,
 };
 
 #define TAG_HELD_ITEM 55120
@@ -4619,8 +4648,10 @@ static void SpriteCB_HeldItem(struct Sprite *sprite)
 
 static void CreatePartyMonPokeballSprite(struct Pokemon *mon, struct PartyMenuBox *menuBox)
 {
-    if (GetMonData(mon, MON_DATA_SPECIES) != SPECIES_NONE)
-        menuBox->pokeballSpriteId = CreateSprite(&sSpriteTemplate_MenuPokeball, menuBox->spriteCoords[6], menuBox->spriteCoords[7], 8);
+    if (GetMonData(mon, MON_DATA_SPECIES) != SPECIES_NONE) {
+        enum PokeBall ball = GetMonData(mon, MON_DATA_POKEBALL);
+        menuBox->pokeballSpriteId = CreateSprite(&sSpriteTable_Pokeballs[ball].template, menuBox->spriteCoords[6], menuBox->spriteCoords[7], 8);
+    }
 }
 
 static void CreatePartyMonPokeballSpriteParameterized(enum Species species, struct PartyMenuBox *menuBox)
@@ -4677,6 +4708,13 @@ static void LoadPartyMenuPokeballGfx(void)
     LoadCompressedSpriteSheet(&sSpriteSheet_MenuPokeball);
     LoadCompressedSpriteSheet(&sSpriteSheet_MenuPokeballSmall);
     LoadSpritePalette(&sSpritePalette_MenuPokeball);
+    for (u32 i = 0; i < PARTY_SIZE; i++) {
+        if (GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES) != SPECIES_NONE) {
+            enum PokeBall ball = GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_POKEBALL);
+            LoadCompressedSpriteSheet(&sSpriteTable_Pokeballs[ball].sheet);
+            LoadSpritePalette(&sSpriteTable_Pokeballs[ball].palette);
+        }
+    }
 }
 
 static void CreatePartyMonStatusSprite(struct Pokemon *mon, struct PartyMenuBox *menuBox)
