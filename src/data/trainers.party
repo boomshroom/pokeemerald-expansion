@@ -4118,8 +4118,8 @@ Class: Psychic
 Pic: Psychic M
 Gender: Male
 Music: Intense
-Double Battle: Yes
-AI: Smart Trainer
+Double Battle: No
+AI: Smart Trainer / Omniscient
 
 Abra
 Level: 15
@@ -4132,8 +4132,8 @@ Class: Psychic
 Pic: Psychic M
 Gender: Male
 Music: Intense
-Double Battle: Yes
-AI: Smart Trainer
+Double Battle: No
+AI: Smart Trainer / Omniscient
 
 Kirlia
 Level: 36
@@ -4145,8 +4145,8 @@ Class: Psychic
 Pic: Psychic M
 Gender: Male
 Music: Intense
-Double Battle: Yes
-AI: Smart Trainer
+Double Battle: No
+AI: Smart Trainer / Omniscient
 
 Ralts
 Level: 36
@@ -4158,8 +4158,8 @@ Class: Psychic
 Pic: Psychic M
 Gender: Male
 Music: Intense
-Double Battle: Yes
-AI: Smart Trainer
+Double Battle: No
+AI: Smart Trainer / Omniscient
 
 Girafarig
 Level: 36
@@ -4172,7 +4172,7 @@ Pic: Psychic M
 Gender: Male
 Music: Intense
 Double Battle: Yes
-AI: Smart Trainer
+AI: Smart Trainer / Omniscient
 
 Ralts
 Level: 26
@@ -4193,7 +4193,7 @@ Pic: Psychic M
 Gender: Male
 Music: Intense
 Double Battle: Yes
-AI: Smart Trainer
+AI: Smart Trainer / Omniscient
 
 Kadabra
 Level: 41
@@ -4209,8 +4209,8 @@ Class: Psychic
 Pic: Psychic M
 Gender: Male
 Music: Intense
-Double Battle: Yes
-AI: Smart Trainer
+Double Battle: No
+AI: Smart Trainer / Omniscient
 
 Solrock
 Level: 31
@@ -4223,7 +4223,7 @@ Pic: Psychic M
 Gender: Male
 Music: Intense
 Double Battle: Yes
-AI: Smart Trainer
+AI: Smart Trainer / Omniscient
 
 Kadabra
 Level: 33
@@ -4240,7 +4240,7 @@ Pic: Psychic M
 Gender: Male
 Music: Intense
 Double Battle: Yes
-AI: Smart Trainer
+AI: Smart Trainer / Omniscient
 
 Kadabra
 Level: 38
@@ -4257,7 +4257,7 @@ Pic: Psychic M
 Gender: Male
 Music: Intense
 Double Battle: Yes
-AI: Smart Trainer
+AI: Smart Trainer / Omniscient
 
 Kadabra
 Level: 41
@@ -4274,7 +4274,7 @@ Pic: Psychic M
 Gender: Male
 Music: Intense
 Double Battle: Yes
-AI: Smart Trainer
+AI: Smart Trainer / Omniscient
 
 Solrock
 Level: 45
@@ -4290,8 +4290,8 @@ Class: Psychic
 Pic: Psychic F
 Gender: Female
 Music: Intense
-Double Battle: Yes
-AI: Smart Trainer
+Double Battle: No
+AI: Smart Trainer / Omniscient
 
 Abra
 Level: 16
@@ -4304,8 +4304,8 @@ Class: Psychic
 Pic: Psychic F
 Gender: Female
 Music: Intense
-Double Battle: Yes
-AI: Smart Trainer
+Double Battle: No
+AI: Smart Trainer / Omniscient
 
 Kirlia
 Level: 36
@@ -4317,8 +4317,8 @@ Class: Psychic
 Pic: Psychic F
 Gender: Female
 Music: Intense
-Double Battle: Yes
-AI: Smart Trainer
+Double Battle: No
+AI: Smart Trainer / Omniscient
 
 Xatu
 Level: 36
@@ -4330,8 +4330,8 @@ Class: Psychic
 Pic: Psychic F
 Gender: Female
 Music: Intense
-Double Battle: Yes
-AI: Smart Trainer
+Double Battle: No
+AI: Smart Trainer / Omniscient
 
 Kadabra
 Level: 36
@@ -4344,7 +4344,7 @@ Pic: Psychic F
 Gender: Female
 Music: Intense
 Double Battle: Yes
-AI: Smart Trainer
+AI: Smart Trainer / Omniscient
 
 Wobbuffet
 Level: 26
@@ -4365,7 +4365,7 @@ Pic: Psychic F
 Gender: Female
 Music: Intense
 Double Battle: Yes
-AI: Smart Trainer
+AI: Smart Trainer / Omniscient
 
 Kirlia
 Level: 41
@@ -4382,7 +4382,7 @@ Pic: Psychic F
 Gender: Female
 Music: Intense
 Double Battle: Yes
-AI: Smart Trainer
+AI: Smart Trainer / Omniscient
 
 Kadabra
 Level: 30
@@ -4399,7 +4399,7 @@ Pic: Psychic F
 Gender: Female
 Music: Intense
 Double Battle: Yes
-AI: Smart Trainer
+AI: Smart Trainer / Omniscient
 
 Kadabra
 Level: 34
@@ -4416,7 +4416,7 @@ Pic: Psychic F
 Gender: Female
 Music: Intense
 Double Battle: Yes
-AI: Smart Trainer
+AI: Smart Trainer / Omniscient
 
 Kadabra
 Level: 37
@@ -4433,7 +4433,7 @@ Pic: Psychic F
 Gender: Female
 Music: Intense
 Double Battle: Yes
-AI: Smart Trainer
+AI: Smart Trainer / Omniscient
 
 Kadabra
 Level: 40
@@ -4450,7 +4450,7 @@ Pic: Psychic F
 Gender: Female
 Music: Intense
 Double Battle: Yes
-AI: Smart Trainer
+AI: Smart Trainer / Omniscient
 
 Lunatone
 Level: 43
@@ -5054,7 +5054,7 @@ Gender: Other
 Music: Female
 Items: Hyper Potion / Hyper Potion / Hyper Potion / Hyper Potion
 Double Battle: Yes
-AI: Smart Trainer
+AI: Smart Trainer / Omniscient
 
 Claydol
 Level: 41
@@ -8666,7 +8666,7 @@ Pic: Psychic M
 Gender: Male
 Music: Intense
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Omniscient
 
 Wobbuffet
 Level: 32
@@ -10716,7 +10716,7 @@ Pic: Psychic F
 Gender: Female
 Music: Intense
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Omniscient
 
 Girafarig
 Level: 37
@@ -10768,7 +10768,7 @@ Pic: Psychic M
 Gender: Male
 Music: Intense
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Omniscient
 
 Wobbuffet
 Level: 36
@@ -10850,7 +10850,7 @@ Pic: Psychic F
 Gender: Female
 Music: Intense
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Omniscient
 
 Natu
 Level: 36
@@ -13824,7 +13824,7 @@ Pic: Psychic F
 Gender: Female
 Music: Intense
 Double Battle: Yes
-AI: Smart Trainer
+AI: Smart Trainer / Omniscient
 
 Kadabra
 Level: 26
@@ -13858,7 +13858,7 @@ Pic: Psychic F
 Gender: Female
 Music: Intense
 Double Battle: Yes
-AI: Smart Trainer
+AI: Smart Trainer / Omniscient
 
 Meditite
 Level: 18
@@ -13922,7 +13922,7 @@ Pic: Psychic F
 Gender: Female
 Music: Intense
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Omniscient
 
 Ralts
 Level: 17
@@ -15403,7 +15403,7 @@ Gender: Other
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Smart Trainer
+AI: Smart Trainer / Omniscient
 
 Slowpoke
 Level: 48
@@ -15453,7 +15453,7 @@ Gender: Other
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Smart Trainer
+AI: Smart Trainer / Omniscient
 
 Drowzee
 Level: 53
@@ -15511,7 +15511,7 @@ Gender: Other
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Smart Trainer
+AI: Smart Trainer / Omniscient
 
 Hypno
 Level: 58
@@ -15569,7 +15569,7 @@ Gender: Other
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Smart Trainer
+AI: Smart Trainer / Omniscient
 
 Hypno
 Level: 63
@@ -16810,8 +16810,8 @@ Class: Psychic
 Pic: Psychic F
 Gender: Female
 Music: Intense
-Double Battle: Yes
-AI: Smart Trainer
+Double Battle: No
+AI: Smart Trainer / Omniscient
 
 Chimecho
 Level: 41
@@ -16824,7 +16824,7 @@ Pic: Psychic M
 Gender: Male
 Music: Intense
 Double Battle: Yes
-AI: Smart Trainer
+AI: Smart Trainer / Omniscient
 
 Banette
 Level: 41
