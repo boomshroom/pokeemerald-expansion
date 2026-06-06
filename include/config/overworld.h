@@ -163,4 +163,9 @@
 #define OW_FLAG_VARIABLE_ROD_GOOD_TECHNIQUE     FLAG_RECEIVED_GOOD_ROD   // If this flag is set, the game will unlock the 'good fishing technique'.
 #define OW_FLAG_VARIABLE_ROD_SUPER_TECHNIQUE    FLAG_RECEIVED_SUPER_ROD  // If this flag is set, the game will unlock the 'super fishing technique'.
 
+
+// Daily Seed
+#define OW_USE_DAILY_SEED_FOR_VANILLA_VARIABLES     FALSE // If TRUE, use daily seed to compute mirage island chance and lottery corner tickets.
+                                                          // This has a side effect of removing the deterministic/anti save scumming aspect of the mirage island randomisation
+
 #endif // GUARD_CONFIG_OVERWORLD_H
