@@ -114,12 +114,14 @@ static const u16 sPoints_StatusDmg[] =
     3, // Nightmare
     3  // Wrap (Trapping move)
 };
+static const u16 sPoints_LightScreen[] = { 3 };
 
 static const u16 *const sPointsArray[] =
 {
     [PTS_EFFECTIVENESS]          = sPoints_Effectiveness,
     [PTS_SET_UP]                 = sPoints_SetUp,
     [PTS_STATUS_DMG]             = sPoints_StatusDmg,
+    [PTS_LIGHT_SCREEN]           = sPoints_LightScreen,
 };
 
 // Points will always be calculated for these messages

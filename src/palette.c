@@ -703,12 +703,14 @@ static void UpdateBlendRegisters(void)
         switch (mode)
         {
         case FADE_FROM_BLACK:
+            tgt1++;
+            tgt2++;
             // increment each target until reaching weather's values
             SetGpuReg(
                 REG_OFFSET_BLDALPHA,
                 BLDALPHA_BLEND(
-                    min(++tgt1, gWeatherPtr->currBlendEVA),
-                    min(++tgt2, gWeatherPtr->currBlendEVB)
+                    min(tgt1, gWeatherPtr->currBlendEVA),
+                    min(tgt2, gWeatherPtr->currBlendEVB)
                 )
             );
             break;
@@ -724,9 +726,11 @@ static void UpdateBlendRegisters(void)
         // case FADE_FROM_WHITE:
         //     break;
         case FADE_TO_WHITE:
+            tgt1++;
+            tgt2++;
             SetGpuReg(
                 REG_OFFSET_BLDALPHA,
-                BLDALPHA_BLEND(min(++tgt1, 31), min(++tgt2, 31))
+                BLDALPHA_BLEND(min(tgt1, 31), min(tgt2, 31))
             );
             // cause display to show white when finished
             // (otherwise blend-mode sprites will still be visible)
