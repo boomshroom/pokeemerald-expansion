@@ -1680,6 +1680,7 @@ const u8 *BattleSetup_GetTrainerPostBattleScript(void)
         if (TRAINER_BATTLE_PARAM.battleScriptRetAddrB != NULL)
         {
             gWhichTrainerToFaceAfterBattle = 1;
+            gSpeakerName = GetTrainerNameFromId(TRAINER_BATTLE_PARAM.opponentB);
             return TRAINER_BATTLE_PARAM.battleScriptRetAddrB;
         }
     }
@@ -1688,6 +1689,7 @@ const u8 *BattleSetup_GetTrainerPostBattleScript(void)
         if (TRAINER_BATTLE_PARAM.battleScriptRetAddrA != NULL)
         {
             gWhichTrainerToFaceAfterBattle = 0;
+            gSpeakerName = GetTrainerNameFromId(TRAINER_BATTLE_PARAM.opponentA);
             return TRAINER_BATTLE_PARAM.battleScriptRetAddrA;
         }
     }
