@@ -25,6 +25,8 @@ enum SpeakerNames {
     SP_NAME_RIVAL,
     SP_NAME_WALLY,
     SP_NAME_RYDEL,
+    SP_NAME_ANNA,
+    SP_NAME_MEG,
     SP_NAME_COUNT
 };
 

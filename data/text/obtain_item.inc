@@ -1,5 +1,5 @@
 gText_ObtainedTheItem::
-	.string "Obtained the {STR_VAR_2}!$"
+	.string "{SPEAKER NAME_NONE}Obtained the {STR_VAR_2}!$"
 
 gText_TheBagIsFull::
 	.string "The Bag is full…$"

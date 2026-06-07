@@ -2471,7 +2471,7 @@ Route117_Text_DerekPostBattle:
 	.string "a Bug Maniac.$"
 
 Route117_Text_AnnaIntro:
-	.string "Anna: I'm with my pretty junior student\n"
+	.string "{SPEAKER NAME_ANNA}I'm with my pretty junior student\n"
 	.string "partner. I have to do good!$"
 
 Route117_Text_AnnaDefeat:
@@ -2479,20 +2479,20 @@ Route117_Text_AnnaDefeat:
 	.string "partner! Let me win!$"
 
 Route117_Text_AnnaPostBattle:
-	.string "Anna: Your Pokémon have some good\n"
+	.string "{SPEAKER NAME_ANNA}Your Pokémon have some good\n"
 	.string "combinations.\p"
 	.string "I'd say you're second only to us!$"
 
 Route117_Text_AnnaAndMegRegister:
-	.string "Anna: We can't take this lying down!\n"
+	.string "{SPEAKER NAME_ANNA}We can't take this lying down!\n"
 	.string "You will come back, won't you?$"
 
 Route117_Text_AnnaNotEnoughMons:
-	.string "Anna: If you want to battle us,\n"
+	.string "{SPEAKER NAME_ANNA}If you want to battle us,\n"
 	.string "bring two Pokémon with you.$"
 
 Route117_Text_MegIntro:
-	.string "Meg: I'm going to tag up with my super\n"
+	.string "{SPEAKER NAME_MEG}I'm going to tag up with my super\n"
 	.string "senior student partner and beat you!$"
 
 Route117_Text_MegDefeat:
@@ -2500,44 +2500,44 @@ Route117_Text_MegDefeat:
 	.string "I'm sorry, Anna! I let you down…$"
 
 Route117_Text_MegPostBattle:
-	.string "Meg: I dragged Anna down…\n"
+	.string "{SPEAKER NAME_MEG}I dragged Anna down…\n"
 	.string "If I didn't, she would have won!$"
 
 Route117_Text_MegNotEnoughMons:
-	.string "Meg: Do you only have one Pokémon?\n"
+	.string "{SPEAKER NAME_MEG}Do you only have one Pokémon?\n"
 	.string "We can't battle with you, then.\p"
 	.string "We want to have a 2-on-2 battle.$"
 
 Route117_Text_AnnaRematchIntro:
-	.string "Anna: I can't keep losing in front of\n"
+	.string "{SPEAKER NAME_ANNA}I can't keep losing in front of\n"
 	.string "my junior partner, right?$"
 
 Route117_Text_AnnaRematchDefeat:
 	.string "Anna: I couldn't get into the groove.$"
 
 Route117_Text_AnnaPostRematch:
-	.string "Anna: Your Pokémon have some good\n"
+	.string "{SPEAKER NAME_ANNA}Your Pokémon have some good\n"
 	.string "combinations.\p"
 	.string "I'd say you're second only to us!$"
 
 Route117_Text_AnnaRematchNotEnoughMons:
-	.string "Anna: If you want to battle us,\n"
+	.string "{SPEAKER NAME_ANNA}If you want to battle us,\n"
 	.string "bring two Pokémon with you.$"
 
 Route117_Text_MegRematchIntro:
-	.string "Meg: I'm going to tag up with my\n"
+	.string "{SPEAKER NAME_MEG}I'm going to tag up with my\n"
 	.string "senior partner and win this time!$"
 
 Route117_Text_MegRematchDefeat:
 	.string "Meg: Too strong!$"
 
 Route117_Text_MegPostRematch:
-	.string "Meg: I battled together with my\n"
+	.string "{SPEAKER NAME_MEG}I battled together with my\n"
 	.string "senior partner, but we lost…\p"
 	.string "That's so discouraging…$"
 
 Route117_Text_MegRematchNotEnoughMons:
-	.string "Meg: Do you only have one Pokémon?\n"
+	.string "{SPEAKER NAME_MEG}Do you only have one Pokémon?\n"
 	.string "We can't battle with you, then.\p"
 	.string "We want to have a 2-on-2 battle.$"
 
