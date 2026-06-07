@@ -193,7 +193,7 @@ static void SpriteCB_StatusSummaryBalls_Exit(struct Sprite *);
 static void SpriteCB_StatusSummaryBalls_OnSwitchout(struct Sprite *);
 
 static u8 GetStatusIconForBattlerId(u8, enum BattlerId);
-static s32 CalcNewBarValue(s32, s32, s32, s32 *, u8, u16);
+static s32 CalcNewBarValue(s32, s32, s32, s32 *, s32);
 static u8 GetScaledExpFraction(s32, s32, s32, u8);
 static void MoveBattleBarGraphically(enum BattlerId, u8);
 static u8 CalcBarFilledPixels(s32, s32, s32, s32 *, u8 *, u8);
@@ -2056,29 +2056,28 @@ s32 MoveBattleBar(enum BattlerId battler, u8 healthboxSpriteId, u8 whichBar, u8 
 
     if (whichBar == HEALTH_BAR) // health bar
     {
-        // u16 hpFraction = B_FAST_HP_DRAIN == FALSE ? 1 : max(gBattleSpritesDataPtr->battleBars[battler].maxValue / (B_HEALTHBAR_PIXELS / 2), 1);
         // Finish in 2 seconds
-        u16 hpFraction = max(gBattleSpritesDataPtr->battleBars[battler].receivedValue / 120, 1);
+        s32 hpFraction = max(Q_24_8(gBattleSpritesDataPtr->battleBars[battler].receivedValue) / 120, 0x40);
         currentBarValue = CalcNewBarValue(gBattleSpritesDataPtr->battleBars[battler].maxValue,
                     gBattleSpritesDataPtr->battleBars[battler].oldValue,
                     gBattleSpritesDataPtr->battleBars[battler].receivedValue,
                     &gBattleSpritesDataPtr->battleBars[battler].currValue,
-                    B_HEALTHBAR_PIXELS / 8, hpFraction);
+                    hpFraction);
     }
     else // exp bar
     {
-        u16 expFraction = GetScaledExpFraction(gBattleSpritesDataPtr->battleBars[battler].oldValue,
+        s32 expFraction = (s32)GetScaledExpFraction(gBattleSpritesDataPtr->battleBars[battler].oldValue,
                     gBattleSpritesDataPtr->battleBars[battler].receivedValue,
                     gBattleSpritesDataPtr->battleBars[battler].maxValue, 8);
         if (expFraction == 0)
             expFraction = 1;
-        expFraction = abs(gBattleSpritesDataPtr->battleBars[battler].receivedValue / expFraction);
+        expFraction = abs(Q_24_8(gBattleSpritesDataPtr->battleBars[battler].receivedValue) / expFraction);
 
         currentBarValue = CalcNewBarValue(gBattleSpritesDataPtr->battleBars[battler].maxValue,
                     gBattleSpritesDataPtr->battleBars[battler].oldValue,
                     gBattleSpritesDataPtr->battleBars[battler].receivedValue,
                     &gBattleSpritesDataPtr->battleBars[battler].currValue,
-                    B_EXPBAR_PIXELS / 8, expFraction);
+                    expFraction);
     }
 
     if (whichBar == EXP_BAR || (whichBar == HEALTH_BAR && !gBattleSpritesDataPtr->battlerData[battler].hpNumbersNoBars))
@@ -2119,10 +2118,7 @@ static void MoveBattleBarGraphically(enum BattlerId battler, u8 whichBar)
                                 array, B_HEALTHBAR_PIXELS / 8);
 
             maxValue = gBattleSpritesDataPtr->battleBars[battler].maxValue;
-            currValue = gBattleSpritesDataPtr->battleBars[battler].currValue;
-
-            if (maxValue < B_HEALTHBAR_PIXELS)
-                currValue = Q_24_8_TO_INT(currValue);
+            currValue = Q_24_8_TO_INT(gBattleSpritesDataPtr->battleBars[battler].currValue);
         }
 
         switch (GetHPBarLevel(currValue, maxValue))
@@ -2179,74 +2175,40 @@ static void MoveBattleBarGraphically(enum BattlerId battler, u8 whichBar)
     }
 }
 
-static s32 CalcNewBarValue(s32 maxValue, s32 oldValue, s32 receivedValue, s32 *currValue, u8 scale, u16 toAdd)
+static s32 CalcNewBarValue(s32 maxValue, s32 oldValue, s32 receivedValue, s32 *currValue, s32 toAdd)
 {
     s32 ret, newValue;
-    scale *= 8;
 
     if (*currValue == -32768) // first function call
     {
-        if (maxValue < scale)
-            *currValue = Q_24_8(oldValue);
-        else
-            *currValue = oldValue;
+        *currValue = Q_24_8(oldValue);
     }
 
     newValue = SubtractClamped(HP_EMPTY, maxValue, oldValue, receivedValue);
-    if (maxValue < scale)
-    {
-        if (newValue == Q_24_8_TO_INT(*currValue) && (*currValue & 0xFF) == 0)
-            return -1;
-    }
-    else
-    {
-        if (newValue == *currValue) // we're done, the bar's value has been updated
-            return -1;
-    }
+    if (newValue == Q_24_8_TO_INT(*currValue) && (*currValue & 0xFF) == 0) // we're done, the bar's value has been updated
+        return -1;
 
-    if (maxValue < scale) // handle cases of max var having less pixels than the whole bar
+    if (receivedValue < 0) // fill bar right
     {
-        s32 toAdd = Q_24_8(maxValue) / scale;
-
-        if (receivedValue < 0) // fill bar right
+        *currValue += toAdd;
+        ret = Q_24_8_TO_INT(*currValue);
+        if (ret >= newValue)
         {
-            *currValue += toAdd;
-            ret = Q_24_8_TO_INT(*currValue);
-            if (ret >= newValue)
-            {
-                *currValue = Q_24_8(newValue);
-                ret = newValue;
-            }
-        }
-        else // move bar left
-        {
-            *currValue -= toAdd;
-            ret = Q_24_8_TO_INT(*currValue);
-            // try round up
-            if ((*currValue & 0xFF) > 0)
-                ret++;
-            if (ret <= newValue)
-            {
-                *currValue = Q_24_8(newValue);
-                ret = newValue;
-            }
+            *currValue = Q_24_8(newValue);
+            ret = newValue;
         }
     }
-    else
+    else // move bar left
     {
-        if (receivedValue < 0) // fill bar right
+        *currValue -= toAdd;
+        ret = Q_24_8_TO_INT(*currValue);
+        // try round up
+        if ((*currValue & 0xFF) > 0)
+            ret++;
+        if (ret <= newValue)
         {
-            *currValue += toAdd;
-            if (*currValue > newValue)
-                *currValue = newValue;
-            ret = *currValue;
-        }
-        else // move bar left
-        {
-            *currValue -= toAdd;
-            if (*currValue < newValue)
-                *currValue = newValue;
-            ret = *currValue;
+            *currValue = Q_24_8(newValue);
+            ret = newValue;
         }
     }
 
@@ -2265,10 +2227,7 @@ static u8 CalcBarFilledPixels(s32 maxValue, s32 oldValue, s32 receivedValue, s32
         pixelsArray[i] = 0;
 
     // Safe Div, because 2vs1 battles can have maxValue 0.
-    if (maxValue < totalPixels)
-        pixels = SAFE_DIV(*currValue * totalPixels, maxValue) >> 8;
-    else
-        pixels = SAFE_DIV(*currValue * totalPixels, maxValue);
+    pixels = SAFE_DIV(*currValue * totalPixels, maxValue) >> 8;
 
     filledPixels = pixels;
 
