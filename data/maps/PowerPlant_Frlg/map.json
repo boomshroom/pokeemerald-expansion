@@ -11,6 +11,7 @@
   "allow_cycling": false,
   "allow_escaping": true,
   "allow_running": true,
+  "aura": "MAP_AURA_CHARGED",
   "show_map_name": true,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_INDOOR_2",
