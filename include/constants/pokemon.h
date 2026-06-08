@@ -182,8 +182,6 @@ enum OtIdMethod
 #define LEVEL_UP_MOVE_LV   0xFE00
 #define LEVEL_UP_MOVE_END  0xFFFF
 
-#define MAX_LEVEL_UP_MOVES       20
-
 #define MON_MALE       0x00
 #define MON_FEMALE     0xFE
 #define MON_GENDERLESS 0xFF
@@ -293,8 +291,7 @@ enum EvolutionConditions {
     IF_MIN_CUTENESS,                    // The Pokémon has the defined amount of Cuteness.
     // Gen 4
     IF_SPECIES_IN_PARTY,                // The party contains a Pokémon of the specified species.
-    IF_IN_MAP,                          // The player is currently in the specific map.
-    IF_IN_MAPSEC,                       // The player is currently in the specific map sector.
+    IF_IN_AURA,                         // The player is currently in the specific map.
     IF_KNOWS_MOVE,                      // The Pokémon knows specific move.
     // Gen 5
     IF_TRADE_PARTNER_SPECIES,           // The Pokémon is traded for a specific species.

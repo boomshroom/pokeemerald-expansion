@@ -2201,7 +2201,7 @@ static bool8 CalculateMoves(void)
 
     // Level up moves
     const struct LevelUpMove *learnset = GetSpeciesLevelUpLearnset(species);
-    for (i = 0; i < MAX_LEVEL_UP_MOVES && learnset[i].move != LEVEL_UP_MOVE_END; i++)
+    for (i = 0; learnset[i].move != LEVEL_UP_MOVE_END; i++)
         numLevelUpMoves++;
 
     // TM and Tutor moves
@@ -3775,15 +3775,22 @@ static void PrintEvolutionTargetSpeciesAndMethod(u8 taskId, enum Species species
                     StringAppend(gStringVar4, GetSpeciesName(evolutions[i].params[j].arg1)); //mon name
                     StringAppend(gStringVar4, COMPOUND_STRING(" in party"));
                     break;
-                case IF_IN_MAPSEC:
+                case IF_IN_AURA:
                     StringAppend(gStringVar4, COMPOUND_STRING("in "));
-                    StringCopy(gStringVar2, gRegionMapEntries[evolutions[i].params[j].arg1].name);
-                    StringAppend(gStringVar4, gStringVar2);
-                    break;
-                case IF_IN_MAP:
-                    StringAppend(gStringVar4, COMPOUND_STRING("in "));
-                    GetMapName(gStringVar2, Overworld_GetMapHeaderByGroupAndId(evolutions[i].params[j].arg1 >> 8, evolutions[i].params[j].arg1 & 0xFF)->regionMapSectionId, 0);
-                    StringAppend(gStringVar4, gStringVar2);
+                    switch (evolutions[i].params[j].arg1) {
+                        case MAP_AURA_ICY:
+                            StringAppend(gStringVar4, COMPOUND_STRING("an icy area"));
+                            break;
+                        case MAP_AURA_MOSSY:
+                            StringAppend(gStringVar4, COMPOUND_STRING("a mossy area"));
+                            break;
+                        case MAP_AURA_CHARGED:
+                            StringAppend(gStringVar4, COMPOUND_STRING("a special magnetic field"));
+                            break;
+                        default:
+                            StringAppend(gStringVar4, COMPOUND_STRING("an area"));
+                            break;
+                    }
                     break;
                 case IF_KNOWS_MOVE:
                     StringAppend(gStringVar4, COMPOUND_STRING("knows "));

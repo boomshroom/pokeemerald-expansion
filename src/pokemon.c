@@ -4364,12 +4364,8 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
                 }
             }
             break;
-        case IF_IN_MAP:
-            if (params[i].arg1 == ((gSaveBlock1Ptr->location.mapGroup) << 8 | gSaveBlock1Ptr->location.mapNum))
-                currentCondition = TRUE;
-            break;
-        case IF_IN_MAPSEC:
-            if (gMapHeader.regionMapSectionId == params[i].arg1)
+        case IF_IN_AURA:
+            if (gMapHeader.aura == params[i].arg1)
                 currentCondition = TRUE;
             break;
         case IF_KNOWS_MOVE:

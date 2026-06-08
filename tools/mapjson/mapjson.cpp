@@ -175,8 +175,8 @@ string generate_map_header_text(Json map_data, Json layouts_data) {
     else
         text << "\t.byte " << floor_number << "\n";
 
-    if (!map_data["NightSong"].is_null())
-        text << "\t.2byte " << json_to_string(map_data, "NightSong") << "\n";
+    if (!map_data["night_music"].is_null())
+        text << "\t.2byte " << json_to_string(map_data, "night_music") << "\n";
     else
         text << "\t.2byte MUS_NONE\n";
 
@@ -184,8 +184,12 @@ string generate_map_header_text(Json map_data, Json layouts_data) {
         text << "\t.byte " << json_to_string(map_data, "show_map_name") << "\n";
     else if (version == "emerald" || version == "firered")
     {
-        text << "\tmap_header_flags "
-             << "allow_cycling=" << json_to_string(map_data, "allow_cycling") << ", "
+        text << "\tmap_header_flags ";
+        if (map_data.object_items().find("aura") != map_data.object_items().end())
+            text << "map_aura=" << json_to_string(map_data, "aura") << ", ";
+        else
+            text  << "map_aura=MAP_AURA_NONE" << ", ";
+        text << "allow_cycling=" << json_to_string(map_data, "allow_cycling") << ", "
              << "allow_escaping=" << json_to_string(map_data, "allow_escaping") << ", "
              << "allow_running=" << json_to_string(map_data, "allow_running") << ", "
              << "show_map_name=" << json_to_string(map_data, "show_map_name") << ", ";

@@ -196,8 +196,8 @@ void ScriptCall(struct ScriptContext *ctx, const u8 *ptr)
         return;
     }
 
-    assertf(!ScriptPush(ctx, ctx->scriptPtr),
-        "Failed to push %p to %p", ptr, ctx)
+    bool32 failed = ScriptPush(ctx, ctx->scriptPtr);
+    assertf(!failed, "could not push %p to %p", ptr, ctx)
     {
         return;
     }
