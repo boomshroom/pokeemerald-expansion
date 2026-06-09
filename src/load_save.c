@@ -245,12 +245,14 @@ void CopyPartyAndObjectsToSave(void)
 {
     SavePlayerParty();
     SaveObjectEvents();
+    SerialiseItemSlots();
 }
 
 void CopyPartyAndObjectsFromSave(void)
 {
     LoadPlayerParty();
     LoadObjectEvents();
+    DeserialiseItemSlots();
 }
 
 void LoadPlayerBag(void)

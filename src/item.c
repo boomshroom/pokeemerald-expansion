@@ -38,6 +38,9 @@ static u16 SanitizeItemId(enum Item itemId);
 static u16 SanitizeBagItemId(enum Item itemId);
 
 EWRAM_DATA struct BagPocket gBagPockets[POCKETS_COUNT] = {0};
+EWRAM_DATA struct ItemSlot gBerryItemSlots[NUM_BERRIES] = {0};
+EWRAM_DATA struct ItemSlot gTMHMItemSlots[NUM_ALL_MACHINES] = {0};
+EWRAM_DATA struct ItemSlot gPokeBallItemSlots[POKEBALL_COUNT] = {0};
 
 #include "data/pokemon/item_effects.h"
 #include "data/items.h"
@@ -142,6 +145,71 @@ void ApplyNewEncryptionKeyToBagItems(u32 newKey)
     }
 }
 
+void SerialiseItemSlots(void)
+{
+    for (u32 i = 0; i < 23; i++) gSaveBlock1Ptr->bag.berries[i] = 0;
+    for (u32 i = 0; i < 16; i++) gSaveBlock1Ptr->bag.TMsHMs[i] = 0;
+    for (u32 i = 0; i < 10; i++) gSaveBlock1Ptr->bag.pokeBalls[i] = 0;
+
+    for (u32 i = 0; i < BAG_BERRIES_COUNT; i++) {
+        enum BerryId id = ItemIdToBerryType(GetBagItemId(POCKET_BERRIES, i));
+        u16 quantity = GetBagItemQuantity(POCKET_BERRIES, i);
+        if (id != BERRY_ID_NONE && quantity > 0) {
+            if (quantity > 999) quantity = 999;
+            gSaveBlock1Ptr->bag.berries[id / 3] |= quantity << (10 * (id % 3));
+        }
+    }
+
+    for (u32 i = 0; i < BAG_TMHM_COUNT; i++) {
+        enum TMHMIndex id = GetItemTMHMIndex(GetBagItemId(POCKET_TM_HM, i));
+        if (id != 0) gSaveBlock1Ptr->bag.TMsHMs[id / 8] |= 1 << (id % 8);
+    }
+
+    for (u32 i = 0; i < BAG_POKEBALLS_COUNT; i++) {
+        enum PokeBall id = ItemIdToBallId(GetBagItemId(POCKET_POKE_BALLS, i));
+        u16 quantity = GetBagItemQuantity(POCKET_POKE_BALLS, i);
+        if (id != BALL_STRANGE && quantity > 0) {
+            if (quantity > 999) quantity = 999;
+            gSaveBlock1Ptr->bag.pokeBalls[id / 3] |= quantity << (10 * (id % 3));
+        }
+    }
+}
+
+STATIC_ASSERT(23 * 3 > NUM_BERRIES, BerryPocketSize);
+STATIC_ASSERT(16 * 8 > NUM_ALL_MACHINES, TMHMPocketSize);
+STATIC_ASSERT(23 * 3 > POKEBALL_COUNT, PokeBallPocketSize);
+
+void DeserialiseItemSlots(void)
+{
+    for (u32 i = 0; i < NUM_BERRIES; i++) {
+        u16 quantity = (gSaveBlock1Ptr->bag.berries[i / 3] >> (10 * (i % 3))) & 0x3FF;
+        gBerryItemSlots[i].itemId = ITEM_NONE;
+        gBerryItemSlots[i].quantity = 0;
+
+        if (quantity != 0) {
+            AddBagItem(BerryTypeToItemId(i), quantity);
+        }
+    }
+    for (u32 i = 0; i < NUM_ALL_MACHINES; i++) {
+        bool32 quantity = (gSaveBlock1Ptr->bag.TMsHMs[i / 8] >> (i % 8)) & 1;
+        gTMHMItemSlots[i].itemId = ITEM_NONE;
+        gTMHMItemSlots[i].quantity = 0;
+
+        if (quantity != 0) {
+            AddBagItem(GetTMHMItemId(i), 1);
+        }
+    }
+    for (u32 i = 0; i < POKEBALL_COUNT; i++) {
+        u16 quantity = (gSaveBlock1Ptr->bag.pokeBalls[i / 3] >> (10 * (i % 3))) & 0x3FF;
+        gPokeBallItemSlots[i].itemId = ITEM_NONE;
+        gPokeBallItemSlots[i].quantity = 0;
+
+        if (quantity != 0) {
+            AddBagItem(gPokeBalls[i].itemId, quantity);
+        }
+    }
+}
+
 void SetBagItemsPointers(void)
 {
     gBagPockets[POCKET_ITEMS].itemSlots = gSaveBlock1Ptr->bag.items;
@@ -152,16 +220,16 @@ void SetBagItemsPointers(void)
     gBagPockets[POCKET_KEY_ITEMS].capacity = BAG_KEYITEMS_COUNT;
     gBagPockets[POCKET_KEY_ITEMS].id = POCKET_KEY_ITEMS;
 
-    gBagPockets[POCKET_POKE_BALLS].itemSlots = gSaveBlock1Ptr->bag.pokeBalls;
-    gBagPockets[POCKET_POKE_BALLS].capacity = BAG_POKEBALLS_COUNT;
+    gBagPockets[POCKET_POKE_BALLS].itemSlots = gPokeBallItemSlots;
+    gBagPockets[POCKET_POKE_BALLS].capacity = POKEBALL_COUNT;
     gBagPockets[POCKET_POKE_BALLS].id = POCKET_POKE_BALLS;
 
-    gBagPockets[POCKET_TM_HM].itemSlots = gSaveBlock1Ptr->bag.TMsHMs;
-    gBagPockets[POCKET_TM_HM].capacity = BAG_TMHM_COUNT;
+    gBagPockets[POCKET_TM_HM].itemSlots = gTMHMItemSlots;
+    gBagPockets[POCKET_TM_HM].capacity = NUM_ALL_MACHINES;
     gBagPockets[POCKET_TM_HM].id = POCKET_TM_HM;
 
-    gBagPockets[POCKET_BERRIES].itemSlots = gSaveBlock1Ptr->bag.berries;
-    gBagPockets[POCKET_BERRIES].capacity = BAG_BERRIES_COUNT;
+    gBagPockets[POCKET_BERRIES].itemSlots = gBerryItemSlots;
+    gBagPockets[POCKET_BERRIES].capacity = NUM_BERRIES;
     gBagPockets[POCKET_BERRIES].id = POCKET_BERRIES;
 }
 
