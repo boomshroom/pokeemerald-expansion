@@ -27,6 +27,10 @@ enum SpeakerNames {
     SP_NAME_RYDEL,
     SP_NAME_ANNA,
     SP_NAME_MEG,
+    SP_NAME_NORMAN,
+    SP_NAME_TATE,
+    SP_NAME_LIZA,
+    SP_NAME_TATE_LIZA,
     SP_NAME_COUNT
 };
 

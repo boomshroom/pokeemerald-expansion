@@ -93,6 +93,7 @@ SootopolisCity_Gym_1F_EventScript_JuanDefeated::
 	message SootopolisCity_Gym_1F_Text_ReceivedRainBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
+	setspeaker SootopolisCity_Gym_Name_Juan
 	msgbox SootopolisCity_Gym_1F_Text_ExplainRainBadgeTakeThis, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_SOOTOPOLIS_GYM
 	setflag FLAG_BADGE08_GET
@@ -175,6 +176,9 @@ SootopolisCity_Gym_1F_EventScript_GymStatue::
 	releaseall
 	end
 
+SootopolisCity_Gym_Name_Juan:
+	.string "Juan$"
+
 SootopolisCity_Gym_1F_Text_GymGuideAdvice:
 	.string "Yo! How's it going, Champion-\n"
 	.string "bound {PLAYER}?\p"
@@ -233,7 +237,7 @@ SootopolisCity_Gym_1F_Text_JuanDefeat:
 	.string "you with this, the Rain Badge!$"
 
 SootopolisCity_Gym_1F_Text_ReceivedRainBadge:
-	.string "{PLAYER} received the Rain Badge\n"
+	.string "{SPEAKER NAME_NONE}{PLAYER} received the Rain Badge\n"
 	.string "from Juan.$"
 
 SootopolisCity_Gym_1F_Text_ExplainRainBadgeTakeThis:

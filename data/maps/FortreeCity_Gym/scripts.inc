@@ -30,6 +30,7 @@ FortreeCity_Gym_EventScript_WinonaDefeated::
 	message FortreeCity_Gym_Text_ReceivedFeatherBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
+	setspeaker FortreeCity_Gym_Name_Winona
 	msgbox FortreeCity_Gym_Text_ExplainFeatherBadgeTakeThis, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_FORTREE_GYM
 	setflag FLAG_BADGE06_GET
@@ -133,6 +134,9 @@ FortreeCity_Gym_EventScript_GymStatue::
 	msgbox FortreeCity_Gym_Text_GymStatue, MSGBOX_DEFAULT
 	releaseall
 	end
+
+FortreeCity_Gym_Name_Winona:
+	.string "Winona$"
 
 FortreeCity_Gym_Text_GymGuideAdvice:
 	.string "Yo, how's it going, Champion-\n"
@@ -250,7 +254,7 @@ FortreeCity_Gym_Text_WinonaDefeat:
 	.string "I present to you this Gym Badge.$"
 
 FortreeCity_Gym_Text_ReceivedFeatherBadge:
-	.string "{PLAYER} received the Feather Badge\n"
+	.string "{SPEAKER NAME_NONE}{PLAYER} received the Feather Badge\n"
 	.string "from Winona.$"
 
 FortreeCity_Gym_Text_ExplainFeatherBadgeTakeThis:
@@ -269,7 +273,7 @@ FortreeCity_Gym_Text_ExplainAerialAce:
 	.string "… … … … … …$"
 
 FortreeCity_Gym_Text_RegisteredWinona:
-	.string "Registered Gym Leader Winona\n"
+	.string "{SPEAKER NAME_NONE}Registered Gym Leader Winona\n"
 	.string "in the PokéNav.$"
 
 FortreeCity_Gym_Text_WinonaPostBattle:
