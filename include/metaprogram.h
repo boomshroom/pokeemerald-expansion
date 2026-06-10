@@ -217,4 +217,8 @@ Input must be of the form (upper << lower) where upper can be up to 7, lower up 
  * outside macros. */
 #define if_comptime(cond) if (__builtin_constant_p((cond) ? 0 : *(int *)0))
 
+/* Expands to _default if no arguments, otherwise expands to arguments. */
+#define IF_EMPTY(_default, ...) __VA_OPT__(__VA_ARGS__ IGNORE) (_default)
+#define IGNORE(...)
+
 #endif
