@@ -633,13 +633,13 @@ void ShowStartMenu(void)
 
 static bool8 HandleStartMenuInput(void)
 {
-    if (JOY_NEW(DPAD_UP))
+    if (JOY_REPEAT(DPAD_UP))
     {
         PlaySE(SE_SELECT);
         sStartMenuCursorPos = Menu_MoveCursor(-1);
     }
 
-    if (JOY_NEW(DPAD_DOWN))
+    if (JOY_REPEAT(DPAD_DOWN))
     {
         PlaySE(SE_SELECT);
         sStartMenuCursorPos = Menu_MoveCursor(1);
@@ -1053,7 +1053,8 @@ static u8 SaveConfirmSaveCallback(void)
     }
     else
     {
-        ShowSaveMessage(gText_ConfirmSave, SaveYesNoCallback);
+        sSaveDialogCallback = SaveSavingMessageCallback;
+        // ShowSaveMessage(gText_ConfirmSave, SaveYesNoCallback);
     }
 
     return SAVE_IN_PROGRESS;
