@@ -685,6 +685,7 @@ static void SpriteCB_MoveTypeIcon(struct Sprite *sprite)
     }
     else if (sprite->tHide && sprite->animDelayCounter == 0)
     {
+        FreeSpriteTilesByTag(MOVE_TYPE_ICON_TAG);
         DestroyMoveTypeIconSprite();
     }
 }
