@@ -79,7 +79,7 @@ Route105_EventScript_AndresRematch::
 Route104_Text_DadPokenavCall:
 	.string "… … … … … …\n"
 	.string "… … … … … Beep!\p"
-	.string "Dad: Oh, {PLAYER}?\p"
+	.string "{SPEAKER NAME_DAD}Oh, {PLAYER}?\p"
 	.string "… … … … … …\n"
 	.string "Where are you now?\l"
 	.string "It sounds windy wherever you are.\p"
@@ -93,5 +93,5 @@ Route104_Text_DadPokenavCall:
 	.string "… … … … … Click!$"
 
 Route104_Text_RegisteredDadInPokenav:
-	.string "Registered Dad\n"
+	.string "{SPEAKER NAME_NONE}Registered Dad\n"
 	.string "in the PokéNav.$"

@@ -1182,9 +1182,9 @@ PetalburgCity_Gym_Text_IllLoanYouMyZigzagoon:
 PetalburgCity_Gym_Text_WallyThankYouAndDadGivesPokeBall:
 	.string "{SPEAKER NAME_WALLY}Oh, wow!\n"
 	.string "A Pokémon!\p"
-	.string "Dad: Hm. I'll give you a Poké Ball, too.\n"
+	.string "{SPEAKER NAME_DAD}Hm. I'll give you a Poké Ball, too.\n"
 	.string "Go for it!\p"
-	.string "Wally received a Poké Ball!$"
+	.string "{SPEAKER NAME_NONE}Wally received a Poké Ball!$"
 
 PetalburgCity_Gym_Text_WallyOhWowThankYou:
 	.string "{SPEAKER NAME_WALLY}Oh, wow!\n"
