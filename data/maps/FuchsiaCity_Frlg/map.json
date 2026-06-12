@@ -48,7 +48,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_SLOWPOKE",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SLOWPOKE)",
       "x": 36,
       "y": 15,
       "elevation": 3,
@@ -62,7 +62,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_VOLTORB",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(VOLTORB)",
       "x": 33,
       "y": 8,
       "elevation": 3,
@@ -90,7 +90,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_CHANSEY",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHANSEY)",
       "x": 39,
       "y": 8,
       "elevation": 3,
@@ -160,7 +160,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_KANGASKHAN",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(KANGASKHAN)",
       "x": 16,
       "y": 9,
       "elevation": 3,

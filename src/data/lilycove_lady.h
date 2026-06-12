@@ -37,35 +37,35 @@ static const u16 sLilycoveLadyGfxId[] =
 static const struct LilycoveContestLadyValues sContestLadyValues[] =
 {
     [CONTEST_CATEGORY_COOL] = {
-        .monGfxId = OBJ_EVENT_GFX_ZIGZAGOON_1,
+        .monGfxId = OBJ_EVENT_GFX_SPECIES(ZIGZAGOON),
         .monSpecies = SPECIES_ZIGZAGOON,
         .monName = COMPOUND_STRING("Handsome"),
         .categoryName = COMPOUND_STRING("coolness"),
         .contestName = gText_CoolnessContest,
     },
     [CONTEST_CATEGORY_BEAUTY] = {
-        .monGfxId = OBJ_EVENT_GFX_SKITTY,
+        .monGfxId = OBJ_EVENT_GFX_SPECIES(SKITTY),
         .monSpecies = SPECIES_SKITTY,
         .monName = COMPOUND_STRING("Vinny"),
         .categoryName = COMPOUND_STRING("beauty"),
         .contestName = gText_BeautyContest,
     },
     [CONTEST_CATEGORY_CUTE] = {
-        .monGfxId = OBJ_EVENT_GFX_POOCHYENA,
+        .monGfxId = OBJ_EVENT_GFX_SPECIES(POOCHYENA),
         .monSpecies = SPECIES_POOCHYENA,
         .monName = COMPOUND_STRING("Moreme"),
         .categoryName = COMPOUND_STRING("cuteness"),
         .contestName = gText_CutenessContest,
     },
     [CONTEST_CATEGORY_SMART] = {
-        .monGfxId = OBJ_EVENT_GFX_KECLEON,
+        .monGfxId = OBJ_EVENT_GFX_SPECIES(KECLEON),
         .monSpecies = SPECIES_KECLEON,
         .monName = COMPOUND_STRING("Ironhard"),
         .categoryName = COMPOUND_STRING("smartness"),
         .contestName = gText_SmartnessContest,
     },
     [CONTEST_CATEGORY_TOUGH] = {
-        .monGfxId = OBJ_EVENT_GFX_PIKACHU,
+        .monGfxId = OBJ_EVENT_GFX_SPECIES(PIKACHU),
         .monSpecies = SPECIES_PIKACHU,
         .monName = COMPOUND_STRING("Muscle"),
         .categoryName = COMPOUND_STRING("toughness"),

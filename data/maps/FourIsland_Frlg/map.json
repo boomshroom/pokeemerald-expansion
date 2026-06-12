@@ -33,7 +33,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_DODUO",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES_FEMALE(DODUO)",
       "x": 12,
       "y": 9,
       "elevation": 3,
@@ -47,7 +47,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_NIDORAN_F",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(NIDORAN_F)",
       "x": 13,
       "y": 7,
       "elevation": 3,
@@ -61,7 +61,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_NIDORAN_M",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(NIDORAN_M)",
       "x": 14,
       "y": 7,
       "elevation": 3,
@@ -75,7 +75,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_PSYDUCK",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PSYDUCK)",
       "x": 17,
       "y": 9,
       "elevation": 3,
