@@ -308,6 +308,7 @@ static void DebugAction_Party_ClearPokerus(u8 taskId);
 static void DebugAction_Party_ClearParty(u8 taskId);
 static void DebugAction_Party_SetParty(u8 taskId);
 static void DebugAction_Party_BattleSingle(u8 taskId);
+static void DebugAction_Party_ResetOriginalTrainer(u8 taskId);
 
 static void DebugAction_Trainers_ChooseFromMap(u8 taskId);
 static void DebugAction_Trainers_ChooseTrainer(u8 taskId, void *selection);
@@ -669,6 +670,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_Party[] =
     { COMPOUND_STRING("Clear Party"),        DebugAction_Party_ClearParty },
     { COMPOUND_STRING("Set Party"),          DebugAction_Party_SetParty },
     { COMPOUND_STRING("Start Debug Battle"), DebugAction_Party_BattleSingle },
+    { COMPOUND_STRING("Reset OT"),           DebugAction_Party_ResetOriginalTrainer },
     { NULL }
 };
 
@@ -5457,6 +5459,21 @@ static void DebugAction_Party_ClearPokerus(u8 taskId)
 static void DebugAction_Party_ClearParty(u8 taskId)
 {
     ZeroPlayerPartyMons();
+    ScriptContext_Enable();
+    Debug_DestroyMenu_Full(taskId);
+}
+
+static void DebugAction_Party_ResetOriginalTrainer(u8 taskId)
+{
+    for (u32 i = 0; i < PARTY_SIZE; i++)
+    {
+        if (!GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES))
+            continue;
+        u32 otId = READ_OTID_FROM_SAVE;
+        SetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_OT_NAME, gSaveBlock2Ptr->playerName);
+        SetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_OT_ID, &otId);
+        SetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_OT_GENDER, &gSaveBlock2Ptr->playerGender);
+    }
     ScriptContext_Enable();
     Debug_DestroyMenu_Full(taskId);
 }
