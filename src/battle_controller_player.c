@@ -195,39 +195,19 @@ static void CompleteOnBattlerSpritePosX_0(enum BattlerId battler)
         BtlController_Complete(battler);
 }
 
-static enum Item GetPrevBall(enum Item ballId)
+static enum Item GetNextBall(enum Item ballId, s32 direction)
 {
-    s32 i;
-    enum PokeBall index = ItemIdToBallId(ballId);
-    enum Item newBall = ITEM_NONE;
-
-    for (i = 0; i < POKEBALL_COUNT; i++)
-    {
-        index--;
-        if (index == -1)
-            index = POKEBALL_COUNT - 1;
-        newBall = gPokeBalls[index].itemId;
-        if (CheckBagHasItem(newBall, 1))
-            return newBall;
-    }
-    return ballId;
-}
-
-static enum Item GetNextBall(enum Item ballId)
-{
-    s32 i;
     s32 index = ItemIdToBallId(ballId);
     enum Item newBall = ITEM_NONE;
 
-    for (i = 0; i < POKEBALL_COUNT; i++)
+    for (s32 i = 0; i < POKEBALL_COUNT; i++)
     {
-        index++;
-        if (index == POKEBALL_COUNT)
-            index = 0;
+        WrapAddPtr(&index, direction, 0, POKEBALL_COUNT - 1);
         newBall = gPokeBalls[index].itemId;
         if (CheckBagHasItem(newBall, 1))
             return newBall;
     }
+
     return ballId;
 }
 
@@ -259,27 +239,16 @@ static void HandleInputChooseAction(enum BattlerId battler)
 
         if (gBattleStruct->ackBallUseBtn)
         {
-            if (JOY_HELD(B_LAST_USED_BALL_BUTTON) && (JOY_NEW(DPAD_DOWN) || JOY_NEW(DPAD_RIGHT)))
+            s32 delta = JOY_AXIS_NEW(DPAD_UP | DPAD_LEFT, DPAD_DOWN | DPAD_RIGHT);
+            if (JOY_HELD(B_LAST_USED_BALL_BUTTON) && delta != 0)
             {
                 bool32 sameBall = FALSE;
-                u32 nextBall = GetNextBall(gBallToDisplay);
+                enum Item nextBall = GetNextBall(gBallToDisplay, delta);
                 gBattleStruct->ballSwapped = TRUE;
                 if (gBallToDisplay == nextBall)
                     sameBall = TRUE;
                 else
                     gBallToDisplay = nextBall;
-                SwapBallToDisplay(sameBall);
-                PlaySE(SE_SELECT);
-            }
-            else if (JOY_HELD(B_LAST_USED_BALL_BUTTON) && (JOY_NEW(DPAD_UP) || JOY_NEW(DPAD_LEFT)))
-            {
-                bool32 sameBall = FALSE;
-                u32 prevBall = GetPrevBall(gBallToDisplay);
-                gBattleStruct->ballSwapped = TRUE;
-                if (gBallToDisplay == prevBall)
-                    sameBall = TRUE;
-                else
-                    gBallToDisplay = prevBall;
                 SwapBallToDisplay(sameBall);
                 PlaySE(SE_SELECT);
             }
@@ -1820,6 +1789,7 @@ static void MoveSelectionDisplayMoveDescription(enum BattlerId battler)
         && moveEffect != EFFECT_LOW_KICK)
     {
         struct DamageContext ctx = {0};
+        struct BattleCalcValues cv = {0};
 
         ctx.battlerAtk = battler;
         ctx.battlerDef = BATTLE_OPPOSITE(battler);
@@ -1838,9 +1808,13 @@ static void MoveSelectionDisplayMoveDescription(enum BattlerId battler)
         else
             pwr = CalcMoveBasePowerAfterModifiers(&ctx);
 
-        acc = GetTotalAccuracy(ctx.battlerAtk, ctx.battlerDef, ctx.move,
-                               ctx.abilities[battler], ABILITY_NONE,
-                               ctx.holdEffects[battler], HOLD_EFFECT_NONE);
+        cv.battlerAtk = battler;
+        cv.battlerDef = BATTLE_OPPOSITE(battler);
+        cv.move = move;
+        cv.abilities[battler] = GetBattlerAbility(battler);
+        cv.holdEffects[battler] = GetBattlerHoldEffect(battler);
+
+        acc = GetTotalAccuracy(&cv, gBattleWeather);
 
         if (acc > 100)
             acc = 100;

@@ -51,6 +51,7 @@
 #include "string_util.h"
 #include "task.h"
 #include "tv.h"
+#include "util.h"
 #include "pokemon_summary_screen.h"
 #include "wild_encounter.h"
 #include "constants/abilities.h"
@@ -307,6 +308,7 @@ static void DebugAction_Party_ClearPokerus(u8 taskId);
 static void DebugAction_Party_ClearParty(u8 taskId);
 static void DebugAction_Party_SetParty(u8 taskId);
 static void DebugAction_Party_BattleSingle(u8 taskId);
+static void DebugAction_Party_ResetOriginalTrainer(u8 taskId);
 
 static void DebugAction_Trainers_ChooseFromMap(u8 taskId);
 static void DebugAction_Trainers_ChooseTrainer(u8 taskId, void *selection);
@@ -535,7 +537,7 @@ static const s32 sPowersOfTen[] =
     1000000000,
 };
 
-static const u32 (*generateListFunctions[])(const struct DebugMenuOption *) =
+static u32 (*const generateListFunctions[])(const struct DebugMenuOption *) =
 {
     [DEBUG_BASIC_MENU] = Debug_GenerateListBasicMenu,
     [DEBUG_FLAGS_MENU] = Debug_GenerateListFlagsMenu,
@@ -668,6 +670,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_Party[] =
     { COMPOUND_STRING("Clear Party"),        DebugAction_Party_ClearParty },
     { COMPOUND_STRING("Set Party"),          DebugAction_Party_SetParty },
     { COMPOUND_STRING("Start Debug Battle"), DebugAction_Party_BattleSingle },
+    { COMPOUND_STRING("Reset OT"),           DebugAction_Party_ResetOriginalTrainer },
     { NULL }
 };
 
@@ -1053,28 +1056,11 @@ static void Debug_DestroyMenu_Full_Script(u8 taskId, const u8 *script)
 
 static void Debug_HandleInput_Numeric(u8 taskId, s32 min, s32 max, u32 digits)
 {
-    if (JOY_NEW(DPAD_UP))
-    {
-        gTasks[taskId].tInput += sPowersOfTen[gTasks[taskId].tDigit];
-        if (gTasks[taskId].tInput > max)
-            gTasks[taskId].tInput = max;
-    }
-    if (JOY_NEW(DPAD_DOWN))
-    {
-        gTasks[taskId].tInput -= sPowersOfTen[gTasks[taskId].tDigit];
-        if (gTasks[taskId].tInput < min)
-            gTasks[taskId].tInput = min;
-    }
-    if (JOY_NEW(DPAD_LEFT))
-    {
-        if (gTasks[taskId].tDigit > 0)
-            gTasks[taskId].tDigit -= 1;
-    }
-    if (JOY_NEW(DPAD_RIGHT))
-    {
-        if (gTasks[taskId].tDigit < digits - 1)
-            gTasks[taskId].tDigit += 1;
-    }
+    s32 delta;
+    if ((delta = JOY_AXIS_NEW(DPAD_DOWN, DPAD_UP)) != 0)
+        SatAddPtr(&gTasks[taskId].tInput, delta * sPowersOfTen[gTasks[taskId].tDigit], min, max);
+    if ((delta = JOY_AXIS_NEW(DPAD_LEFT, DPAD_RIGHT)) != 0)
+        SatAddPtr(&gTasks[taskId].tDigit, delta, 0, digits - 1);
 }
 
 enum SongType { SONG_SE, SONG_MUS };
@@ -4290,11 +4276,19 @@ void DebugAction_TimeMenu_RedoDailyEvents(u8 taskId)
 // *******************************
 // Actions PCBag
 
+static enum Species GetNextSpecies(enum Species species)
+{
+    do {
+        species = (species < NUM_SPECIES - 1) ? species + 1 : 1;
+    } while (!IsSpeciesEnabled(species));
+    return species;
+}
+
 static void DebugAction_PCBag_Fill_PCBoxes_Fast(u8 taskId) //Credit: Sierraffinity
 {
     int boxId, boxPosition;
     struct BoxPokemon boxMon;
-    enum Species species = SPECIES_BULBASAUR;
+    enum Species species = GetNextSpecies(SPECIES_NONE);
     u8 speciesName[POKEMON_NAME_LENGTH + 1];
 
     CreateBoxMon(&boxMon, species, 100, Random32(), OTID_STRUCT_PLAYER_ID);
@@ -4302,7 +4296,7 @@ static void DebugAction_PCBag_Fill_PCBoxes_Fast(u8 taskId) //Credit: Sierraffini
 
     for (boxId = 0; boxId < TOTAL_BOXES_COUNT; boxId++)
     {
-        for (boxPosition = 0; boxPosition < IN_BOX_COUNT; boxPosition++, species++)
+        for (boxPosition = 0; boxPosition < IN_BOX_COUNT; boxPosition++)
         {
             if (!GetBoxMonData(&gPokemonStoragePtr->boxes[boxId][boxPosition], MON_DATA_SANITY_HAS_SPECIES))
             {
@@ -4311,6 +4305,7 @@ static void DebugAction_PCBag_Fill_PCBoxes_Fast(u8 taskId) //Credit: Sierraffini
                 SetBoxMonData(&boxMon, MON_DATA_SPECIES, &species);
                 GiveBoxMonInitialMoveset(&boxMon);
                 gPokemonStoragePtr->boxes[boxId][boxPosition] = boxMon;
+                species = GetNextSpecies(species);
             }
         }
     }
@@ -4325,7 +4320,7 @@ static void DebugAction_PCBag_Fill_PCBoxes_Slow(u8 taskId)
 {
     int boxId, boxPosition;
     struct BoxPokemon boxMon;
-    enum Species species = SPECIES_BULBASAUR;
+    enum Species species = GetNextSpecies(SPECIES_NONE);
     bool8 spaceAvailable = FALSE;
 
     for (boxId = 0; boxId < TOTAL_BOXES_COUNT; boxId++)
@@ -4340,7 +4335,7 @@ static void DebugAction_PCBag_Fill_PCBoxes_Slow(u8 taskId)
                 SetBoxMonIVs(&boxMon, USE_RANDOM_IVS);
                 GiveBoxMonInitialMoveset(&boxMon);
                 gPokemonStoragePtr->boxes[boxId][boxPosition] = boxMon;
-                species = (species < NUM_SPECIES - 1) ? species + 1 : 1;
+                species = GetNextSpecies(species);
                 spaceAvailable = TRUE;
             }
         }
@@ -5473,6 +5468,21 @@ static void DebugAction_Party_ClearPokerus(u8 taskId)
 static void DebugAction_Party_ClearParty(u8 taskId)
 {
     ZeroPlayerPartyMons();
+    ScriptContext_Enable();
+    Debug_DestroyMenu_Full(taskId);
+}
+
+static void DebugAction_Party_ResetOriginalTrainer(u8 taskId)
+{
+    for (u32 i = 0; i < PARTY_SIZE; i++)
+    {
+        if (!GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES))
+            continue;
+        u32 otId = READ_OTID_FROM_SAVE;
+        SetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_OT_NAME, gSaveBlock2Ptr->playerName);
+        SetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_OT_ID, &otId);
+        SetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_OT_GENDER, &gSaveBlock2Ptr->playerGender);
+    }
     ScriptContext_Enable();
     Debug_DestroyMenu_Full(taskId);
 }

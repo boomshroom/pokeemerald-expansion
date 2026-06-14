@@ -686,6 +686,7 @@ SootopolisCity_EventScript_ExpertLegendaries::
 SootopolisCity_EventScript_Kiri::
 	lock
 	faceplayer
+	call_if_set FLAG_CUSTOM_MET_KIRI, SootopolisCity_EventScript_SetNameboxKiri
 	goto_if_le VAR_SOOTOPOLIS_CITY_STATE, 1, SootopolisCity_EventScript_KiriGiveBerry
 	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 6, SootopolisCity_EventScript_KiriGiveBerry
 	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 5, SootopolisCity_EventScript_KiriRayquaza
@@ -695,6 +696,10 @@ SootopolisCity_EventScript_Kiri::
 	waitmovement 0
 	release
 	end
+
+SootopolisCity_EventScript_SetNameboxKiri::
+	setspeaker SP_NAME_KIRI
+	return
 
 SootopolisCity_EventScript_KiriRayquaza::
 	msgbox SootopolisCity_Text_PrettyMonCameFromSky, MSGBOX_DEFAULT
@@ -708,6 +713,7 @@ SootopolisCity_EventScript_KiriGiveBerry::
 	special GetPlayerBigGuyGirlString
 	goto_if_set FLAG_DAILY_SOOTOPOLIS_RECEIVED_BERRY, SootopolisCity_EventScript_KiriReceivedBerry
 	msgbox SootopolisCity_Text_NameIsKiriHaveOneOfThese, MSGBOX_DEFAULT
+	setflag FLAG_CUSTOM_MET_KIRI
 	giverandomberry BERRY_ID_POMEG, BERRY_ID_NOMEL
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_DAILY_SOOTOPOLIS_RECEIVED_BERRY

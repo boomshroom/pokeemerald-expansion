@@ -22,7 +22,7 @@ struct LilycoveQuizLadyQuestions
 struct LilycoveFavorLady
 {
     const u8 *request;
-    const u16 *acceptedItems;
+    const enum Item *acceptedItems;
     u16 prize;
 };
 
@@ -37,35 +37,35 @@ static const u16 sLilycoveLadyGfxId[] =
 static const struct LilycoveContestLadyValues sContestLadyValues[] =
 {
     [CONTEST_CATEGORY_COOL] = {
-        .monGfxId = OBJ_EVENT_GFX_ZIGZAGOON_1,
+        .monGfxId = OBJ_EVENT_GFX_SPECIES(ZIGZAGOON),
         .monSpecies = SPECIES_ZIGZAGOON,
         .monName = COMPOUND_STRING("Handsome"),
         .categoryName = COMPOUND_STRING("coolness"),
         .contestName = gText_CoolnessContest,
     },
     [CONTEST_CATEGORY_BEAUTY] = {
-        .monGfxId = OBJ_EVENT_GFX_SKITTY,
+        .monGfxId = OBJ_EVENT_GFX_SPECIES(SKITTY),
         .monSpecies = SPECIES_SKITTY,
         .monName = COMPOUND_STRING("Vinny"),
         .categoryName = COMPOUND_STRING("beauty"),
         .contestName = gText_BeautyContest,
     },
     [CONTEST_CATEGORY_CUTE] = {
-        .monGfxId = OBJ_EVENT_GFX_POOCHYENA,
+        .monGfxId = OBJ_EVENT_GFX_SPECIES(POOCHYENA),
         .monSpecies = SPECIES_POOCHYENA,
         .monName = COMPOUND_STRING("Moreme"),
         .categoryName = COMPOUND_STRING("cuteness"),
         .contestName = gText_CutenessContest,
     },
     [CONTEST_CATEGORY_SMART] = {
-        .monGfxId = OBJ_EVENT_GFX_KECLEON,
+        .monGfxId = OBJ_EVENT_GFX_SPECIES(KECLEON),
         .monSpecies = SPECIES_KECLEON,
         .monName = COMPOUND_STRING("Ironhard"),
         .categoryName = COMPOUND_STRING("smartness"),
         .contestName = gText_SmartnessContest,
     },
     [CONTEST_CATEGORY_TOUGH] = {
-        .monGfxId = OBJ_EVENT_GFX_PIKACHU,
+        .monGfxId = OBJ_EVENT_GFX_SPECIES(PIKACHU),
         .monSpecies = SPECIES_PIKACHU,
         .monName = COMPOUND_STRING("Muscle"),
         .categoryName = COMPOUND_STRING("toughness"),
@@ -303,7 +303,7 @@ static const struct LilycoveQuizLadyQuestions sQuizLadyQuestions[] =
 };
 
 // Favor Lady data
-static const u16 sFavorLadyAcceptedItems_Slippery[] =
+static const enum Item sFavorLadyAcceptedItems_Slippery[] =
 {
     ITEM_REPEL,
     ITEM_SUPER_REPEL,
@@ -320,7 +320,7 @@ static const u16 sFavorLadyAcceptedItems_Slippery[] =
     ITEM_NONE
 };
 
-static const u16 sFavorLadyAcceptedItems_Roundish[] =
+static const enum Item sFavorLadyAcceptedItems_Roundish[] =
 {
     ITEM_FLUFFY_TAIL,
     ITEM_PEARL,
@@ -341,7 +341,7 @@ static const u16 sFavorLadyAcceptedItems_Roundish[] =
     ITEM_NONE
 };
 
-static const u16 sFavorLadyAcceptedItems_Whamish[] =
+static const enum Item sFavorLadyAcceptedItems_Whamish[] =
 {
     ITEM_REVIVAL_HERB,
     ITEM_POTION,
@@ -360,7 +360,7 @@ static const u16 sFavorLadyAcceptedItems_Whamish[] =
     ITEM_NONE
 };
 
-static const u16 sFavorLadyAcceptedItems_Shiny[] =
+static const enum Item sFavorLadyAcceptedItems_Shiny[] =
 {
     ITEM_HEAL_POWDER,
     ITEM_X_SPEED,
@@ -385,7 +385,7 @@ static const u16 sFavorLadyAcceptedItems_Shiny[] =
     ITEM_NONE
 };
 
-static const u16 sFavorLadyAcceptedItems_Sticky[] =
+static const enum Item sFavorLadyAcceptedItems_Sticky[] =
 {
     ITEM_ENERGY_ROOT,
     ITEM_FULL_RESTORE,
@@ -400,7 +400,7 @@ static const u16 sFavorLadyAcceptedItems_Sticky[] =
     ITEM_NONE
 };
 
-static const u16 sFavorLadyAcceptedItems_Pointy[] =
+static const enum Item sFavorLadyAcceptedItems_Pointy[] =
 {
     ITEM_QUICK_CLAW,
     ITEM_POISON_BARB,

@@ -48,6 +48,7 @@ LavaridgeTown_Gym_1F_EventScript_Flannery::
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, LavaridgeTown_Gym_1F_EventScript_FlanneryRematch
 	goto_if_unset FLAG_RECEIVED_TM_OVERHEAT, LavaridgeTown_Gym_1F_EventScript_GiveOverheat2
+	setspeaker LavaridgeTown_Gym_1F_Name_Flannery
 	msgbox LavaridgeTown_Gym_1F_Text_FlanneryPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -56,6 +57,7 @@ LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated::
 	message LavaridgeTown_Gym_1F_Text_ReceivedHeatBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
+	setspeaker LavaridgeTown_Gym_1F_Name_Flannery
 	msgbox LavaridgeTown_Gym_1F_Text_ExplainHeatBadgeTakeThis, MSGBOX_DEFAULT
 	setflag FLAG_WHITEOUT_TO_LAVARIDGE
 	setflag FLAG_DEFEATED_LAVARIDGE_GYM
@@ -178,6 +180,9 @@ LavaridgeTown_Gym_1F_EventScript_GymStatue::
 	msgbox LavaridgeTown_Gym_1F_Text_GymStatue, MSGBOX_DEFAULT
 	releaseall
 	end
+
+LavaridgeTown_Gym_1F_Name_Flannery:
+	.string "Flannery$"
 
 LavaridgeTown_Gym_1F_Text_GymGuideAdvice:
 	.string "Hey, how's it going, Champion-\n"
@@ -325,7 +330,7 @@ LavaridgeTown_Gym_1F_Text_FlanneryDefeat:
 	.string "For that, you deserve this.$"
 
 LavaridgeTown_Gym_1F_Text_ReceivedHeatBadge:
-	.string "{PLAYER} received the Heat Badge\n"
+	.string "{SPEAKER NAME_NONE}{PLAYER} received the Heat Badge\n"
 	.string "from Flannery.$"
 
 LavaridgeTown_Gym_1F_Text_ExplainHeatBadgeTakeThis:
@@ -347,7 +352,7 @@ LavaridgeTown_Gym_1F_Text_ExplainOverheat:
 	.string "be suitable for longer battles.$"
 
 LavaridgeTown_Gym_1F_Text_RegisteredFlannery:
-	.string "Registered Gym Leader Flannery\n"
+	.string "{SPEAKER NAME_NONE}Registered Gym Leader Flannery\n"
 	.string "in the PokéNav.$"
 
 LavaridgeTown_Gym_1F_Text_FlanneryPostBattle:

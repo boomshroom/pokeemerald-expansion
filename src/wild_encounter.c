@@ -803,11 +803,58 @@ void RockSmashWildEncounter(void)
     }
 }
 
+bool32 CanSweetScent(void)
+{
+    s16 x, y;
+    u32 headerId;
+    enum TimeOfDay timeOfDay;
+
+    PlayerGetDestCoords(&x, &y);
+    headerId = GetCurrentMapWildMonHeaderId();
+    if (headerId == HEADER_NONE)
+    {
+        if (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_WILD_MONS)
+        {
+            return TRUE;
+        }
+        if (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_FLOOR)
+        {
+            return TRUE;
+        }
+    }
+    else
+    {
+        if (MetatileBehavior_IsLandWildEncounter(MapGridGetMetatileBehaviorAt(x, y)) == TRUE)
+        {
+            timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND);
+
+            if (gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo == NULL)
+                return FALSE;
+
+            return TRUE;
+        }
+        else if (MetatileBehavior_IsWaterWildEncounter(MapGridGetMetatileBehaviorAt(x, y)) == TRUE)
+        {
+            timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_WATER);
+
+            if (AreLegendariesInSootopolisPreventingEncounters() == TRUE)
+                return FALSE;
+            if (gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo == NULL)
+                return FALSE;
+
+            return TRUE;
+        }
+    }
+
+    return FALSE;
+}
+
 bool8 SweetScentWildEncounter(void)
 {
     s16 x, y;
     u32 headerId;
     enum TimeOfDay timeOfDay;
+    if (!CanSweetScent()) return FALSE;
 
     PlayerGetDestCoords(&x, &y);
     headerId = GetCurrentMapWildMonHeaderId();
@@ -844,9 +891,6 @@ bool8 SweetScentWildEncounter(void)
         {
             timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND);
 
-            if (gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo == NULL)
-                return FALSE;
-
             if (TryStartRoamerEncounter())
             {
                 BattleSetup_StartRoamerBattle();
@@ -864,11 +908,6 @@ bool8 SweetScentWildEncounter(void)
         else if (MetatileBehavior_IsWaterWildEncounter(MapGridGetMetatileBehaviorAt(x, y)) == TRUE)
         {
             timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_WATER);
-
-            if (AreLegendariesInSootopolisPreventingEncounters() == TRUE)
-                return FALSE;
-            if (gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo == NULL)
-                return FALSE;
 
             if (TryStartRoamerEncounter())
             {

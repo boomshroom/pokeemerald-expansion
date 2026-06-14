@@ -126,10 +126,18 @@
 
 // Macros for checking the joypad
 #define TEST_BUTTON(field, button) ((field) & (button))
-#define JOY_NEW(button) TEST_BUTTON(gMain.newKeys,  button)
-#define JOY_HELD(button)  TEST_BUTTON(gMain.heldKeys, button)
+#define JOY_NEW(button) TEST_BUTTON(gMain.newKeys, button)
+#define JOY_HELD(button) TEST_BUTTON(gMain.heldKeys, button)
 #define JOY_HELD_RAW(button) TEST_BUTTON(gMain.heldKeysRaw, button)
 #define JOY_REPEAT(button) TEST_BUTTON(gMain.newAndRepeatedKeys, button)
+
+// Returns 0 if 'plusButton' and 'minusButton' are in the same state,
+// otherwise returns 1 if 'plusButton' is active or -1 if 'minusButton'
+// is active.
+s32 TestButtonAxis(u32 field, u32 plusButton, u32 minusButton);
+#define JOY_AXIS_NEW(minusButton, plusButton) TestButtonAxis(gMain.newKeys, minusButton, plusButton)
+#define JOY_AXIS_HELD(minusButton, plusButton) TestButtonAxis(gMain.heldKeys, minusButton, plusButton)
+#define JOY_AXIS_REPEAT(minusButton, plusButton) TestButtonAxis(gMain.newAndRepeatedKeys, minusButton, plusButton)
 
 #define S16TOPOSFLOAT(val)   \
 ({                           \
@@ -1087,9 +1095,10 @@ struct Bag
 {
     struct ItemSlot items[BAG_ITEMS_COUNT];
     struct ItemSlot keyItems[BAG_KEYITEMS_COUNT];
-    struct ItemSlot pokeBalls[BAG_POKEBALLS_COUNT];
-    struct ItemSlot TMsHMs[BAG_TMHM_COUNT];
-    struct ItemSlot berries[BAG_BERRIES_COUNT];
+    struct ItemSlot vestigial[89];
+    u32 pokeBalls[10];
+    u8 TMsHMs[16];
+    u32 berries[23];
 };
 
 struct SaveBlock1

@@ -2,6 +2,7 @@
 #define GUARD_FLDEFF_H
 
 // cut
+bool32 CanCut(struct Pokemon *mon);
 bool32 SetUpFieldMove_Cut(void);
 bool8 FldEff_UseCutOnGrass(void);
 bool8 FldEff_UseCutOnTree(void);
@@ -33,6 +34,7 @@ bool32 SetUpFieldMove_Strength(void);
 bool8 FldEff_UseStrength(void);
 
 // sweet scent
+bool32 CanSweetScent(void);
 bool32 SetUpFieldMove_SweetScent(void);
 bool8 FldEff_SweetScent(void);
 void StartSweetScentFieldEffect(void);

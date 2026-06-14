@@ -9,6 +9,7 @@
 #include "battle_pyramid.h"
 #include "battle_pyramid_bag.h"
 #include "bg.h"
+#include "braille_puzzles.h"
 #include "contest.h"
 #include "data.h"
 #include "decompress.h"
@@ -81,6 +82,7 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "constants/pokeball.h"
+#include "constants/weather.h"
 
 #if !SWSH_PARTY_MENU
 
@@ -249,7 +251,7 @@ EWRAM_DATA MainCallback gPostMenuFieldCallback = NULL;
 static EWRAM_DATA u16 *sSlot1TilemapBuffer = 0; // for switching party slots
 static EWRAM_DATA u16 *sSlot2TilemapBuffer = 0; //
 EWRAM_DATA u8 gSelectedOrderFromParty[MAX_FRONTIER_PARTY_SIZE] = {0};
-static EWRAM_DATA u16 sPartyMenuItemId = 0;
+static EWRAM_DATA enum Item sPartyMenuItemId = 0;
 EWRAM_DATA u8 gBattlePartyCurrentOrder[PARTY_SIZE / 2] = {0}; // bits 0-3 are the current pos of Slot 1, 4-7 are Slot 2, and so on
 static EWRAM_DATA u8 sInitialLevel = 0;
 static EWRAM_DATA u8 sFinalLevel = 0;
@@ -2173,7 +2175,7 @@ static enum TryTakeMonItemResult TryTakeMonItem(struct Pokemon *mon)
     return TAKE_OK;
 }
 
-static void BufferBagFullCantTakeItemMessage(u16 itemUnused)
+static void BufferBagFullCantTakeItemMessage(void)
 {
     StringExpandPlaceholders(gStringVar4, gText_BagFullCouldNotRemoveItem);
 }
@@ -2981,25 +2983,48 @@ static void SetPartyMonSelectionActions(struct Pokemon *mons, u8 slotId, u8 acti
     }
 }
 
-// Field moves that can be used via items and should be excluded from the party menu
-static const u16 sItemBasedFieldMoves[] =
-{
-    MOVE_CUT,
-    MOVE_SURF,
-    MOVE_STRENGTH,
-    MOVE_ROCK_SMASH,
-    MOVE_DIVE,
-    MOVE_WATERFALL,
-};
-
 // Check if a field move should be excluded from the party menu (because it has an item alternative)
-static bool8 IsFieldMoveExcludedFromPartyMenu(u16 moveId)
+static bool32 ShouldShowFieldMove(struct Pokemon *mon, enum FieldMove fieldMove)
 {
-    u32 i;
-    for (i = 0; i < ARRAY_COUNT(sItemBasedFieldMoves); i++)
-    {
-        if (sItemBasedFieldMoves[i] == moveId)
-            return TRUE;
+    if (!IsFieldMoveUnlocked(fieldMove)) return FALSE;
+    if (MenuHelpers_IsLinkActive() == TRUE || InUnionRoom() == TRUE) return FALSE;
+
+    switch (fieldMove) {
+        case FIELD_MOVE_DEFOG:
+            if (gWeather.currWeather != WEATHER_FOG_HORIZONTAL && gWeather.currWeather != WEATHER_FOG_DIAGONAL) return FALSE;
+            break;
+        case FIELD_MOVE_ROCK_SMASH:
+            if (!ShouldDoBrailleRegirockEffect()) return FALSE;
+            break;
+        case FIELD_MOVE_CUT:
+            if (!CanCut(mon)) return FALSE;
+            break;
+        case FIELD_MOVE_SWEET_SCENT:
+            if (!CanSweetScent()) return FALSE;
+            break;
+        case FIELD_MOVE_MILK_DRINK:
+        case FIELD_MOVE_SOFT_BOILED:
+            u16 maxHp = GetMonData(mon, MON_DATA_MAX_HP);
+            u16 hp = GetMonData(mon, MON_DATA_HP);
+            if (hp <= maxHp / 5) return FALSE;
+            break;
+        case FIELD_MOVE_FLASH:
+            if ((!gMapHeader.cave || FlagGet(FLAG_SYS_USE_FLASH)) && !ShouldDoBrailleDigEffect()) return FALSE;
+            break;
+        case FIELD_MOVE_DIG:
+            if (!CanUseDigOrEscapeRopeOnCurMap()) return FALSE;
+            break;
+        case FIELD_MOVE_TELEPORT:
+            if (!Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType)) return FALSE;
+            break;
+        default:
+            return FALSE;
+    }
+    enum Move move = FieldMove_GetMoveId(fieldMove);
+    enum Species species = GetMonData(mon, MON_DATA_SPECIES);
+
+    if (MonKnowsMove(mon, move) || (FieldMove_HaveHM(fieldMove) && CanLearnTeachableMove(species, move))) {
+        return TRUE;
     }
     return FALSE;
 }
@@ -3007,45 +3032,16 @@ static bool8 IsFieldMoveExcludedFromPartyMenu(u16 moveId)
 static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 // modified for field move implementation
 {
-    u8 i, j;
-
     sPartyMenuInternal->numActions = 0;
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
-
-    u16 species = GetMonData(&mons[slotId], MON_DATA_SPECIES);
 
     if (!GetMonData(&mons[slotId], MON_DATA_IS_EGG))
     {
         // Loop through all possible field moves
-        for (i = 0; i < FIELD_MOVES_COUNT; i++)
+        for (u8 i = 0; i < FIELD_MOVES_COUNT; i++)
         {
-            u16 moveId = FieldMove_GetMoveId(i);
-
-            // Case 1: Fly and Flash - show if learnable and badge obtained
-            if (moveId == MOVE_FLY || moveId == MOVE_FLASH)
-            {
-                if (IsFieldMoveUnlocked(i) && CanLearnTeachableMove(species, moveId))
-                {
-                    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, i + MENU_FIELD_MOVES);
-                }
-            }
-            // Case 2: Item-based field moves - excluded from party menu
-            else if (IsFieldMoveExcludedFromPartyMenu(moveId))
-            {
-                // Do nothing, effectively removing them from the menu.
-            }
-            // Case 3: All other field moves (Dig, Soft-Boiled, etc.)
-            else
-            {
-                // Use the original logic: check if the Pokémon knows the move.
-                for (j = 0; j < MAX_MON_MOVES; j++)
-                {
-                    if (GetMonData(&mons[slotId], MON_DATA_MOVE1 + j) == moveId)
-                    {
-                        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, i + MENU_FIELD_MOVES);
-                        break; // Move found, stop checking this Pokémon's moves
-                    }
-                }
+            if (ShouldShowFieldMove(&mons[slotId], i)) {
+                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, i + MENU_FIELD_MOVES);
             }
         }
     }
@@ -3631,7 +3627,7 @@ static void Task_HandleSwitchItemsYesNoInput(u8 taskId)
         if (AddBagItem(sPartyMenuItemId, 1) == FALSE)
         {
             AddBagItem(gSpecialVar_ItemId, 1);
-            BufferBagFullCantTakeItemMessage(sPartyMenuItemId);
+            BufferBagFullCantTakeItemMessage();
             DisplayPartyMenuMessage(gStringVar4, FALSE);
             gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
         }
@@ -3746,7 +3742,7 @@ static void CursorCb_TakeItem(u8 taskId)
         DisplayPartyMenuMessage(gStringVar4, TRUE);
         break;
     case TAKE_NO_BAG_SPACE:
-        BufferBagFullCantTakeItemMessage(item);
+        BufferBagFullCantTakeItemMessage();
         DisplayPartyMenuMessage(gStringVar4, TRUE);
         break;
     case TAKE_OK:
@@ -3925,7 +3921,7 @@ static void Task_HandleLoseMailMessageYesNoInput(u8 taskId)
         }
         else
         {
-            BufferBagFullCantTakeItemMessage(item);
+            BufferBagFullCantTakeItemMessage();
             DisplayPartyMenuMessage(gStringVar4, FALSE);
             gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
         }
@@ -6384,7 +6380,7 @@ void ItemUseCB_EvolutionStone(u8 taskId, TaskFunc task)
 static void Task_TryItemUseFusionChange(u8 taskId);
 static void SpriteCB_FormChangeIconMosaic(struct Sprite *sprite);
 
-u8 IsFusionMon(enum Species species)
+static bool32 IsFusionMon(enum Species species)
 {
     u16 i;
     const struct Fusion *itemFusion = gFusionTablePointers[species];
@@ -7309,7 +7305,7 @@ static void Task_HandleSwitchItemsFromBagYesNoInput(u8 taskId)
         if (AddBagItem(sPartyMenuItemId, 1) == FALSE)
         {
             ReturnGiveItemToBagOrPC(item);
-            BufferBagFullCantTakeItemMessage(sPartyMenuItemId);
+            BufferBagFullCantTakeItemMessage();
             DisplayPartyMenuMessage(gStringVar4, FALSE);
             gTasks[taskId].func = Task_UpdateHeldItemSpriteAndClosePartyMenu;
         }
