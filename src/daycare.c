@@ -1115,14 +1115,6 @@ static inline u32 GetEggCycleLength(void)
     }
 }
 
-static u32 GetEggCyclesToSubtract(void)
-{
-    u32 result = 1;
-    if (DoesPartyHaveIncubatorMon())
-        result += 1;
-    return result;
-}
-
 static bool32 TryToHatchEgg(struct DayCare *daycare)
 {
     daycare->stepCounter++;

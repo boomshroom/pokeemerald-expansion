@@ -3,6 +3,7 @@
 
 void ScriptHatchMon(void);
 void EggHatch(void);
+u32 GetEggCyclesToSubtract(void);
 u16 CountPartyAliveNonEggMons(void);
 
 #endif // GUARD_EGG_HATCH_H

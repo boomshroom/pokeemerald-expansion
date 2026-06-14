@@ -37,6 +37,7 @@
 #include "battle.h" // to get rid of later
 #include "constants/rgb.h"
 #include "party_menu.h"
+#include "ow_abilities.h"
 
 #define GFXTAG_EGG       12345
 #define GFXTAG_EGG_SHARD 23456
@@ -888,6 +889,14 @@ static void EggHatchPrintMessage(u8 windowId, u8 *string, u8 x, u8 y, u8 speed)
     sEggHatchData->textColor[1] = 5;
     sEggHatchData->textColor[2] = 6;
     AddTextPrinterParameterized4(windowId, FONT_NORMAL, x, y, 0, 0, sEggHatchData->textColor, speed, string);
+}
+
+u32 GetEggCyclesToSubtract(void)
+{
+    u32 result = 1;
+    if (DoesPartyHaveIncubatorMon())
+        result += 1;
+    return result;
 }
 
 u16 CountPartyAliveNonEggMons(void)

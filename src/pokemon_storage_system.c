@@ -46,6 +46,7 @@
 #include "constants/pokemon_icon.h"
 #include "chooseboxmon.h"
 #include "party_menu.h"
+#include "swsh_storage_system.h"
 
 /*
     NOTE: This file is large. Some general groups of functions have
@@ -1659,8 +1660,18 @@ void PokemonPC_SetReturnToPartyCallback(MainCallback cb)
     sReturnToPartyCallback = cb;
 }
 
+bool32 PokemonPC_HasReturnToPartyCallback(void)
+{
+    return sReturnToPartyCallback != NULL;
+}
+
 void ShowPokemonPCFromParty(void)
 {
+    if (SWSH_STORAGE_SYSTEM)
+    {
+        ShowPokemonPCFromParty_SwSh();
+        return;
+    }
     EnterPokeStorage(OPTION_MOVE_MONS);
 }
 

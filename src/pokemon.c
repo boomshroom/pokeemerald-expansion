@@ -38,6 +38,7 @@
 #include "pokemon.h"
 #include "pokemon_animation.h"
 #include "pokemon_icon.h"
+#include "swsh_summary_screen.h"
 #include "pokemon_summary_screen.h"
 #include "pokemon_storage_system.h"
 #include "pokerus.h"
