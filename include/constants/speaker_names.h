@@ -33,6 +33,8 @@ enum SpeakerNames {
     SP_NAME_TATE_LIZA,
     SP_NAME_KIRI,
     SP_NAME_WATTSON,
+    SP_NAME_MIU,
+    SP_NAME_YUKI,
     SP_NAME_COUNT
 };
 

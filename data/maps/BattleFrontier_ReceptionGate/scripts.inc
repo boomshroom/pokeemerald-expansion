@@ -35,6 +35,7 @@ BattleFrontier_ReceptionGate_EventScript_ScottScene::
 	waitmessage
 	msgbox BattleFrontier_ReceptionGate_Text_PlacedTrainerCardInFrontierPass, MSGBOX_DEFAULT
 	setflag FLAG_SYS_FRONTIER_PASS
+	setspeaker BattleFrontier_ReceptionGate_Name_Guide
 	msgbox BattleFrontier_ReceptionGate_Text_EnjoyBattleFrontier, MSGBOX_DEFAULT
 	msgbox BattleFrontier_ReceptionGate_Text_IfItIsntPlayerYouCame, MSGBOX_DEFAULT
 	closemessage
@@ -47,6 +48,7 @@ BattleFrontier_ReceptionGate_EventScript_ScottScene::
 	applymovement LOCALID_FRONTIER_RECEPTION_GUIDE, Common_Movement_ExclamationMark
 	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 	waitmovement 0
+	setspeaker BattleFrontier_ReceptionGate_Name_Guide
 	msgbox BattleFrontier_ReceptionGate_Text_OhMrScottGoodDay, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_FRONTIER_RECEPTION_GREETER, BattleFrontier_ReceptionGate_Movement_GreeterFaceScott
@@ -122,6 +124,7 @@ BattleFrontier_ReceptionGate_Movement_FacilityGuideFaceScott:
 BattleFrontier_ReceptionGate_EventScript_Greeter::
 	lock
 	faceplayer
+	setspeaker BattleFrontier_ReceptionGate_Name_Guide
 	msgbox BattleFrontier_ReceptionGate_Text_WelcomeToBattleFrontier, MSGBOX_DEFAULT
 	msgbox BattleFrontier_ReceptionGate_Text_EnjoyBattleFrontier, MSGBOX_DEFAULT
 	release
@@ -257,6 +260,7 @@ BattleFrontier_ReceptionGate_EventScript_ExitRulesGuide::
 BattleFrontier_ReceptionGate_EventScript_FrontierPassGuide::
 	lock
 	faceplayer
+	setspeaker BattleFrontier_ReceptionGate_Name_Guide
 	msgbox BattleFrontier_ReceptionGate_Text_YourGuideToFrontierPass, MSGBOX_DEFAULT
 	goto BattleFrontier_ReceptionGate_EventScript_ChooseFrontierPassInfoToLearnAbout
 	end
@@ -293,6 +297,9 @@ BattleFrontier_ReceptionGate_EventScript_ExitFrontierPassGuide::
 	release
 	end
 
+BattleFrontier_ReceptionGate_Name_Guide:
+	.string "Guide$"
+
 BattleFrontier_ReceptionGate_Text_FirstTimeHereThisWay:
 	.string "Is it your first time here?\n"
 	.string "Please step this way!$"
@@ -309,7 +316,7 @@ BattleFrontier_ReceptionGate_Text_IssueFrontierPass:
 	.string "Here you are!$"
 
 BattleFrontier_ReceptionGate_Text_ObtainedFrontierPass:
-	.string "{PLAYER} obtained\n"
+	.string "{SPEAKER NAME_NONE}{PLAYER} obtained\n"
 	.string "the Frontier Pass.$"
 
 BattleFrontier_ReceptionGate_Text_PlacedTrainerCardInFrontierPass:
@@ -321,15 +328,15 @@ BattleFrontier_ReceptionGate_Text_EnjoyBattleFrontier:
 	.string "Frontier has to offer!$"
 
 BattleFrontier_ReceptionGate_Text_IfItIsntPlayerYouCame:
-	.string "???: Well, if it isn't {PLAYER}{KUN}!\n"
+	.string "{SPEAKER NAME_NONE}Well, if it isn't {PLAYER}{KUN}!\n"
 	.string "You came out here!$"
 
 BattleFrontier_ReceptionGate_Text_OhMrScottGoodDay:
-	.string "Guide: Oh! Mr. Scott, sir!\n"
+	.string "Oh! Mr. Scott, sir!\n"
 	.string "Good day to you, sir!$"
 
 BattleFrontier_ReceptionGate_Text_ScottGreatToSeeYouHere:
-	.string "Scott: It's great to see you here,\n"
+	.string "{SPEAKER NAME_SCOTT}It's great to see you here,\n"
 	.string "it really is!\p"
 	.string "I hope you'll take your time and\n"
 	.string "explore everywhere.\p"

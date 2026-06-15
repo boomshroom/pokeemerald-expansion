@@ -3431,33 +3431,33 @@ Route123_Text_JackiPostRematch:
 	.string "That could be a psychic power, too.$"
 
 Route123_Text_MiuIntro:
-	.string "Miu: Hello, Trainer. I hope your\n"
+	.string "{SPEAKER NAME_MIU}Hello, Trainer. I hope your\n"
 	.string "Pokémon won't cry when they lose.$"
 
 Route123_Text_MiuDefeat:
 	.string "Miu: Uh-oh, we lost.$"
 
 Route123_Text_MiuPostBattle:
-	.string "Miu: Trainer, your Pokémon are\n"
+	.string "{SPEAKER NAME_MIU}Trainer, your Pokémon are\n"
 	.string "strong because you are friends.$"
 
 Route123_Text_MiuNotEnoughMons:
-	.string "Miu: It's no fun to battle if you\n"
+	.string "{SPEAKER NAME_MIU}It's no fun to battle if you\n"
 	.string "don't have two Pokémon.$"
 
 Route123_Text_YukiIntro:
-	.string "Yuki: Okay!\n"
+	.string "{SPEAKER NAME_YUKI}Okay!\n"
 	.string "We're beating the Trainer's Pokémon!$"
 
 Route123_Text_YukiDefeat:
 	.string "Yuki: Uh-oh, we lost.$"
 
 Route123_Text_YukiPostBattle:
-	.string "Yuki: Why are you so strong?\n"
+	.string "{SPEAKER NAME_YUKI}Why are you so strong?\n"
 	.string "We've never lost before.$"
 
 Route123_Text_YukiNotEnoughMons:
-	.string "Yuki: It's no fun to battle if you\n"
+	.string "{SPEAKER NAME_YUKI}It's no fun to battle if you\n"
 	.string "don't have two Pokémon.$"
 
 Route123_Text_KindraIntro:
