@@ -3,6 +3,7 @@
 
 #include "global.h"
 #include "item.h"
+#include "party_menu.h"
 #include "constants/field_move.h"
 
 // Tracks whether a field move is being used via a Pokémon or an item
@@ -21,7 +22,10 @@ bool32 CanUseFieldMove(enum FieldMove fieldMove, bool32 doUnlockedCheck, u16 *id
 
 // Check if Fly can be used (either via Pokémon or FLY_TOOL item)
 static inline bool32 CanUseFly() {
-    return CanUseFieldMove(FIELD_MOVE_FLY, TRUE, NULL, NULL);
+    u16 slotId;
+    bool32 res = CanUseFieldMove(FIELD_MOVE_FLY, TRUE, &slotId, NULL);
+    gPartyMenu.slotId = (s8)slotId;
+    return res;
 }
 
 // Check if Flash can be used (either via Pokémon or FLASH_TOOL item)
