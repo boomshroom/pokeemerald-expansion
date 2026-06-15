@@ -581,7 +581,7 @@ MauvilleCity_Text_ScottYouDidntHoldBack:
 	.string "I'll be cheering for you!$"
 
 MauvilleCity_Text_WattsonNeedFavorTakeKey:
-	.string "Wattson: Oh, {PLAYER}{KUN}!\n"
+	.string "{SPEAKER NAME_WATTSON}Oh, {PLAYER}{KUN}!\n"
 	.string "You look like you have a lot of zip!\l"
 	.string "That's a good thing, wahahahaha!\p"
 	.string "Fine! I've decided!\n"
@@ -596,7 +596,7 @@ MauvilleCity_Text_WattsonNeedFavorTakeKey:
 	.string "New Mauville.$"
 
 MauvilleCity_Text_WattsonWontBeChallenge:
-	.string "Wattson: Don't you worry about it.\n"
+	.string "{SPEAKER NAME_WATTSON}Don't you worry about it.\n"
 	.string "It won't be a challenge to you.\p"
 	.string "The entrance to New Mauville is just\n"
 	.string "a short Surf away from Route 110.\p"
@@ -604,7 +604,7 @@ MauvilleCity_Text_WattsonWontBeChallenge:
 	.string "Wahahahaha!$"
 
 MauvilleCity_Text_WattsonThanksTakeTM:
-	.string "Wattson: Wahahahaha!\p"
+	.string "{SPEAKER NAME_WATTSON}Wahahahaha!\p"
 	.string "I knew it, {PLAYER}{KUN}! I knew I'd made\n"
 	.string "the right choice asking you!\p"
 	.string "This is my thanks--a TM containing\n"
@@ -612,7 +612,7 @@ MauvilleCity_Text_WattsonThanksTakeTM:
 	.string "Go on, you've earned it!$"
 
 MauvilleCity_Text_WattsonYoungTakeCharge:
-	.string "Wattson: Wahahahaha!\p"
+	.string "{SPEAKER NAME_WATTSON}Wahahahaha!\p"
 	.string "It pleases me to no end to see\n"
 	.string "the young step up and take charge!$"
 

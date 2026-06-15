@@ -87,7 +87,6 @@ MauvilleCity_Gym_EventScript_WattsonDefeated::
 	message MauvilleCity_Gym_Text_ReceivedDynamoBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
-	setspeaker MauvilleCity_Gym_Name_Wattson
 	msgbox MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis, MSGBOX_DEFAULT
 	setvar VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 3
 	clearflag FLAG_HIDE_VERDANTURF_TOWN_SCOTT
@@ -114,7 +113,6 @@ MauvilleCity_Gym_EventScript_WattsonDefeated::
 
 MauvilleCity_Gym_EventScript_GiveShockWave2::
 	giveitem ITEM_TM_SHOCK_WAVE
-	setspeaker MauvilleCity_Gym_Name_Wattson
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox MauvilleCity_Gym_Text_ExplainShockWave, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_SHOCK_WAVE
@@ -361,7 +359,7 @@ MauvilleCity_Gym_Text_ReceivedDynamoBadge:
 	.string "from Wattson.$"
 
 MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis:
-	.string "With the Dynamo Badge, Pokémon can\n"
+	.string "{SPEAKER NAME_WATTSON}With the Dynamo Badge, Pokémon can\n"
 	.string "use Rock Smash out of battle.\p"
 	.string "And, all Pokémon up to Level 40, even\n"
 	.string "traded ones, will listen to you.\p"
@@ -369,21 +367,21 @@ MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis:
 	.string "You should take this, too!$"
 
 MauvilleCity_Gym_Text_ExplainShockWave:
-	.string "That TM contains Shock Wave.\p"
+	.string "{SPEAKER NAME_WATTSON}That TM contains Shock Wave.\p"
 	.string "It's a trustworthy move that never\n"
 	.string "misses! You can count on it!\p"
 	.string "… … … … … …$"
 
 MauvilleCity_Gym_Text_RegisteredWattson:
-	.string "Registered Gym Leader Wattson\n"
+	.string "{SPEAKER NAME_NONE}Registered Gym Leader Wattson\n"
 	.string "in the PokéNav.$"
 
 MauvilleCity_Gym_Text_WattsonPostBattle:
-	.string "I swell with optimism, seeing a promising\n"
+	.string "{SPEAKER NAME_WATTSON}I swell with optimism, seeing a promising\n"
 	.string "young Trainer like you!$"
 
 MauvilleCity_Gym_Text_WattsonGoForthAndEndeavor:
-	.string "Wahahahah!\n"
+	.string "{SPEAKER NAME_WATTSON}Wahahahah!\n"
 	.string "Go forth and endeavor, youngster!$"
 
 MauvilleCity_Gym_Text_GymStatue:
@@ -395,7 +393,7 @@ MauvilleCity_Gym_Text_GymStatueCertified:
 	.string "{PLAYER}$"
 
 MauvilleCity_Gym_Text_WattsonPreRematch:
-	.string "Wattson: Ah-ha! Here at last!\n"
+	.string "{SPEAKER NAME_WATTSON}Ah-ha! Here at last!\n"
 	.string "I know what you want.\l"
 	.string "You want to battle my Pokémon!\p"
 	.string "Wahahahaha!\p"
@@ -407,7 +405,7 @@ MauvilleCity_Gym_Text_WattsonRematchDefeat:
 	.string "Our batteries ran dry…$"
 
 MauvilleCity_Gym_Text_WattsonPostRematch:
-	.string "Wattson: We'll have to recharge our\n"
+	.string "{SPEAKER NAME_WATTSON}We'll have to recharge our\n"
 	.string "batteries again.\p"
 	.string "When we're fully charged up, we'll\n"
 	.string "gladly accept your challenge.\p"
@@ -415,7 +413,7 @@ MauvilleCity_Gym_Text_WattsonPostRematch:
 	.string "won't you?$"
 
 MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons:
-	.string "Wattson: Ah-ha! Here at last!\n"
+	.string "{SPEAKER NAME_WATTSON}Ah-ha! Here at last!\n"
 	.string "I know what you want.\l"
 	.string "You want to battle my Pokémon!\p"
 	.string "Wahahahaha!\p"
