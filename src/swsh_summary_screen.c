@@ -549,7 +549,11 @@ const u32 sSummaryScreen_Gfx[]                      = INCGFX_U32("graphics/summa
 const u16 sSummaryScreen_Pal[]                      = INCGFX_U16("graphics/summary_screen/w/wTiles.png", ".gbapal");
 
 const u32 sSummaryPage_ScrollBG_Tilemap[]           = INCGFX_U32("graphics/summary_screen/w/scroll_bg.bin", ".smolTM");
+#if SWSH_SUMMARY_SHOW_TERA_TYPE
+const u32 sSummaryPage_Info_Tilemap[]               = INCGFX_U32("graphics/summary_screen/w/page_info_tera.bin", ".smolTM");
+#else
 const u32 sSummaryPage_Info_Tilemap[]               = INCGFX_U32("graphics/summary_screen/w/page_info.bin", ".smolTM");
+#endif
 const u32 sSummaryPage_Skills_Tilemap[]             = INCGFX_U32("graphics/summary_screen/w/page_skills.bin", ".smolTM");
 const u32 sSummaryPage_BattleMoves_Tilemap[]        = INCGFX_U32("graphics/summary_screen/w/page_moves_battle.bin", ".smolTM");
 const u32 sSummaryEffect_Battle_Tilemap[]           = INCGFX_U32("graphics/summary_screen/w/effect_battle.bin", ".smolTM");;
