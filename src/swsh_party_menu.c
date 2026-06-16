@@ -1521,7 +1521,7 @@ static void DisplayPartyPokemonAbility(u8 windowId, u8 slot)
 
     u8 abilityNum;
     u16 species;
-    enum Ability ability;
+    enum Ability ability = ABILITY_NONE;
     const u8 *name;
     int x;
     int y = 16;
@@ -1529,12 +1529,22 @@ static void DisplayPartyPokemonAbility(u8 windowId, u8 slot)
     BlitBitmapToPartyWindow(windowId, sAbilityTilemap_SwSh, 13, 0, 2, 13, 2);
 
     {
-        struct Pokemon *mon = GetPartyMonFromPartyMenuId(slot);
-        if (GetMonData(mon, MON_DATA_SPECIES) != SPECIES_NONE && !GetMonData(mon, MON_DATA_IS_EGG))
-        {
-            abilityNum = GetMonData(mon, MON_DATA_ABILITY_NUM);
-            species = GetMonData(mon, MON_DATA_SPECIES);
-            ability = GetAbilityBySpecies(species, abilityNum);
+        for (enum BattlerId idx = B_BATTLER_0; idx < MAX_BATTLERS_COUNT; idx++) {
+            if (GetBattlerTrainer(idx) == B_TRAINER_PLAYER && gBattlerPartyIndexes[idx] == slot) {
+                ability = GetBattlerAbility(idx);
+                break;
+            }
+        }
+        if (ability == ABILITY_NONE) {
+            struct Pokemon *mon = GetPartyMonFromPartyMenuId(slot);
+            if (GetMonData(mon, MON_DATA_SPECIES) != SPECIES_NONE && !GetMonData(mon, MON_DATA_IS_EGG))
+            {
+                abilityNum = GetMonData(mon, MON_DATA_ABILITY_NUM);
+                species = GetMonData(mon, MON_DATA_SPECIES);
+                ability = GetAbilityBySpecies(species, abilityNum);
+            }
+        }
+        if (ability != ABILITY_NONE) {
             name = gAbilitiesInfo[ability].name;
             x = GetStringCenterAlignXOffset(FONT_SMALL, name, 104);
             AddTextPrinterParameterized3(windowId, FONT_SMALL, x, y, sFontColorTable[11], 0, name);
