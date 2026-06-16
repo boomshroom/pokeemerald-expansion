@@ -1013,7 +1013,7 @@ Music: Interviewer
 Double Battle: Yes
 AI: Smart Trainer
 
-Magneton
+Magnezone
 Level: 36
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
@@ -1030,7 +1030,7 @@ Music: Interviewer
 Double Battle: Yes
 AI: Smart Trainer
 
-Magneton
+Magnezone
 Level: 39
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Sonic Boom
@@ -1197,7 +1197,7 @@ Class: Tuber M
 Pic: Tuber M
 Gender: Male
 Music: Girl
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Marill
@@ -1210,7 +1210,7 @@ Class: Tuber M
 Pic: Tuber M
 Gender: Male
 Music: Girl
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Linoone
@@ -1227,7 +1227,7 @@ Class: Tuber M
 Pic: Tuber M
 Gender: Male
 Music: Girl
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Linoone
@@ -1244,7 +1244,7 @@ Class: Tuber M
 Pic: Tuber M
 Gender: Male
 Music: Girl
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Linoone
@@ -1261,7 +1261,7 @@ Class: Tuber M
 Pic: Tuber M
 Gender: Male
 Music: Girl
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Linoone
@@ -1279,7 +1279,7 @@ Pic: Cooltrainer M
 Gender: Male
 Music: Cool
 Items: Hyper Potion
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Swellow
@@ -1296,7 +1296,7 @@ Pic: Cooltrainer M
 Gender: Male
 Music: Cool
 Items: Hyper Potion
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Spinda
@@ -1313,7 +1313,7 @@ Pic: Cooltrainer M
 Gender: Male
 Music: Cool
 Items: Hyper Potion
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Slakoth @ Sitrus Berry
@@ -1330,7 +1330,7 @@ Pic: Cooltrainer M
 Gender: Male
 Music: Cool
 Items: Hyper Potion
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Vigoroth
@@ -1633,7 +1633,7 @@ Items: Full Restore
 Double Battle: Yes
 AI: Smart Trainer
 
-Manectric
+Manectric @ Manectite
 Level: 35
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
@@ -1952,7 +1952,7 @@ Numel
 Level: 32
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
-Roselia
+Roserade
 Level: 32
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
@@ -1970,11 +1970,11 @@ Pelipper
 Level: 34
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
-Camerupt
+Camerupt @ Cameruptite
 Level: 34
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
-Roselia
+Roserade
 Level: 34
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
@@ -2119,7 +2119,7 @@ Duskull
 Level: 42
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Sableye
+Sableye @ Sablenite
 Level: 42
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -2195,7 +2195,7 @@ Pic: Lady
 Gender: Female
 Music: Female
 Items: Full Restore
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Zigzagoon @ Nugget
@@ -2211,7 +2211,7 @@ Pic: Lady
 Gender: Female
 Music: Female
 Items: Full Restore
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Seaking @ Nugget
@@ -2225,7 +2225,7 @@ Pic: Lady
 Gender: Female
 Music: Female
 Items: Full Restore
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Roselia @ Nugget
@@ -2239,7 +2239,7 @@ Pic: Lady
 Gender: Female
 Music: Female
 Items: Full Restore
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Linoone @ Nugget
@@ -2253,7 +2253,7 @@ Pic: Lady
 Gender: Female
 Music: Female
 Items: Full Restore
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Linoone @ Nugget
@@ -2267,7 +2267,7 @@ Pic: Lady
 Gender: Female
 Music: Female
 Items: Full Restore
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Linoone @ Nugget
@@ -2281,7 +2281,7 @@ Pic: Lady
 Gender: Female
 Music: Female
 Items: Full Restore
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Linoone @ Nugget
@@ -2298,7 +2298,7 @@ Class: Beauty
 Pic: Beauty
 Gender: Female
 Music: Female
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Marill
@@ -2311,7 +2311,7 @@ Class: Beauty
 Pic: Beauty
 Gender: Female
 Music: Female
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Shroomish
@@ -2324,7 +2324,7 @@ Class: Beauty
 Pic: Beauty
 Gender: Female
 Music: Female
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Numel
@@ -2538,7 +2538,7 @@ Pic: Rich Boy
 Gender: Male
 Music: Rich
 Items: Full Restore
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Zigzagoon @ Nugget
@@ -2569,7 +2569,7 @@ Pic: Rich Boy
 Gender: Male
 Music: Rich
 Items: Full Restore
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Azumarill @ Nugget
@@ -2583,7 +2583,7 @@ Pic: Rich Boy
 Gender: Male
 Music: Rich
 Items: Full Restore
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Linoone @ Nugget
@@ -2597,7 +2597,7 @@ Pic: Rich Boy
 Gender: Male
 Music: Rich
 Items: Full Restore
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Linoone @ Nugget
@@ -2611,7 +2611,7 @@ Pic: Rich Boy
 Gender: Male
 Music: Rich
 Items: Full Restore
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Linoone @ Nugget
@@ -2625,7 +2625,7 @@ Pic: Rich Boy
 Gender: Male
 Music: Rich
 Items: Full Restore
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Linoone @ Nugget
@@ -2642,7 +2642,7 @@ Class: Pokemaniac
 Pic: Pokemaniac
 Gender: Male
 Music: Suspicious
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Aron
@@ -2672,7 +2672,7 @@ Class: Pokemaniac
 Pic: Pokemaniac
 Gender: Male
 Music: Suspicious
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Rhyhorn
@@ -2685,7 +2685,7 @@ Class: Team Magma
 Pic: Magma Grunt F
 Gender: Female
 Music: Magma
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Numel
@@ -2698,7 +2698,7 @@ Class: Pokemaniac
 Pic: Pokemaniac
 Gender: Male
 Music: Suspicious
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Lairon
@@ -2711,7 +2711,7 @@ Class: Pokemaniac
 Pic: Pokemaniac
 Gender: Male
 Music: Suspicious
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Lairon
@@ -2731,7 +2731,7 @@ Music: Suspicious
 Double Battle: Yes
 AI: Smart Trainer
 
-Lairon
+Aggron
 Level: 32
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -2748,7 +2748,7 @@ Music: Suspicious
 Double Battle: Yes
 AI: Smart Trainer
 
-Aggron
+Aggron @ Aggronite
 Level: 35
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -2762,7 +2762,7 @@ Class: Swimmer M
 Pic: Swimmer M
 Gender: Male
 Music: Swimmer
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Carvanha
@@ -2775,7 +2775,7 @@ Class: Swimmer M
 Pic: Swimmer M
 Gender: Male
 Music: Swimmer
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Tentacool
@@ -3172,7 +3172,7 @@ Starmie
 Level: 37
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Sharpedo
+Sharpedo @ Sharpedonite
 Level: 39
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -3182,7 +3182,7 @@ Class: Black Belt
 Pic: Black Belt
 Gender: Male
 Music: Intense
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Machop
@@ -3212,7 +3212,7 @@ Class: Black Belt
 Pic: Black Belt
 Gender: Male
 Music: Intense
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Hariyama
@@ -3242,7 +3242,7 @@ Class: Black Belt
 Pic: Black Belt
 Gender: Male
 Music: Intense
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Machop
@@ -3255,7 +3255,7 @@ Class: Black Belt
 Pic: Black Belt
 Gender: Male
 Music: Intense
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Machoke
@@ -3553,7 +3553,7 @@ Exploud
 Level: 34
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Magneton
+Magnezone
 Level: 34
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -4259,7 +4259,7 @@ Music: Intense
 Double Battle: Yes
 AI: Smart Trainer / Omniscient
 
-Kadabra
+Alakazam
 Level: 41
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -4280,7 +4280,7 @@ Solrock
 Level: 45
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Alakazam
+Alakazam @ Alakazite
 Level: 45
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -4435,7 +4435,7 @@ Music: Intense
 Double Battle: Yes
 AI: Smart Trainer / Omniscient
 
-Kadabra
+Alakazam
 Level: 40
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -4456,7 +4456,7 @@ Lunatone
 Level: 43
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Alakazam
+Alakazam @ Alakazite
 Level: 43
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -4590,7 +4590,7 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Confusion
 - Psych Up
 
-Manectric
+Manectric @ Manectite
 Level: 41
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Quick Attack
@@ -5048,7 +5048,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_TATE_AND_LIZA_1 ===
 Name: Tate & Liza
-Class: Leader
+Class: Gym Leaders
 Pic: Leader Tate And Liza
 Gender: Other
 Music: Female
@@ -5228,7 +5228,7 @@ Music: Male
 Double Battle: Yes
 AI: Smart Trainer
 
-Kirlia
+Gardevoir
 Level: 32
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -5245,7 +5245,7 @@ Music: Male
 Double Battle: Yes
 AI: Smart Trainer
 
-Kirlia
+Gardevoir
 Level: 34
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -5253,7 +5253,7 @@ Banette
 Level: 34
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Medicham
+Medicham @ Medichamite
 Level: 34
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -5946,7 +5946,7 @@ Music: Intense
 Double Battle: Yes
 AI: Smart Trainer
 
-Medicham
+Medicham @ Medichamite
 Level: 39
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 
@@ -6583,7 +6583,7 @@ Sharpedo
 Level: 33
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Gyarados
+Gyarados @ Gyaradosite
 Level: 33
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -6723,7 +6723,7 @@ Music: Male
 Double Battle: No
 AI: Smart Trainer
 
-Magneton
+Magnezone
 Level: 39
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -7072,7 +7072,7 @@ Music: Swimmer
 Double Battle: No
 AI: Smart Trainer
 
-Starmie
+Starmie @ Starminite
 Level: 48
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -7197,7 +7197,7 @@ Music: Swimmer
 Double Battle: No
 AI: Smart Trainer
 
-Starmie
+Starmie @ Starminite
 Level: 48
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -7286,7 +7286,7 @@ Altaria
 Level: 49
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
-Altaria
+Altaria @ Altarianite
 Level: 49
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
@@ -7974,7 +7974,7 @@ Music: Intense
 Double Battle: Yes
 AI: Smart Trainer
 
-Medicham
+Medicham @ Medichamite
 Level: 35
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
@@ -8529,7 +8529,7 @@ Luvdisc
 Level: 45
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Wailmer
+Wailord
 Level: 45
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -10462,7 +10462,7 @@ Gloom
 Level: 36
 IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
 
-Roselia
+Roserade
 Level: 36
 IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
 
@@ -10480,7 +10480,7 @@ Bellossom
 Level: 39
 IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 
-Roselia
+Roserade
 Level: 39
 IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 
@@ -12101,7 +12101,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Tri Attack
 - Screech
 
-Gardevoir
+Gallade @ Galladite
 Level: 48
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Double Team
@@ -12135,7 +12135,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Charm
 - Feint Attack
 
-Roselia
+Roserade
 Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Magical Leaf
@@ -12151,7 +12151,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Tri Attack
 - Screech
 
-Gardevoir
+Gallade @ Galladite
 Level: 51
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Double Team
@@ -12185,7 +12185,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Charm
 - Feint Attack
 
-Roselia
+Roserade
 Level: 53
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Magical Leaf
@@ -12193,7 +12193,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Giga Drain
 - Toxic
 
-Magneton
+Magnezone
 Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Supersonic
@@ -12201,7 +12201,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Tri Attack
 - Screech
 
-Gardevoir
+Gallade @ Galladite
 Level: 54
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Double Team
@@ -12235,7 +12235,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Charm
 - Feint Attack
 
-Roselia
+Roserade
 Level: 56
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Magical Leaf
@@ -12243,7 +12243,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Giga Drain
 - Toxic
 
-Magneton
+Magnezone
 Level: 53
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Supersonic
@@ -12251,7 +12251,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Tri Attack
 - Screech
 
-Gardevoir
+Gallade @ Galladite
 Level: 57
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Double Team
@@ -12786,7 +12786,7 @@ Music: Intense
 Double Battle: Yes
 AI: Smart Trainer
 
-Medicham
+Medicham @ Medichamite
 Level: 52
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 - Psychic
@@ -12900,7 +12900,7 @@ Lanturn
 Level: 51
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Sharpedo
+Sharpedo @ Sharpedonite
 Level: 49
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -14297,7 +14297,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Surf
 - Rock Slide
 
-Onix
+Steelix
 Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Iron Tail
@@ -14355,7 +14355,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Surf
 - Rock Slide
 
-Steelix
+Steelix @ Steelixite
 Level: 50
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Iron Tail
@@ -14539,7 +14539,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Focus Punch
 - Bulk Up
 
-Medicham
+Medicham @ Medichamite
 Level: 48
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Focus Punch
@@ -15397,7 +15397,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_TATE_AND_LIZA_2 ===
 Name: Tate & Liza
-Class: Leader
+Class: Gym Leaders
 Pic: Leader Tate And Liza
 Gender: Other
 Music: Female
@@ -15447,7 +15447,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_TATE_AND_LIZA_3 ===
 Name: Tate & Liza
-Class: Leader
+Class: Gym Leaders
 Pic: Leader Tate And Liza
 Gender: Other
 Music: Female
@@ -15505,7 +15505,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_TATE_AND_LIZA_4 ===
 Name: Tate & Liza
-Class: Leader
+Class: Gym Leaders
 Pic: Leader Tate And Liza
 Gender: Other
 Music: Female
@@ -15563,7 +15563,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_TATE_AND_LIZA_5 ===
 Name: Tate & Liza
-Class: Leader
+Class: Gym Leaders
 Pic: Leader Tate And Liza
 Gender: Other
 Music: Female
@@ -16260,7 +16260,7 @@ Starmie
 Level: 43
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Starmie
+Starmie @ Starminite
 Level: 43
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -16402,7 +16402,7 @@ Loudred
 Level: 39
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
-Vigoroth
+Slaking
 Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -16504,7 +16504,7 @@ Manectric
 Level: 41
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Manectric
+Manectric @ Manectite
 Level: 41
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -16563,7 +16563,7 @@ Machop
 Level: 30
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Numel
+Camerupt
 Level: 30
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -16584,7 +16584,7 @@ Machoke
 Level: 33
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Camerupt
+Camerupt @ Cameruptite
 Level: 33
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 

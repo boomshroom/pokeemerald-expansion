@@ -417,6 +417,8 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_RUIN_MANIAC_FRLG] =     { COMPOUND_STRING("Ruin Maniac"), 12 },
     [TRAINER_CLASS_LADY_FRLG] =            { COMPOUND_STRING("Lady"), 50 },
     [TRAINER_CLASS_PAINTER_FRLG] =         { COMPOUND_STRING("Painter"), 4 },
+
+    [TRAINER_CLASS_GYM_LEADERS] =          { COMPOUND_STRING("Gym Leaders"), 25, B_TRAINER_CLASS_POKE_BALLS >= GEN_8 ? BALL_ULTRA : BALL_POKE },
 };
 
 static void (*const sTurnActionsFuncsTable[])(void) =
