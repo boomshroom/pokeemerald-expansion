@@ -38,8 +38,8 @@ static enum Item SanitizeItemId(enum Item itemId);
 static enum Item SanitizeBagItemId(enum Item itemId);
 
 EWRAM_DATA struct BagPocket gBagPockets[POCKETS_COUNT] = {0};
-EWRAM_DATA struct ItemSlot gBerryItemSlots[NUM_BERRIES] = {0};
-EWRAM_DATA struct ItemSlot gTMHMItemSlots[NUM_ALL_MACHINES] = {0};
+EWRAM_DATA struct ItemSlot gBerryItemSlots[BAG_BERRIES_COUNT] = {0};
+EWRAM_DATA struct ItemSlot gTMHMItemSlots[BAG_TMHM_COUNT] = {0};
 EWRAM_DATA struct ItemSlot gPokeBallItemSlots[POKEBALL_COUNT] = {0};
 
 #include "data/pokemon/item_effects.h"
@@ -181,7 +181,7 @@ STATIC_ASSERT(23 * 3 > POKEBALL_COUNT, PokeBallPocketSize);
 
 void DeserialiseItemSlots(void)
 {
-    for (u32 i = 0; i < NUM_BERRIES; i++) {
+    for (u32 i = 0; i <= NUM_BERRIES; i++) {
         u16 quantity = (gSaveBlock1Ptr->bag.berries[i / 3] >> (10 * (i % 3))) & 0x3FF;
         gBerryItemSlots[i].itemId = ITEM_NONE;
         gBerryItemSlots[i].quantity = 0;
@@ -190,7 +190,7 @@ void DeserialiseItemSlots(void)
             AddBagItem(BerryTypeToItemId(i), quantity);
         }
     }
-    for (u32 i = 0; i < NUM_ALL_MACHINES; i++) {
+    for (u32 i = 0; i <= NUM_ALL_MACHINES; i++) {
         bool32 quantity = (gSaveBlock1Ptr->bag.TMsHMs[i / 8] >> (i % 8)) & 1;
         gTMHMItemSlots[i].itemId = ITEM_NONE;
         gTMHMItemSlots[i].quantity = 0;

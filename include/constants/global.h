@@ -113,8 +113,8 @@ enum Language
 #define BAG_ITEMS_COUNT (30 + 50)
 #define BAG_KEYITEMS_COUNT 30
 #define BAG_POKEBALLS_COUNT POKEBALL_COUNT
-#define BAG_TMHM_COUNT NUM_ALL_MACHINES
-#define BAG_BERRIES_COUNT NUM_BERRIES
+#define BAG_TMHM_COUNT NUM_ALL_MACHINES + 1
+#define BAG_BERRIES_COUNT NUM_BERRIES + 1
 
 // Number of facilities for Ranking Hall.
 // 7 facilities for single mode + tower double mode + tower multi mode.
