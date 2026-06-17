@@ -73,6 +73,7 @@ PacifidlogTown_House2_EventScript_HappyAzurill::
 	faceplayer
 	waitse
 	playmoncry SPECIES_AZURILL, CRY_MODE_NORMAL
+	setspeaker PacifidlogTown_House2_Name_Azurill
 	msgbox PacifidlogTown_House2_Text_Rurii, MSGBOX_DEFAULT
 	waitmoncry
 	msgbox PacifidlogTown_House2_Text_VeryFriendlyWithTrainer, MSGBOX_DEFAULT
@@ -84,11 +85,15 @@ PacifidlogTown_House2_EventScript_UnhappyAzurill::
 	faceplayer
 	waitse
 	playmoncry SPECIES_AZURILL, CRY_MODE_ENCOUNTER
+	setspeaker PacifidlogTown_House2_Name_Azurill
 	msgbox PacifidlogTown_House2_Text_Rururi, MSGBOX_DEFAULT
 	waitmoncry
 	msgbox PacifidlogTown_House2_Text_DoesntLikeTrainerVeryMuch, MSGBOX_DEFAULT
 	release
 	end
+
+PacifidlogTown_House2_Name_Azurill:
+	.string "Azurill$"
 
 PacifidlogTown_House2_Text_ChairmansYoungerBrotherOnVacation:
 	.string "Er-hem!\p"
@@ -132,16 +137,16 @@ PacifidlogTown_House2_Text_GetGoodTMInXDays:
 	.string "your Pokémon.$"
 
 PacifidlogTown_House2_Text_Rurii:
-	.string "Azurill: Rurii.$"
+	.string "Rurii.$"
 
 PacifidlogTown_House2_Text_VeryFriendlyWithTrainer:
-	.string "It appears to be very friendly with the\n"
+	.string "{SPEAKER NAME_NONE}It appears to be very friendly with the\n"
 	.string "Trainer.$"
 
 PacifidlogTown_House2_Text_Rururi:
-	.string "Azurill: Rururi!$"
+	.string "Rururi!$"
 
 PacifidlogTown_House2_Text_DoesntLikeTrainerVeryMuch:
-	.string "It doesn't appear to like the Trainer\n"
+	.string "{SPEAKER NAME_NONE}It doesn't appear to like the Trainer\n"
 	.string "very much.$"
 

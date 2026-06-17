@@ -11,6 +11,16 @@ FallarborTown_Mart_EventScript_Clerk::
 	release
 	end
 
+FallarborTown_Mart_EventScript_Clerk2::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart FallarborTown_Mart_TopClerk
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
 FallarborTown_Mart_EventScript_Woman::
 	msgbox FallarborTown_Mart_Text_DecidingSkittyEvolve, MSGBOX_NPC
 	end
@@ -24,10 +34,20 @@ FallarborTown_Mart_EventScript_Skitty::
 	faceplayer
 	waitse
 	playmoncry SPECIES_SKITTY, CRY_MODE_NORMAL
+	setspeaker FallarborTown_Mart_Name_Skitty
 	msgbox FallarborTown_Mart_Text_Skitty, MSGBOX_DEFAULT
 	waitmoncry
 	release
 	end
+
+FallarborTown_Mart_TopClerk:
+	.2byte ITEM_QUICK_BALL
+	.2byte ITEM_DUSK_BALL
+	.2byte ITEM_DIVE_BALL
+	pokemartlistend
+
+FallarborTown_Mart_Name_Skitty:
+	.string "Skitty$"
 
 FallarborTown_Mart_Text_DecidingSkittyEvolve:
 	.string "I'm having a hard time deciding if I\n"
@@ -39,7 +59,7 @@ FallarborTown_Mart_Text_DecidingSkittyEvolve:
 	.string "But it will look so different, too.$"
 
 FallarborTown_Mart_Text_Skitty:
-	.string "Skitty: Miyao?$"
+	.string "Miyao?$"
 
 FallarborTown_Mart_Text_SellNuggetIFound:
 	.string "This Nugget I found here…\n"

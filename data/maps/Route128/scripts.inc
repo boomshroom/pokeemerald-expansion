@@ -282,7 +282,7 @@ Route128_Text_StevenWhatIsHappening:
 	.string "What is happening?$"
 
 Route128_Text_StevenWholeWorldWillDrown:
-	.string "This is terrible…\p"
+	.string "{SPEAKER NAME_STEVEN}This is terrible…\p"
 	.string "After the scorching heat wave ended,\n"
 	.string "this deluge began.\p"
 	.string "If this doesn't stop, all of Hoenn…\n"

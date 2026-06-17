@@ -545,6 +545,7 @@ SlateportCity_Pokemart_PowerTMs:
 SlateportCity_EventScript_CaptStern::
 	lockall
 	msgbox SlateportCity_Text_SternMoveAheadWithExploration, MSGBOX_DEFAULT
+	setspeaker SlateportCity_Name_Gabby
 	msgbox SlateportCity_Text_GabbyWonderfulThanksForInterview, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_SLATEPORT_GABBY, Common_Movement_WalkInPlaceFasterRight
@@ -692,10 +693,12 @@ SlateportCity_Movement_PlayerFaceStern:
 	step_end
 
 SlateportCity_EventScript_Ty::
+	setspeaker SlateportCity_Name_Ty
 	msgbox SlateportCity_Text_BigSmileForCamera, MSGBOX_SIGN
 	end
 
 SlateportCity_EventScript_Gabby::
+	setspeaker SlateportCity_Name_Gabby
 	msgbox SlateportCity_Text_MostInvaluableExperience, MSGBOX_SIGN
 	end
 
@@ -917,6 +920,12 @@ SlateportCity_EventScript_BerryCrushRankingsSign::
 	releaseall
 	end
 
+SlateportCity_Name_Gabby:
+	.string "Gabby$"
+
+SlateportCity_Name_Ty:
+	.string "Ty$"
+
 SlateportCity_Text_EnergyGuruSellWhatYouNeed:
 	.string "I'm the Energy Guru! I'll go for it and\n"
 	.string "sell you what you need!$"
@@ -1136,26 +1145,26 @@ SlateportCity_Text_CaptainsACelebrity:
 	.string "The Captain's a celebrity!$"
 
 SlateportCity_Text_BigSmileForCamera:
-	.string "Ty: Okay, Capt. Stern, a big smile\n"
+	.string "Okay, Capt. Stern, a big smile\n"
 	.string "for the camera!$"
 
 SlateportCity_Text_MostInvaluableExperience:
-	.string "Gabby: I see, I see. You've had a most\n"
+	.string "I see, I see. You've had a most\n"
 	.string "invaluable experience…$"
 
 SlateportCity_Text_SternMoveAheadWithExploration:
-	.string "Capt. Stern: Yes, indeed. We intend to\n"
+	.string "{SPEAKER NAME_STERN}Yes, indeed. We intend to\n"
 	.string "move ahead with our exploration.$"
 
 SlateportCity_Text_GabbyWonderfulThanksForInterview:
-	.string "Gabby: That's wonderful, Capt. Stern!\n"
+	.string "That's wonderful, Capt. Stern!\n"
 	.string "Thank you for taking the time from\l"
 	.string "your busy schedule to talk to us.\p"
 	.string "We hope we can interview you again\n"
 	.string "with news of more discoveries!$"
 
 SlateportCity_Text_SternWhewFirstInterview:
-	.string "Capt. Stern: Whew…\p"
+	.string "{SPEAKER NAME_STERN}Whew…\p"
 	.string "That was my first time to be filmed for\n"
 	.string "TV. That was nerve-wracking.$"
 
@@ -1170,7 +1179,7 @@ SlateportCity_Text_OhPlayerWeMadeDiscovery:
 	.string "that's said to have been long extinct.$"
 
 SlateportCity_Text_AquaWillAssumeControlOfSubmarine:
-	.string "Fufufu…\n"
+	.string "{SPEAKER NAME_NONE}Fufufu…\n"
 	.string "Capt. Stern, I presume.\p"
 	.string "We of Team Aqua will be assuming\n"
 	.string "control of your submarine!\p"
@@ -1181,7 +1190,7 @@ SlateportCity_Text_AquaWillAssumeControlOfSubmarine:
 	.string "Aqua has planned!$"
 
 SlateportCity_Text_SternWhatWasAllThat:
-	.string "Capt. Stern: What was that all about?\p"
+	.string "{SPEAKER NAME_STERN}What was that all about?\p"
 	.string "It sounded like someone using\n"
 	.string "a megaphone…\p"
 	.string "Where did it come from?$"
