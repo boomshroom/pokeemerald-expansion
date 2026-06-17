@@ -3737,7 +3737,7 @@ static bool32 ShouldShowFieldMove(struct Pokemon *mon, enum FieldMove fieldMove)
             if (hp <= maxHp / 5) return FALSE;
             break;
         case FIELD_MOVE_FLASH:
-            if ((!gMapHeader.cave || FlagGet(FLAG_SYS_USE_FLASH)) && !ShouldDoBrailleDigEffect()) return FALSE;
+            if ((!gMapHeader.cave || FlagGet(FLAG_SYS_USE_FLASH)) && !ShouldDoBrailleRegisteelEffect()) return FALSE;
             break;
         case FIELD_MOVE_DIG:
             if (!CanUseDigOrEscapeRopeOnCurMap()) return FALSE;
