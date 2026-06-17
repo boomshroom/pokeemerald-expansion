@@ -47,11 +47,13 @@ SkyPillar_Top_EventScript_Rayquaza::
 	delay 40
 	waitmoncry
 	setflag FLAG_CUSTOM_VICTORY_CATCH
+	setflag FLAG_CUSTOM_SMART_WILD
 	setwildbattle SPECIES_RAYQUAZA_MEGA, 70
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	clearflag FLAG_CUSTOM_VICTORY_CATCH
+	clearflag FLAG_CUSTOM_SMART_WILD
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, SkyPillar_Top_EventScript_DefeatedRayquaza
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, SkyPillar_Top_EventScript_RanFromRayquaza
