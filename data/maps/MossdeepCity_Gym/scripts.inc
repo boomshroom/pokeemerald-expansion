@@ -553,12 +553,12 @@ MossdeepCity_Gym_Text_NicholasPostBattle:
 MossdeepCity_Gym_Text_TateAndLizaIntro:
 	.string "{SPEAKER NAME_TATE}Hehehe… Were you surprised?\p"
 	.string "{SPEAKER NAME_LIZA}Fufufu… Were you surprised?\p"
-	.string "{SPEAKER NAME_TATE_LIZA}That there are two Gym Leaders?\p"
-	.string "We're twins!\p"
+	.string "{SPEAKER NAME_TATE_LIZA}That there are two Gym Leaders?\n"
+	.string "We're twins!\l"
 	.string "{SPEAKER NAME_TATE}We don't need to talk because…\l"
 	.string "{SPEAKER NAME_LIZA}We can each determine what…\l"
 	.string "{SPEAKER NAME_TATE}The other is thinking…\l"
-	.string "{SPEAKER NAME_LIZA}All in our minds!\p"
+	.string "{SPEAKER NAME_LIZA}All in our minds!\l"
 	.string "{SPEAKER NAME_TATE}This combination of ours…\l"
 	.string "{SPEAKER NAME_LIZA}Can you beat it?$"
 

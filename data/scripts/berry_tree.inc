@@ -179,8 +179,8 @@ BerryTree_EventScript_PickBerry::
 	showberrydescription
 	playfanfare MUS_OBTAIN_BERRY
 	waitmessage
-	waitfanfare
 	waitbuttonpress
+	waitfanfare
 	message BerryTree_Text_PutAwayBerry
 	waitmessage
 	waitbuttonpress
