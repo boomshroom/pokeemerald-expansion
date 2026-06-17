@@ -15,6 +15,7 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [],
+  "floor_number": 1,
   "warp_events": [
     {
       "x": 10,

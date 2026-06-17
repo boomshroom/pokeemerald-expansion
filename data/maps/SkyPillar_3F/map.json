@@ -14,6 +14,7 @@
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
+  "floor_number": 3,
   "object_events": [],
   "warp_events": [
     {
