@@ -874,7 +874,7 @@ Class: Ruin Maniac
 Pic: Ruin Maniac
 Gender: Male
 Music: Hiker
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Sandslash
@@ -891,7 +891,7 @@ Class: Ruin Maniac
 Pic: Ruin Maniac
 Gender: Male
 Music: Hiker
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Sandslash
@@ -908,7 +908,7 @@ Class: Ruin Maniac
 Pic: Ruin Maniac
 Gender: Male
 Music: Hiker
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Sandslash
@@ -925,7 +925,7 @@ Class: Ruin Maniac
 Pic: Ruin Maniac
 Gender: Male
 Music: Hiker
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer
 
 Sandslash
@@ -4649,6 +4649,65 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Swords Dance
 - Slash
 
+=== TRAINER_SIDNEY_2 ===
+Name: Sidney
+Class: Elite Four
+Pic: Elite Four Sidney
+Gender: Male
+Music: Elite Four
+Items: Full Restore / Full Restore
+Double Battle: Yes
+AI: Smart Trainer
+Mugshot: Purple
+
+Scrafty
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Crunch
+- Brick Break
+- Poison Jab
+- Dragon Claw
+
+Shiftry
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fake Out
+- Feint Attack
+- Extrasensory
+- Leaf Blade
+
+Zoroark
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Night Slash
+- Shadow Claw
+- Dark Pulse
+- Flamethrower
+
+Sharpedo
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Crunch
+- Poison Fang
+- Aqua Jet
+- Slash
+
+Mandibuzz
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brave Bird
+- Bone Rush
+- Feint Attack
+- Tailwind
+
+Absol @ Absolite
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Aerial Ace
+- Night Slash
+- Psycho Cut
+- Slash
+
 === TRAINER_PHOEBE ===
 Name: Phoebe
 Class: Elite Four
@@ -4699,6 +4758,65 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ice Beam
 - Rock Slide
 - Earthquake
+
+=== TRAINER_PHOEBE_2 ===
+Name: Phoebe
+Class: Elite Four
+Pic: Elite Four Phoebe
+Gender: Female
+Music: Elite Four
+Items: Full Restore / Full Restore
+Double Battle: Yes
+AI: Smart Trainer
+Mugshot: Green
+
+Banette
+Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shadow Ball
+- Grudge
+- Toxic
+- Psychic
+
+Mismagius
+Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shadow Ball
+- Power Gem
+- Thunderbolt
+- Pain Split
+
+Drifblim
+Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Phantom Force
+- Psychic
+- Icy Wind
+- Acrobatics
+
+Chandelure
+Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hex
+- Flamethrower
+- Energy Ball
+- Dark Pulse
+
+Dusknoir
+Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hex
+- Fire Punch
+- Ice Punch
+- Thunder Punch
+
+Sableye @ Sablenite
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shadow Claw
+- Foul Play
+- Power Gem
+- Fake Out
 
 === TRAINER_GLACIA ===
 Name: Glacia
@@ -4751,6 +4869,65 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ice Beam
 - Sheer Cold
 
+=== TRAINER_GLACIA_2 ===
+Name: Glacia
+Class: Elite Four
+Pic: Elite Four Glacia
+Gender: Female
+Music: Elite Four
+Items: Full Restore / Full Restore
+Double Battle: Yes
+AI: Smart Trainer
+Mugshot: Pink
+
+Abomasnow
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Blizzard
+- Wood Hammer
+- Ice Shard
+- Earthquake
+
+Beartic
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Icicle Crash
+- Slash
+- Shadow Claw
+- Brick Break
+
+Froslass
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Draining Kiss
+- Blizzard
+- Hail
+- Shadow Ball
+
+Vanilluxe
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Beam
+- Mirror Coat
+- Freeze Dry
+- Signal Beam
+
+Walrein
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Body Slam
+- Blizzard
+- Sheer Cold
+
+Glalie @ Glalitite
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Protect
+- Ice Shard
+- Hail
+- Freeze Dry
+
 === TRAINER_DRAKE ===
 Name: Drake
 Class: Elite Four
@@ -4801,6 +4978,65 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Dragon Claw
 - Rock Slide
 - Crunch
+
+=== TRAINER_DRAKE_2 ===
+Name: Drake
+Class: Elite Four
+Pic: Elite Four Drake
+Gender: Male
+Music: Elite Four
+Items: Full Restore / Full Restore
+Double Battle: Yes
+AI: Smart Trainer
+Mugshot: Blue
+
+Altaria
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Aerial Ace
+- Cotton Guard
+- Dragon Pulse
+- Moonblast
+
+Dragalge
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Pulse
+- Hydro Pump
+- Sludge Wave
+- Thunderbolt
+
+Kingdra
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Pulse
+- Surf
+- Yawn
+- Ice Beam
+
+Flygon
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flamethrower
+- Boomburst
+- Dragon Pulse
+- Screech
+
+Haxorus
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Claw
+- Earthquake
+- X Scissor
+- Shadow Claw
+
+Salamence @ Salamencite
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Rush
+- Zen Headbutt
+- Crunch
+- Thunder Fang
 
 === TRAINER_ROXANNE_1 ===
 Name: Roxanne
@@ -6312,6 +6548,65 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Surf
 - Ice Beam
 - Toxic
+
+=== TRAINER_WALLACE_2 ===
+Name: Wallace
+Class: Champion
+Pic: Champion Wallace
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Full Restore
+Double Battle: Yes
+AI: Smart Trainer
+Mugshot: Yellow
+
+Milotic @ Rocky Helmet
+Level: 79
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Scald
+- Icy Wind
+- Rest
+- Sleep Talk
+
+Sharpedo @ Focus Sash
+Level: 77
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hydro Pump
+- Crunch
+- Zen Headbutt
+- Aqua Jet
+
+Walrein @ Leftovers
+Level: 77
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Yawn
+- Blizzard
+- Sheer Cold
+
+Ludicolo @ Life Orb
+Level: 77
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Focus Blast
+- Giga Drain
+- Rain Dance
+
+Swampert @ Swampertite
+Level: 79
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Muddy Water
+- Earth Power
+- Ice Beam
+- Focus Blast
+
+Starmie @ Expert Belt
+Level: 77
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Psychic
+- Thunderbolt
+- Signal Beam
 
 === TRAINER_ANDREW ===
 Name: Andrew
@@ -16239,7 +16534,7 @@ Staryu
 Level: 41
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Staryu
+Starmie
 Level: 41
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
