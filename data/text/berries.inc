@@ -210,11 +210,11 @@ SootopolisCity_Text_NameIsKiriHaveOneOfThese:
 	.string "You can have one of these.$"
 
 SootopolisCity_Text_GiveYouThisBerryToo:
-	.string "Kiri will give you this Berry, too!\n"
+	.string "{SPEAKER NAME_KIRI}Kiri will give you this Berry, too!\n"
 	.string "I really like it lots!$"
 
 SootopolisCity_Text_WhatKindOfWishInYourName:
-	.string "I wonder what kind of wish is included\n"
+	.string "{SPEAKER NAME_KIRI}I wonder what kind of wish is included\n"
 	.string "in your name.$"
 
 SootopolisCity_Text_LikeSeasonBornIn:

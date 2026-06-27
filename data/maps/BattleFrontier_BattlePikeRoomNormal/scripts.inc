@@ -122,6 +122,7 @@ BattleFrontier_BattlePikeRoomNormal_EventScript_LucyEnter::
 	waitse
 	applymovement LOCALID_PIKE_ROOM_NPC_1, BattleFrontier_BattlePikeRoomNormal_Movement_LucyEnter
 	waitmovement 0
+	setspeaker BattleFrontier_BattlePike_Name_Lucy
 	pike_getbrainstatus
 	switch VAR_RESULT
 	case FRONTIER_BRAIN_GOLD, BattleFrontier_BattlePikeRoomNormal_EventScript_IntroLucyGold
@@ -632,6 +633,9 @@ BattleFrontier_BattlePikeRoomNormal_Movement_CameraPanDown:
 	walk_down
 	walk_down
 	step_end
+
+BattleFrontier_BattlePike_Name_Lucy:
+	.string "Lucy$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_WillRestoreToFullHealth:
 	.string "Welcome…\n"
