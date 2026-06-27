@@ -1059,8 +1059,11 @@ static void Debug_HandleInput_Numeric(u8 taskId, s32 min, s32 max, u32 digits)
     s32 delta;
     if ((delta = JOY_AXIS_NEW(DPAD_DOWN, DPAD_UP)) != 0)
         SatAddPtr(&gTasks[taskId].tInput, delta * sPowersOfTen[gTasks[taskId].tDigit], min, max);
-    if ((delta = JOY_AXIS_NEW(DPAD_LEFT, DPAD_RIGHT)) != 0)
-        SatAddPtr(&gTasks[taskId].tDigit, delta, 0, digits - 1);
+        // gTasks[taskId].tInput = (u8)SatAdd((s32)gTasks[taskId].tInput, delta * sPowersOfTen[gTasks[taskId].tDigit], min, max);
+    if ((delta = JOY_AXIS_NEW(DPAD_LEFT, DPAD_RIGHT)) != 0) {
+        // gTasks[taskId].tDigit = (s16)SatAdd((s32)(gTasks[taskId].tDigit), delta, 0, (s32)digits - 1);
+        SatAddPtr(&gTasks[taskId].tDigit, delta, 0, (s32)digits - 1);
+    }
 }
 
 enum SongType { SONG_SE, SONG_MUS };
