@@ -2952,10 +2952,10 @@ static const u8 *BattleStringGetOpponentNameByTrainerId(u16 trainerId, u8 *text,
             toCpy = GetTrainerNameFromId(trainerId);
     }
 
-    assertf(DoesStringProperlyTerminate(toCpy, TRAINER_NAME_LENGTH + 1),"Opponent needs a valid name")
-    {
-        return sText_EmptyString4;
-    }
+    // assertf(DoesStringProperlyTerminate(toCpy, TRAINER_NAME_LENGTH + 1),"Opponent needs a valid name")
+    // {
+    //     return sText_EmptyString4;
+    // }
 
     return toCpy;
 }
