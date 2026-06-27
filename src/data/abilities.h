@@ -2526,7 +2526,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_EELEVATE] =
     {
         .name = _("Eelevate"),
-        .description = COMPOUND_STRING("Unimplemented."),
+        .description = COMPOUND_STRING("Levitate and Beast Boost."),
     },
 
     [ABILITY_314] =
