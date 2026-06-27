@@ -108,6 +108,7 @@ struct PokedexListItem
     u16 dexNum;
     u16 seen:1;
     u16 owned:1;
+    u16 silhouette:1;
 };
 
 struct PokemonStats
