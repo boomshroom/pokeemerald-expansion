@@ -34,11 +34,13 @@ MarineCave_End_EventScript_Kyogre::
 	waitmoncry
 	setvar VAR_LAST_TALKED, LOCALID_MARINE_CAVE_KYOGRE
 	setflag FLAG_CUSTOM_VICTORY_CATCH
+	setflag FLAG_CUSTOM_SMART_WILD
 	setwildbattle SPECIES_KYOGRE_PRIMAL, 70
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	clearflag FLAG_CUSTOM_VICTORY_CATCH
+	clearflag FLAG_CUSTOM_SMART_WILD
 	setvar VAR_TEMP_1, 0
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, MarineCave_End_EventScript_DefeatedKyogre
