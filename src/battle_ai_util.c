@@ -1768,7 +1768,7 @@ enum Ability AI_DecideKnownAbilityForTurn(enum BattlerId battlerId)
     u8 numValidAbilities = 0;
     enum Ability knownAbility = GetBattlerAbilityIgnoreMoldBreaker(battlerId);
     enum Ability indexAbility;
-    enum Ability abilityAiRatings[NUM_ABILITY_SLOTS] = {0};
+    u8 abilityAiRatings[NUM_ABILITY_SLOTS] = {0};
 
     // We've had ability overwritten by e.g. Worry Seed. It is not part of gAiPartyData in case of switching
     if (gBattleMons[battlerId].volatiles.overwrittenAbility)
@@ -1800,7 +1800,8 @@ enum Ability AI_DecideKnownAbilityForTurn(enum BattlerId battlerId)
     }
 
     if (numValidAbilities > 0 && IsAiBattlerPredictingAbility(battlerId))
-        return validAbilities[RandomWeighted(RNG_AI_PREDICT_ABILITY, abilityAiRatings[0], abilityAiRatings[1], abilityAiRatings[2])];
+        // return validAbilities[RandomWeighted(RNG_AI_PREDICT_ABILITY, abilityAiRatings[0], abilityAiRatings[1], abilityAiRatings[2])];
+        return validAbilities[RandomWeightedIndex(abilityAiRatings, numValidAbilities)];
 
     if (numValidAbilities > 0)
         return validAbilities[RandomUniform(RNG_AI_ABILITY, 0, numValidAbilities - 1)];
