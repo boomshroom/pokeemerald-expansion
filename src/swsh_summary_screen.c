@@ -6656,15 +6656,13 @@ static u8 FormatTextByWidth(u8 *result, s32 maxWidth, u8 fontId, const u8 *str, 
 
 static inline bool32 ShouldShowMoveRelearner(void)
 {
-	return FALSE; //No Move Relerner lol
-    /*
+	// return FALSE; //No Move Relerner lol
 	return (P_SUMMARY_SCREEN_MOVE_RELEARNER
          && !sMonSummaryScreen->lockMovesFlag
          && sMonSummaryScreen->mode != SUMMARY_MODE_BOX_CURSOR
          && sMonSummaryScreen->hasRelearnableMoves
          && !InBattleFactory()
          && !InSlateportBattleTent());
-		 */
 }
 
 /*
